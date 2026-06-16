@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INGE&amp;MAT — Engineering Precision. Global Sourcing.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Nunito:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="./images/INGEMAT ICON.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════
+     TOP NAVIGATION
+══════════════════════════════════════════════════════════ -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <img src="./images/INGEMAT ICON.png" alt="INGE&MAT icon" class="nav-logo-icon" />
+      INGE&amp;MAT S.A.S
+      <span class="nav-logo-sub">Ingeniería y Materiales</span>
+    </a>
+    <div class="nav-center">
+      <div class="nav-links">
+
+        <a href="#hero" class="nav-link active" id="nl-home" data-i18n="nav.home">Home</a>
+
+        <div class="nav-item nav-item--dropdown">
+          <a href="#solutions" class="nav-link" id="nl-solutions" data-i18n="nav.solutions">Solutions</a>
+          <div class="mega-menu">
+            <a href="#solutions" class="mega-sub" data-i18n="nav.sub.coastal">Coastal Protection</a>
+            <a href="#solutions" class="mega-sub" data-i18n="nav.sub.ground">Ground Stabilization</a>
+            <a href="#solutions" class="mega-sub" data-i18n="nav.sub.marine">Marine Infrastructure</a>
+            <a href="#solutions" class="mega-sub" data-i18n="nav.sub.retaining">Retaining Structures</a>
+            <a href="#solutions" class="mega-sub" data-i18n="nav.sub.mining">Mining &amp; Energy</a>
+          </div>
+        </div>
+
+        <div class="nav-item nav-item--dropdown">
+          <a href="#solutions" class="nav-link" id="nl-products" data-i18n="nav.products">Products</a>
+          <div class="mega-menu">
+            <a href="steel-solutions.html" class="mega-sub" data-i18n="nav.sub.steel">Steel</a>
+            <a href="#solutions" class="mega-sub" data-i18n="nav.sub.geosyn">Geosynthetics</a>
+            <a href="#solutions" class="mega-sub" data-i18n="nav.sub.rocks">Rock Bags</a>
+            <a href="#solutions" class="mega-sub" data-i18n="nav.sub.anchoring">Anchoring Systems</a>
+          </div>
+        </div>
+
+        <a href="#capabilities" class="nav-link" id="nl-capabilities" data-i18n="nav.capabilities">Capabilities</a>
+        <a href="#about"        class="nav-link" id="nl-about"         data-i18n="nav.about">About</a>
+        <a href="#contact"      class="nav-link" id="nl-contact"       data-i18n="nav.contact">Contact</a>
+
+      </div>
+    </div>
+    <div class="nav-right">
+      <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
+        <span class="lang-opt" id="lang-en">EN</span>
+        <span class="lang-sep">/</span>
+        <span class="lang-opt" id="lang-es">ES</span>
+      </button>
+      <a href="#contact" class="nav-cta" data-i18n="nav.enquire">Enquire</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+    <div class="nav-mobile-links">
+      <a href="#hero" class="nav-mobile-link" data-i18n="nav.home">Home</a>
+      <div class="nav-mobile-item">
+        <button class="nav-mobile-trigger" aria-expanded="false">
+          <span data-i18n="nav.solutions">Solutions</span>
+          <svg class="nav-mobile-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+            <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="nav-mobile-sub">
+          <a href="#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.coastal">Coastal Protection</a>
+          <a href="#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.ground">Ground Stabilization</a>
+          <a href="#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.marine">Marine Infrastructure</a>
+          <a href="#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.retaining">Retaining Structures</a>
+          <a href="#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.mining">Mining &amp; Energy</a>
+        </div>
+      </div>
+      <div class="nav-mobile-item">
+        <button class="nav-mobile-trigger" aria-expanded="false">
+          <span data-i18n="nav.products">Products</span>
+          <svg class="nav-mobile-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+            <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="nav-mobile-sub">
+          <a href="steel-solutions.html" class="nav-mobile-sub-link" data-i18n="nav.sub.steel">Steel</a>
+          <a href="#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.geosyn">Geosynthetics</a>
+          <a href="#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.rocks">Rock Bags</a>
+          <a href="#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.anchoring">Anchoring Systems</a>
+        </div>
+      </div>
+      <a href="#capabilities" class="nav-mobile-link" data-i18n="nav.capabilities">Capabilities</a>
+      <a href="#about"        class="nav-mobile-link" data-i18n="nav.about">About</a>
+      <a href="#contact"      class="nav-mobile-link" data-i18n="nav.contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════════════ -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-content">
+    <h1 class="hero-headline">
+      <span data-i18n="hero.line1">Engineering Precision</span><br />
+      <span style="color:#b7b5b4;" data-i18n="hero.line2">Global Sourcing</span>
+    </h1>
+    <div class="hero-buttons">
+      <a href="#solutions"    class="hero-btn" data-i18n="hero.btn1">View Projects</a>
+      <a href="#capabilities" class="hero-btn" data-i18n="hero.btn2">Global Logistics</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     OVERLAPPING WHITE PANEL + SOLUTIONS (light section)
+══════════════════════════════════════════════════════════ -->
+<div id="solutions-wrap">
+  <div class="white-panel" id="solutions">
+
+    <!-- Intro text + bridge image -->
+    <div class="solutions-grid">
+      <div>
+        <span class="solutions-eyebrow" data-i18n="solutions.eyebrow">Solutions</span>
+        <h2 class="solutions-heading" data-i18n-html="solutions.heading">Solutions designed for<br />real infrastructure</h2>
+        <p class="solutions-body" data-i18n="solutions.body">In Inge&amp;Mat SAS we offer specialized solutions for infrastructure projects, including sheet piles, woven and non-woven geotextiles, anchoring systems, slope stabilization, and materials for oil & gas applications, port works, and critical structures. Each solution is selected and optimized based on project conditions, ensuring technical performance, cost efficiency, and reliability in execution.</p>
+      </div>
+      <div class="bridge-img-col">
+        <img class="bridge-img" src="./images/tablaestaca blueprint.png" alt="Tablaestaca blueprint" />
+        <img class="bridge-img-secondary" src="./images/Blueprint.png" alt="Blueprint" />
+      </div>
+    </div>
+
+    <!-- Carousel -->
+    <div class="carousel-section">
+      <div class="carousel-backdrop"></div>
+      <button class="carousel-btn carousel-prev" id="carousel-prev">&#8249;</button>
+      <div class="carousel-outer" id="carousel-outer">
+        <div class="carousel-track" id="carousel-track">
+
+          <article class="card">
+            <div class="card-img-wrap">
+              <img class="card-img" src="https://picsum.photos/seed/geotextile/800/500" alt="Geotextiles" />
+              <span class="card-badge" data-i18n="card.badge">Premium Spec</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Geotextiles</h3>
+              <p class="card-desc">Woven and non-woven geotextile systems for drainage, filtration, and soil reinforcement in demanding civil engineering projects.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img-wrap">
+              <img class="card-img" src="https://picsum.photos/seed/sheetpile/800/500" alt="Sheet Piles" />
+              <span class="card-badge" data-i18n="card.badge">Premium Spec</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Tablestacas</h3>
+              <p class="card-desc">High-performance sheet pile systems for retaining walls, port structures, and deep excavation support across varied soil conditions.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img-wrap">
+              <img class="card-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB13e6lsiYM-uzzqEfPfOp-VinTna2SREbgP-1CWWOLTqfov4CsZuKAStf6Y8w1vI1f--OSX2iOI5ct7NAZw_x6lYTbJhR-5eHY8P3z72dgzehd5xzATg6Nkd5xgHhZcTrMpZEtXS9DN6g0_qNuYwam6SP2RmKAthk06JaDkKllFVa_9D9uQEXIgPPgp7NxFU4m3mO-8a7ywDGTpO7uI7amSb4dBEd2HURo9Ijxs2XD-uqQHB06EX5wVB2oQAkeOGz4dDyHxE-6cOSB" alt="High-resistance industrial anchor systems" />
+              <span class="card-badge" data-i18n="card.badge">Premium Spec</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title" data-i18n="card1.title">Anclajes de Alta Resistencia</h3>
+              <p class="card-desc" data-i18n="card1.desc">Engineering strength that defies environmental degradation. Our proprietary anchoring systems are forged for extreme conditions and tested to international load-bearing standards.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img-wrap">
+              <img class="card-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQT4bVLkUP1WjckO-c0osNB30RxlH5qLoAMUotkOn6qh09NY9j-pL17mY9KqRXqvrXerCJn0csSYN9vy5o6eREtr5OCB4kka2fKZKk27-BywANrr8f3StBFfFL4nDAd3u-6BZAfqsgtmSR50-TZjSX0W1B4kIMblPw3sAQ6VIC51K_gZv_k3v__qxSp2-bc5jmlfh-y9Z0BIvXnuH5bOD8qtzSsHvY6KGdy0Evy3l6JJ8msIdpWkXgbsD84jZQNg2stafLBA_dZGat" alt="Amorphous gabion stone matrix for erosion control" />
+              <span class="card-badge" data-i18n="card.badge">Premium Spec</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title" data-i18n="card2.title">Gavión Amorfo</h3>
+              <p class="card-desc" data-i18n="card2.desc">Fluid structural solutions meeting rigid requirements. A breakthrough in erosion control and international landscaping — adaptive, durable, architecturally precise.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img-wrap">
+              <img class="card-img" src="https://picsum.photos/seed/oilgas/800/500" alt="Oil and Gas" />
+              <span class="card-badge" data-i18n="card.badge">Premium Spec</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Oil &amp; Gas</h3>
+              <p class="card-desc">Specialized materials and structural components engineered for upstream and downstream energy infrastructure under extreme operational conditions.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img-wrap">
+              <img class="card-img" src="https://picsum.photos/seed/portwork/800/500" alt="Port Works" />
+              <span class="card-badge" data-i18n="card.badge">Premium Spec</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Obras Portuarias</h3>
+              <p class="card-desc">Robust structural systems and marine-grade materials designed for port, coastal, and waterfront infrastructure development.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img-wrap">
+              <img class="card-img" src="https://picsum.photos/seed/slopewall/800/500" alt="Slope Stabilization" />
+              <span class="card-badge" data-i18n="card.badge">Premium Spec</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Estabilización de Taludes</h3>
+              <p class="card-desc">Integrated slope stabilization systems combining anchoring, drainage, and geosynthetics for long-term geotechnical performance.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+      <button class="carousel-btn carousel-next" id="carousel-next">&#8250;</button>
+    </div>
+
+  </div><!-- /white-panel -->
+</div><!-- /solutions-wrap -->
+
+<!-- ══════════════════════════════════════════════════════════
+     CAPABILITIES — dark section
+══════════════════════════════════════════════════════════ -->
+<section id="capabilities" aria-label="Core Capabilities">
+  <div class="cap-inner">
+
+    <div>
+      <span class="cap-eyebrow" data-i18n="cap.eyebrow">Core Capabilities</span>
+      <h2 class="cap-heading" data-i18n-html="cap.heading">Engineering &amp; Supply<br>Capabilities</h2>
+      <p class="cap-body" data-i18n="cap.body">We operate as an integration channel between international manufacturers and projects across Latin America, facilitating access to specialized solutions and ensuring their availability during critical execution phases. We have the capacity to articulate technical supply for sectors such as road infrastructure, geotechnics, maritime works, and energy, adapting each solution to the specific conditions of the project. Our structure allows us to respond quickly to complex technical requirements and serve projects at both regional and broader market levels, with a direct focus on performance and execution.</p>
+      <ul class="cap-features" role="list">
+        <li class="cap-feat">
+          <div class="cap-feat-icon" aria-hidden="true">
+            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#ddcc0f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="cap-feat-text" data-i18n="cap.feat1">Fully compliant with all applicable technical and regulatory requirements established by the Agencia Nacional de Infraestructura (ANI), Colombia.</span>
+        </li>
+        <li class="cap-feat">
+          <div class="cap-feat-icon" aria-hidden="true">
+            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#ddcc0f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="cap-feat-text" data-i18n="cap.feat2">Established operational presence across Latin America, with the ability to support projects in multiple markets and technical contexts.</span>
+        </li>
+        <li class="cap-feat">
+          <div class="cap-feat-icon" aria-hidden="true">
+            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#ddcc0f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="cap-feat-text" data-i18n="cap.feat3">End-to-end support, from sourcing and logistics to on-site delivery and integration.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="cap-right">
+      <div class="cap-planet-block">
+        <img
+          class="cap-planet"
+          src="images/planet.png"
+          alt="Global operations map"
+        />
+      </div>
+      <div class="stat-block">
+        <div>
+          <span class="stat-label" data-i18n="cap.stat.label">PROJECTS SUPPORTED</span>
+          <p class="stat-desc" data-i18n="cap.stat.desc">Across infrastructure, geotechnical and energy sectors</p>
+        </div>
+        <span class="stat-number">+50</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     ABOUT
+══════════════════════════════════════════════════════════ -->
+<div class="about-white-panel">
+  <section id="about" aria-label="About INGE&amp;MAT">
+    <div class="about-inner">
+
+      <div>
+        <span class="about-eyebrow" data-i18n="about.eyebrow">About INGE&amp;MAT</span>
+        <h2 class="about-heading" data-i18n="about.heading">Engineering the Foundation of Tomorrow's Infrastructure</h2>
+        <p class="about-body" data-i18n="about.body1">Founded on the principles of structural precision and global sourcing, INGE&amp;MAT delivers advanced anchoring systems, gabion solutions, and engineered structural components to major infrastructure projects worldwide.</p>
+        <p class="about-body" style="margin-bottom:0;" data-i18n="about.body2">With over two decades of field experience, our team of structural engineers and logistics specialists ensures every component meets the highest international standards before it reaches your site.</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-card-num" style="color:#f0eeec;">20+</span>
+          <span class="stat-card-label" data-i18n="about.stat1">Years of engineering excellence</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card-num" style="color:#ddcc0f;">40+</span>
+          <span class="stat-card-label" data-i18n="about.stat2">Countries in our supply network</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card-num" style="color:#f0eeec;">2,400+</span>
+          <span class="stat-card-label" data-i18n="about.stat3">Projects completed globally</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card-num" style="color:#ddcc0f;">ISO</span>
+          <span class="stat-card-label" data-i18n="about.stat4">9001 certified quality management</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div><!-- /about-white-panel -->
+
+<!-- ══════════════════════════════════════════════════════════
+     RESOURCES / PDF SECTION
+══════════════════════════════════════════════════════════ -->
+<section id="resources" aria-label="Technical Documentation">
+  <div class="res-inner">
+
+    <header class="res-header">
+      <span class="res-eyebrow" data-i18n="res.eyebrow">Technical Documentation</span>
+      <h2 class="res-heading" data-i18n="res.heading">Downloadable Resources</h2>
+      <p class="res-subtext" data-i18n="res.subtext">Access our complete library of technical documents, product catalogs, and case studies. All documents are updated quarterly and available for immediate download.</p>
+    </header>
+
+    <div class="pdf-grid">
+
+      <div class="pdf-card">
+        <div class="pdf-card-top">
+          <div class="pdf-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M11 2H5a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7l-6-5z" stroke="#ddcc0f" stroke-width="1.4" stroke-linejoin="round"/><path d="M11 2v5h5" stroke="#ddcc0f" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="pdf-type-badge">PDF</span>
+        </div>
+        <div>
+          <h4 class="pdf-title" data-i18n="pdf1.title">Company Brochure 2024</h4>
+          <p class="pdf-desc" data-i18n="pdf1.desc">Complete overview of INGE&amp;MAT's product range, global capabilities, and engineering philosophy.</p>
+        </div>
+        <a href="#" class="pdf-btn" data-i18n="pdf.download">Download</a>
+      </div>
+
+      <div class="pdf-card">
+        <div class="pdf-card-top">
+          <div class="pdf-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M11 2H5a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7l-6-5z" stroke="#ddcc0f" stroke-width="1.4" stroke-linejoin="round"/><path d="M11 2v5h5" stroke="#ddcc0f" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="pdf-type-badge">PDF</span>
+        </div>
+        <div>
+          <h4 class="pdf-title" data-i18n="pdf2.title">Technical Product Catalog</h4>
+          <p class="pdf-desc" data-i18n="pdf2.desc">Detailed specifications, tolerances, load ratings, and installation guides for all anchoring systems.</p>
+        </div>
+        <a href="#" class="pdf-btn" data-i18n="pdf.download">Download</a>
+      </div>
+
+      <div class="pdf-card">
+        <div class="pdf-card-top">
+          <div class="pdf-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M11 2H5a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7l-6-5z" stroke="#ddcc0f" stroke-width="1.4" stroke-linejoin="round"/><path d="M11 2v5h5" stroke="#ddcc0f" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="pdf-type-badge">PDF</span>
+        </div>
+        <div>
+          <h4 class="pdf-title" data-i18n="pdf3.title">Capabilities Sheet</h4>
+          <p class="pdf-desc" data-i18n="pdf3.desc">Summary of manufacturing capabilities, certifications, quality benchmarks, and delivery timelines.</p>
+        </div>
+        <a href="#" class="pdf-btn" data-i18n="pdf.download">Download</a>
+      </div>
+
+      <div class="pdf-card">
+        <div class="pdf-card-top">
+          <div class="pdf-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M11 2H5a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7l-6-5z" stroke="#ddcc0f" stroke-width="1.4" stroke-linejoin="round"/><path d="M11 2v5h5" stroke="#ddcc0f" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="pdf-type-badge">PDF</span>
+        </div>
+        <div>
+          <h4 class="pdf-title" data-i18n="pdf4.title">Infrastructure Case Study</h4>
+          <p class="pdf-desc" data-i18n="pdf4.desc">Documented case study of a large-scale slope stabilization project using INGE&amp;MAT anchor systems.</p>
+        </div>
+        <a href="#" class="pdf-btn" data-i18n="pdf.download">Download</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     CONTACT
+══════════════════════════════════════════════════════════ -->
+<section id="contact" aria-label="Contact">
+  <div class="contact-inner">
+
+    <div>
+      <span class="contact-eyebrow" data-i18n="contact.eyebrow">Contact</span>
+      <h2 class="contact-heading" data-i18n="contact.heading">Ready to Start Your Project?</h2>
+      <p class="contact-body" data-i18n="contact.body">Our engineering team is available to discuss project specifications, technical requirements, and custom sourcing solutions.</p>
+      <div class="contact-info">
+        <div class="contact-info-row">
+          <svg width="21" height="21" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <rect x="2" y="3" width="12" height="10" rx="1" stroke="#ddcc0f" stroke-width="1.2"/>
+            <path d="M2 5l6 4.5L14 5" stroke="#ddcc0f" stroke-width="1.2"/>
+          </svg>
+          <a href="mailto:comercial@ingemat.co" class="contact-info-link">comercial@ingemat.co</a>
+        </div>
+        <div class="contact-info-row">
+          <svg width="21" height="21" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M2.5 3a1 1 0 011-1h1.5a.5.5 0 01.5.5v2a.5.5 0 01-.146.354l-1 1A7.5 7.5 0 009.146 11.646l1-1A.5.5 0 0110.5 10.5h2a.5.5 0 01.5.5V12.5a1 1 0 01-1 1A11 11 0 011.5 3.5a1 1 0 011-1z" stroke="#ddcc0f" stroke-width="1.2"/>
+          </svg>
+          <span class="contact-info-plain">+57 3124626911</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-card">
+      <h3 class="form-title" data-i18n="form.title">Request a Quote</h3>
+      <div class="form-fields">
+        <input class="form-input" id="form-name"    type="text"  data-i18n-placeholder="form.name"    placeholder="Full Name"              autocomplete="name"  />
+        <input class="form-input" id="form-email"   type="email" data-i18n-placeholder="form.email"   placeholder="Email Address"          autocomplete="email" />
+        <input class="form-input" id="form-company" type="text"  data-i18n-placeholder="form.company" placeholder="Company / Organisation" />
+        <textarea class="form-textarea" id="form-message"        data-i18n-placeholder="form.message" placeholder="Project details or inquiry..."></textarea>
+        <button class="form-submit" id="form-submit" type="button" data-i18n="form.submit">Send Enquiry</button>
+        <p class="form-feedback" id="form-feedback"></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./images/INGEMAT ICON.png" alt="INGE&MAT icon" class="footer-brand-icon" />
+      <div>
+        <span class="footer-brand-name">INGE&amp;MAT S.A.S</span>
+        <span class="footer-brand-sub">Ingeniería y Materiales</span>
+      </div>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="docs/Politica_Privacidad_INGEMAT.pdf" target="_blank" class="footer-link" data-i18n="footer.privacy">Privacy Policy</a>
+      <a href="#" class="footer-link" data-i18n="footer.terms">Terms of Service</a>
+      <a href="#" class="footer-link" data-i18n="footer.sustainability">Sustainability</a>
+    </nav>
+    <span class="footer-copy" data-i18n="footer.copy">© 2024 INGE&amp;MAT. All rights reserved.</span>
+  </div>
+</footer>
+
+<!-- WhatsApp floating button -->
+<a href="https://wa.link/trjia4" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contact us on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="#fff">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.738 5.48 2.031 7.785L0 32l8.438-2.01A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.771-1.854l-.486-.29-5.01 1.195 1.234-4.87-.318-.5A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.908c-.398-.199-2.354-1.162-2.719-1.294-.365-.133-.63-.199-.896.199-.265.398-1.029 1.294-1.261 1.56-.232.265-.465.298-.863.1-.398-.2-1.681-.62-3.202-1.977-1.183-1.056-1.982-2.36-2.214-2.758-.232-.398-.025-.613.174-.811.179-.178.398-.465.597-.697.199-.232.265-.398.398-.664.133-.265.066-.497-.033-.697-.1-.199-.896-2.16-1.228-2.957-.323-.776-.651-.671-.896-.683l-.763-.013c-.265 0-.697.1-.1063.497-.365.398-1.394 1.362-1.394 3.322s1.427 3.854 1.626 4.12c.199.265 2.808 4.287 6.803 6.013.951.41 1.693.655 2.271.839.954.304 1.823.261 2.51.158.765-.114 2.354-.962 2.686-1.892.332-.93.332-1.727.232-1.892-.099-.166-.365-.265-.763-.464z"/>
+  </svg>
+</a>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>

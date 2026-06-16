@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(start \"\" \"d:\\\\Ingemat vsc claude\\\\index.html\")",
+      "Bash(npm install *)",
+      "Bash(npx vite *)",
+      "Bash(curl *)",
+      "Bash(ngrok http *)",
+      "PowerShell(Stop-Process *)",
+      "PowerShell(netstat *)",
+      "PowerShell(Start-Process -FilePath \"npm\" -ArgumentList \"run\",\"dev\",\"--\",\"--host\",\"127.0.0.1\" -WorkingDirectory \"D:\\\\Ingemat vsc claude\" -WindowStyle Hidden -PassThru)",
+      "Bash(npm run *)",
+      "Skill(run)",
+      "Bash(npm --version)"
+    ]
+  }
+}

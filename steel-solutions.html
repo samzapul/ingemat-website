@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steel — INGE&amp;MAT</title>
+  <meta name="description" content="High-performance steel solutions for critical infrastructure — seamless pipes, welded pipes, structural steel, sheet piles, steel structures and custom fabrication." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Nunito:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="./images/INGEMAT ICON.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="steel-solutions.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════════════════════ -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="./images/INGEMAT ICON.png" alt="INGE&MAT icon" class="nav-logo-icon" />
+      INGE&amp;MAT S.A.S
+      <span class="nav-logo-sub">Ingeniería y Materiales</span>
+    </a>
+    <div class="nav-center">
+      <div class="nav-links">
+        <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+        <div class="nav-item nav-item--dropdown">
+          <a href="index.html#solutions" class="nav-link" data-i18n="nav.solutions">Solutions</a>
+          <div class="mega-menu">
+            <a href="index.html#solutions" class="mega-sub" data-i18n="nav.sub.coastal">Coastal Protection</a>
+            <a href="index.html#solutions" class="mega-sub" data-i18n="nav.sub.ground">Ground Stabilization</a>
+            <a href="index.html#solutions" class="mega-sub" data-i18n="nav.sub.marine">Marine Infrastructure</a>
+            <a href="index.html#solutions" class="mega-sub" data-i18n="nav.sub.retaining">Retaining Structures</a>
+            <a href="index.html#solutions" class="mega-sub" data-i18n="nav.sub.mining">Mining &amp; Energy</a>
+          </div>
+        </div>
+        <div class="nav-item nav-item--dropdown">
+          <a href="#" class="nav-link active" data-i18n="nav.products">Products</a>
+          <div class="mega-menu">
+            <a href="steel-solutions.html" class="mega-sub" style="color:#ddcc0f;" data-i18n="nav.sub.steel">Steel</a>
+            <a href="#" class="mega-sub" data-i18n="nav.sub.geosyn">Geosynthetics</a>
+            <a href="#" class="mega-sub" data-i18n="nav.sub.rocks">Amorphous Gabions</a>
+            <a href="#" class="mega-sub" data-i18n="nav.sub.anchoring">Anchoring Systems</a>
+          </div>
+        </div>
+        <a href="index.html#capabilities" class="nav-link" data-i18n="nav.capabilities">Capabilities</a>
+        <a href="index.html#about"        class="nav-link" data-i18n="nav.about">About</a>
+        <a href="index.html#contact"      class="nav-link" data-i18n="nav.contact">Contact</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
+        <span class="lang-opt lang-active" id="lang-en">EN</span>
+        <span class="lang-sep">/</span>
+        <span class="lang-opt" id="lang-es">ES</span>
+      </button>
+      <a href="index.html#contact" class="nav-cta" data-i18n="nav.enquire">Enquire</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+    <div class="nav-mobile-links">
+      <a href="index.html" class="nav-mobile-link" data-i18n="nav.home">Home</a>
+      <div class="nav-mobile-item">
+        <button class="nav-mobile-trigger" aria-expanded="false">
+          <span data-i18n="nav.solutions">Solutions</span>
+          <svg class="nav-mobile-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="nav-mobile-sub">
+          <a href="index.html#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.coastal">Coastal Protection</a>
+          <a href="index.html#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.ground">Ground Stabilization</a>
+          <a href="index.html#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.marine">Marine Infrastructure</a>
+          <a href="index.html#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.retaining">Retaining Structures</a>
+          <a href="index.html#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.mining">Mining &amp; Energy</a>
+        </div>
+      </div>
+      <div class="nav-mobile-item">
+        <button class="nav-mobile-trigger is-open" aria-expanded="true">
+          <span data-i18n="nav.products">Products</span>
+          <svg class="nav-mobile-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="nav-mobile-sub is-open">
+          <a href="steel-solutions.html" class="nav-mobile-sub-link" style="color:#ddcc0f;" data-i18n="nav.sub.steel">Steel</a>
+          <a href="#" class="nav-mobile-sub-link" data-i18n="nav.sub.geosyn">Geosynthetics</a>
+          <a href="#" class="nav-mobile-sub-link" data-i18n="nav.sub.rocks">Amorphous Gabions</a>
+          <a href="#" class="nav-mobile-sub-link" data-i18n="nav.sub.anchoring">Anchoring Systems</a>
+        </div>
+      </div>
+      <a href="index.html#capabilities" class="nav-mobile-link" data-i18n="nav.capabilities">Capabilities</a>
+      <a href="index.html#about"        class="nav-mobile-link" data-i18n="nav.about">About</a>
+      <a href="index.html#contact"      class="nav-mobile-link" data-i18n="nav.contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════════════ -->
+<section id="ss-hero">
+  <div class="ss-hero-bg">
+    <div class="ss-hero-overlay"></div>
+  </div>
+  <div class="ss-hero-content">
+    <nav class="ss-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <span aria-hidden="true">›</span>
+      <span data-i18n="ss.crumb.products">Products</span>
+      <span aria-hidden="true">›</span>
+      <span data-i18n="ss.crumb.page">Steel</span>
+    </nav>
+    <h1 class="ss-hero-h1 ss-fade" data-i18n-html="ss.hero.h1">
+      Steel for<br /><em>Critical Infrastructure</em>
+    </h1>
+    <p class="ss-hero-sub ss-fade ss-fade-d1" data-i18n="ss.hero.sub">
+      High-performance steel systems engineered for marine infrastructure, deep foundations, energy projects, transportation networks, industrial facilities, and large-scale construction.
+    </p>
+    <p class="ss-hero-body ss-fade ss-fade-d2" data-i18n="ss.hero.body">
+      INGE&amp;MAT delivers specialized steel solutions designed to meet the demands of modern infrastructure projects. From pipeline systems and structural steel to marine piling and retaining structures, we provide engineered materials that combine reliability, durability, and performance in the most demanding environments.
+    </p>
+    <div class="ss-hero-btns ss-fade ss-fade-d3">
+      <a href="#ss-products" class="hero-btn" data-i18n="ss.hero.btn1">Explore Products</a>
+      <a href="index.html#contact" class="hero-btn" data-i18n="ss.hero.btn2">Request a Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     INTRO
+══════════════════════════════════════════════════════════ -->
+<section id="ss-intro">
+  <div class="ss-intro-inner">
+    <div class="ss-fade">
+      <span class="ss-eyebrow" data-i18n="ss.intro.eyebrow">Engineering Materials</span>
+      <h2 data-i18n="ss.intro.h2">Engineering-Grade Steel Systems</h2>
+      <p data-i18n="ss.intro.p1">Steel remains one of the most critical materials in modern infrastructure. Whether supporting deep foundations, retaining waterfront structures, transporting energy resources, or forming the framework of industrial facilities, steel systems must perform under demanding conditions for decades.</p>
+      <p data-i18n="ss.intro.p2">At INGE&amp;MAT, we provide a comprehensive portfolio of steel products selected for structural integrity, durability, and project reliability. Our solutions support projects across transportation, marine construction, energy infrastructure, industrial facilities, water management, and heavy civil engineering.</p>
+    </div>
+    <div class="ss-fade ss-fade-d2">
+      <img src="./images/Port Steel.png" alt="Port steel solutions" class="ss-intro-img" />
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     PRODUCT NAVIGATION GRID
+══════════════════════════════════════════════════════════ -->
+<section id="ss-products">
+  <div class="ss-section-inner">
+    <span class="ss-eyebrow ss-fade" data-i18n="ss.nav.eyebrow">Product Portfolio</span>
+    <h2 class="ss-fade ss-fade-d1" data-i18n="ss.nav.h2">Steel Product Lines</h2>
+    <div class="ss-nav-grid">
+
+      <a href="#ss-seamless" class="ss-nav-card ss-fade">
+        <div class="ss-nav-card-img">
+          <img src="./images/seamless steel pipe icon.webp" alt="Seamless steel pipe" class="ss-nav-card-photo" />
+        </div>
+        <div class="ss-nav-card-body">
+          <span class="ss-nav-card-num">01</span>
+          <div class="ss-nav-card-title" data-i18n="ss.nav.c1.title">Seamless Steel Pipe</div>
+          <p class="ss-nav-card-desc" data-i18n="ss.nav.c1.desc">API 5L line pipe and oilfield casing for pressure-critical transmission and energy applications.</p>
+          <span class="ss-nav-card-link"><span data-i18n="ss.meta.view">View Products</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></span>
+        </div>
+      </a>
+
+      <a href="#ss-welded" class="ss-nav-card ss-fade ss-fade-d1">
+        <div class="ss-nav-card-img">
+          <img src="./images/welded pipe icon.png" alt="Welded steel pipe" class="ss-nav-card-photo" />
+        </div>
+        <div class="ss-nav-card-body">
+          <span class="ss-nav-card-num">02</span>
+          <div class="ss-nav-card-title" data-i18n="ss.nav.c2.title">Welded Steel Pipe</div>
+          <p class="ss-nav-card-desc" data-i18n="ss.nav.c2.desc">ERW, API 5L welded, and EFW pipe for industrial, utility, and energy infrastructure projects.</p>
+          <span class="ss-nav-card-link"><span data-i18n="ss.meta.view">View Products</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></span>
+        </div>
+      </a>
+
+      <a href="#ss-structural-pipe" class="ss-nav-card ss-fade ss-fade-d2">
+        <div class="ss-nav-card-img">
+          <img src="./images/structural steel beams icon.png" alt="Structural steel beams" class="ss-nav-card-photo" />
+        </div>
+        <div class="ss-nav-card-body">
+          <span class="ss-nav-card-num">03</span>
+          <div class="ss-nav-card-title" data-i18n="ss.nav.c3.title">Structural Steel Beams</div>
+          <p class="ss-nav-card-desc" data-i18n="ss.nav.c3.desc">Heavy-duty pipe piles and structural tubing for foundations, bridges, and marine infrastructure.</p>
+          <span class="ss-nav-card-link"><span data-i18n="ss.meta.view">View Products</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></span>
+        </div>
+      </a>
+
+      <a href="#ss-structural-steel" class="ss-nav-card ss-fade ss-fade-d3">
+        <div class="ss-nav-card-img">
+          <img src="./images/sheet piles icon.png" alt="Structural steel sheet piles" class="ss-nav-card-photo" />
+        </div>
+        <div class="ss-nav-card-body">
+          <span class="ss-nav-card-num">04</span>
+          <div class="ss-nav-card-title" data-i18n="ss.nav.c4.title">Sheet Piles</div>
+          <p class="ss-nav-card-desc" data-i18n="ss.nav.c4.desc">Sheet piles, H-beams, wide flange sections, and channels for construction and retention systems.</p>
+          <span class="ss-nav-card-link"><span data-i18n="ss.meta.view">View Products</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></span>
+        </div>
+      </a>
+
+      <a href="#ss-structures" class="ss-nav-card ss-fade ss-fade-d4">
+        <div class="ss-nav-card-img">
+          <img src="./images/steel structures icon.png" alt="Steel structures" class="ss-nav-card-photo" />
+        </div>
+        <div class="ss-nav-card-body">
+          <span class="ss-nav-card-num">05</span>
+          <div class="ss-nav-card-title" data-i18n="ss.nav.c5.title">Steel Structures</div>
+          <p class="ss-nav-card-desc" data-i18n="ss.nav.c5.desc">Prefabricated buildings and industrial stair systems engineered for rapid deployment and durability.</p>
+          <span class="ss-nav-card-link"><span data-i18n="ss.meta.view">View Products</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></span>
+        </div>
+      </a>
+
+      <a href="#ss-grating" class="ss-nav-card ss-fade ss-fade-d5">
+        <div class="ss-nav-card-img">
+          <div class="img-ph img-ph--card" role="img" aria-label="Steel grating">
+            <div class="img-ph-inner"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3"><line x1="4" y1="4" x2="4" y2="28"/><line x1="11" y1="4" x2="11" y2="28"/><line x1="18" y1="4" x2="18" y2="28"/><line x1="25" y1="4" x2="25" y2="28"/><line x1="4" y1="10" x2="28" y2="10"/><line x1="4" y1="18" x2="28" y2="18"/><line x1="4" y1="26" x2="28" y2="26"/></svg></div>
+          </div>
+        </div>
+        <div class="ss-nav-card-body">
+          <span class="ss-nav-card-num">06</span>
+          <div class="ss-nav-card-title" data-i18n="ss.nav.c6.title">Steel Grating &amp; Fabrication</div>
+          <p class="ss-nav-card-desc" data-i18n="ss.nav.c6.desc">Industrial grating systems and custom fabricated steel components for demanding project environments.</p>
+          <span class="ss-nav-card-link"><span data-i18n="ss.meta.view">View Products</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 1 — SEAMLESS STEEL PIPE
+══════════════════════════════════════════════════════════ -->
+<div id="ss-seamless">
+  <div class="ss-cat-header">
+    <div class="ss-cat-header-inner ss-fade">
+      <span class="ss-cat-num" data-i18n="ss.s1.num">Section 01</span>
+      <h2 class="ss-cat-title" data-i18n="ss.s1.title">Seamless Steel Pipe</h2>
+      <p class="ss-cat-intro" data-i18n="ss.s1.intro">Manufactured without longitudinal welds, seamless steel pipes provide exceptional strength, pressure resistance, and reliability for critical transmission and industrial applications.</p>
+    </div>
+    <div class="ss-cat-banner-img">
+      <div class="img-ph img-ph--banner" role="img" aria-label="Seamless steel pipe photography">
+        <div class="img-ph-inner"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><circle cx="20" cy="20" r="14"/><circle cx="20" cy="20" r="8"/><line x1="6" y1="20" x2="12" y2="20"/><line x1="28" y1="20" x2="34" y2="20"/></svg><span>Seamless Pipe Photography</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ss-products-body">
+    <div class="ss-products-inner">
+
+      <div class="ss-prod-card ss-prod-card--light ss-fade">
+        <div class="img-ph img-ph--prod img-ph--light" role="img" aria-label="API 5L seamless line pipe">
+          <div class="img-ph-inner"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><circle cx="16" cy="16" r="12"/><circle cx="16" cy="16" r="6"/></svg><span>Product Photography</span></div>
+        </div>
+        <div class="ss-prod-card-content">
+          <span class="ss-prod-tag" data-i18n="ss.s1.p1.tag">API 5L</span>
+          <h3 class="ss-prod-name" data-i18n="ss.s1.p1.name">API 5L Seamless Line Pipe</h3>
+          <p class="ss-prod-desc" data-i18n="ss.s1.p1.desc">High-performance seamless carbon steel pipe designed for oil, gas, water transmission, and industrial pipeline systems. Manufactured without welded seams, these pipes provide superior pressure resistance, structural integrity, and long-term reliability in critical infrastructure environments.</p>
+          <div class="ss-prod-meta">
+            <div>
+              <span class="ss-meta-label" data-i18n="ss.meta.applications">Applications</span>
+              <div class="ss-apps">
+                <span class="ss-app-tag" data-i18n="ss.app.oil_gas_pipelines">Oil &amp; Gas Pipelines</span>
+                <span class="ss-app-tag" data-i18n="ss.app.water_transmission">Water Transmission</span>
+                <span class="ss-app-tag" data-i18n="ss.app.energy_infra">Energy Infrastructure</span>
+                <span class="ss-app-tag" data-i18n="ss.app.industrial_process">Industrial Process Systems</span>
+              </div>
+            </div>
+            <div>
+              <span class="ss-meta-label" data-i18n="ss.meta.grades">Available Grades</span>
+              <div class="ss-grades">
+                <span class="ss-grade-tag">Grade B</span>
+                <span class="ss-grade-tag">X42</span>
+                <span class="ss-grade-tag">X46</span>
+                <span class="ss-grade-tag">X52</span>
+                <span class="ss-grade-tag">X60</span>
+                <span class="ss-grade-tag">X65</span>
+                <span class="ss-grade-tag">X70</span>
+                <span class="ss-grade-tag">X80</span>
+              </div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="ss-prod-cta"><span data-i18n="ss.meta.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+      <div class="ss-prod-card ss-prod-card--light ss-fade ss-fade-d2">
+        <div class="img-ph img-ph--prod img-ph--light" role="img" aria-label="API 5CT oilfield casing pipe">
+          <div class="img-ph-inner"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M8 4v24M24 4v24M8 8h16M8 16h16M8 24h16"/></svg><span>Product Photography</span></div>
+        </div>
+        <div class="ss-prod-card-content">
+          <span class="ss-prod-tag" data-i18n="ss.s1.p2.tag">API 5CT</span>
+          <h3 class="ss-prod-name" data-i18n="ss.s1.p2.name">API 5CT Oilfield Casing Pipe</h3>
+          <p class="ss-prod-desc" data-i18n="ss.s1.p2.desc">Engineered for demanding drilling operations, oilfield casing pipes are designed to withstand high pressures, corrosive environments, and mechanical stresses associated with exploration and production activities.</p>
+          <div class="ss-prod-meta">
+            <div>
+              <span class="ss-meta-label" data-i18n="ss.meta.applications">Applications</span>
+              <div class="ss-apps">
+                <span class="ss-app-tag" data-i18n="ss.app.oil_wells">Oil Wells</span>
+                <span class="ss-app-tag" data-i18n="ss.app.gas_wells">Gas Wells</span>
+                <span class="ss-app-tag" data-i18n="ss.app.petroleum_prod">Petroleum Production</span>
+                <span class="ss-app-tag" data-i18n="ss.app.drilling">Drilling Operations</span>
+              </div>
+            </div>
+            <div>
+              <span class="ss-meta-label" data-i18n="ss.meta.grades">Available Grades</span>
+              <div class="ss-grades">
+                <span class="ss-grade-tag">J55</span>
+                <span class="ss-grade-tag">K55</span>
+                <span class="ss-grade-tag">N80</span>
+                <span class="ss-grade-tag">L80</span>
+                <span class="ss-grade-tag">C90</span>
+                <span class="ss-grade-tag">P110</span>
+                <span class="ss-grade-tag">T95</span>
+              </div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="ss-prod-cta"><span data-i18n="ss.meta.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 2 — WELDED STEEL PIPE
+══════════════════════════════════════════════════════════ -->
+<div id="ss-welded">
+  <div class="ss-cat-header">
+    <div class="ss-cat-header-inner ss-fade">
+      <span class="ss-cat-num" data-i18n="ss.s2.num">Section 02</span>
+      <h2 class="ss-cat-title" data-i18n="ss.s2.title">Welded Steel Pipe</h2>
+      <p class="ss-cat-intro" data-i18n="ss.s2.intro">Welded steel pipes provide a versatile and cost-effective solution for industrial, structural, utility, and energy applications while maintaining excellent mechanical performance.</p>
+    </div>
+    <div class="ss-cat-banner-img">
+      <div class="img-ph img-ph--banner" role="img" aria-label="Welded steel pipe photography">
+        <div class="img-ph-inner"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><rect x="6" y="14" width="28" height="12" rx="6"/><line x1="6" y1="20" x2="34" y2="20" stroke-dasharray="3 3"/></svg><span>Welded Pipe Photography</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ss-products-body ss-products-body--dark">
+    <div class="ss-products-inner ss-products-inner--3col">
+
+      <div class="ss-prod-card ss-prod-card--dark ss-fade">
+        <div class="img-ph img-ph--prod" role="img" aria-label="ERW carbon steel pipe">
+          <div class="img-ph-inner"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><rect x="4" y="12" width="24" height="8" rx="4"/><line x1="4" y1="16" x2="28" y2="16" stroke-dasharray="2 3"/></svg><span>Product Photography</span></div>
+        </div>
+        <div class="ss-prod-card-content">
+          <span class="ss-prod-tag" data-i18n="ss.s2.p1.tag">ERW</span>
+          <h3 class="ss-prod-name" data-i18n="ss.s2.p1.name">ERW Carbon Steel Pipe</h3>
+          <p class="ss-prod-desc" data-i18n="ss.s2.p1.desc">Electric Resistance Welded pipe designed for construction, utilities, mechanical systems, and infrastructure applications requiring dependable performance and efficient installation.</p>
+          <div class="ss-prod-meta">
+            <div>
+              <span class="ss-meta-label" data-i18n="ss.meta.applications">Applications</span>
+              <div class="ss-apps">
+                <span class="ss-app-tag" data-i18n="ss.app.utility_networks">Utility Networks</span>
+                <span class="ss-app-tag" data-i18n="ss.app.construction">Construction</span>
+                <span class="ss-app-tag" data-i18n="ss.app.water_systems">Water Systems</span>
+                <span class="ss-app-tag" data-i18n="ss.app.mechanical_infra">Mechanical Infrastructure</span>
+              </div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="ss-prod-cta"><span data-i18n="ss.meta.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+      <div class="ss-prod-card ss-prod-card--dark ss-fade ss-fade-d2">
+        <div class="img-ph img-ph--prod" role="img" aria-label="API 5L welded line pipe">
+          <div class="img-ph-inner"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M4 16c0-6.627 5.373-12 12-12s12 5.373 12 12-5.373 12-12 12S4 22.627 4 16z"/><path d="M10 16h12"/></svg><span>Product Photography</span></div>
+        </div>
+        <div class="ss-prod-card-content">
+          <span class="ss-prod-tag" data-i18n="ss.s2.p2.tag">API 5L — Welded</span>
+          <h3 class="ss-prod-name" data-i18n="ss.s2.p2.name">API 5L Welded Line Pipe</h3>
+          <p class="ss-prod-desc" data-i18n="ss.s2.p2.desc">Engineered for long-distance fluid transportation systems, these pipes provide strength, consistency, and reliability for oil, gas, and water transmission projects.</p>
+          <div class="ss-prod-meta">
+            <div>
+              <span class="ss-meta-label" data-i18n="ss.meta.applications">Applications</span>
+              <div class="ss-apps">
+                <span class="ss-app-tag" data-i18n="ss.app.oil_pipelines">Oil Pipelines</span>
+                <span class="ss-app-tag" data-i18n="ss.app.gas_pipelines">Gas Pipelines</span>
+                <span class="ss-app-tag" data-i18n="ss.app.water_pipelines">Water Pipelines</span>
+                <span class="ss-app-tag" data-i18n="ss.app.energy_projects">Energy Projects</span>
+              </div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="ss-prod-cta"><span data-i18n="ss.meta.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+      <div class="ss-prod-card ss-prod-card--dark ss-fade ss-fade-d3">
+        <div class="img-ph img-ph--prod" role="img" aria-label="EFW steel pipe">
+          <div class="img-ph-inner"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><rect x="4" y="8" width="24" height="16" rx="8"/><line x1="16" y1="8" x2="16" y2="24"/></svg><span>Product Photography</span></div>
+        </div>
+        <div class="ss-prod-card-content">
+          <span class="ss-prod-tag" data-i18n="ss.s2.p3.tag">EFW</span>
+          <h3 class="ss-prod-name" data-i18n="ss.s2.p3.name">EFW Steel Pipe</h3>
+          <p class="ss-prod-desc" data-i18n="ss.s2.p3.desc">Electric Fusion Welded pipe designed for industrial processing facilities, refineries, boilers, and pressure-service applications where large diameters and structural performance are required.</p>
+          <div class="ss-prod-meta">
+            <div>
+              <span class="ss-meta-label" data-i18n="ss.meta.applications">Applications</span>
+              <div class="ss-apps">
+                <span class="ss-app-tag" data-i18n="ss.app.refineries">Refineries</span>
+                <span class="ss-app-tag" data-i18n="ss.app.industrial_plants">Industrial Plants</span>
+                <span class="ss-app-tag" data-i18n="ss.app.power_gen">Power Generation</span>
+                <span class="ss-app-tag" data-i18n="ss.app.processing">Processing Facilities</span>
+              </div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="ss-prod-cta"><span data-i18n="ss.meta.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 3 — STRUCTURAL STEEL PIPE
+══════════════════════════════════════════════════════════ -->
+<div id="ss-structural-pipe">
+  <div class="ss-cat-header">
+    <div class="ss-cat-header-inner ss-fade">
+      <span class="ss-cat-num" data-i18n="ss.s3.num">Section 03</span>
+      <h2 class="ss-cat-title" data-i18n="ss.s3.title">Structural Steel Pipe</h2>
+      <p class="ss-cat-intro" data-i18n="ss.s3.intro">Load-bearing structural pipe systems engineered for deep foundations, marine construction, and major infrastructure projects demanding maximum structural performance.</p>
+    </div>
+    <div class="ss-cat-banner-img">
+      <div class="img-ph img-ph--banner" role="img" aria-label="Infrastructure project photography">
+        <div class="img-ph-inner"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><rect x="6" y="6" width="12" height="28" rx="2"/><rect x="22" y="6" width="12" height="28" rx="2"/><line x1="18" y1="18" x2="22" y2="18"/><line x1="18" y1="24" x2="22" y2="24"/></svg><span>Infrastructure Photography</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ss-products-body">
+    <div class="ss-products-inner">
+
+      <div class="ss-prod-card ss-prod-card--light ss-fade">
+        <div class="img-ph img-ph--prod img-ph--light" role="img" aria-label="Structural pipe piles">
+          <div class="img-ph-inner"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><rect x="6" y="4" width="8" height="24" rx="1"/><rect x="18" y="4" width="8" height="24" rx="1"/></svg><span>Product Photography</span></div>
+        </div>
+        <div class="ss-prod-card-content">
+          <span class="ss-prod-tag" data-i18n="ss.s3.p1.tag">Foundation Systems</span>
+          <h3 class="ss-prod-name" data-i18n="ss.s3.p1.name">Structural Pipe Piles</h3>
+          <p class="ss-prod-desc" data-i18n="ss.s3.p1.desc">Heavy-duty steel pipe piles engineered for deep foundation systems and major infrastructure projects. Designed to transfer structural loads efficiently in marine, bridge, transportation, and offshore applications.</p>
+          <div class="ss-prod-meta">
+            <div>
+              <span class="ss-meta-label" data-i18n="ss.meta.applications">Applications</span>
+              <div class="ss-apps">
+                <span class="ss-app-tag" data-i18n="ss.app.ports">Ports</span>
+                <span class="ss-app-tag" data-i18n="ss.app.bridges">Bridges</span>
+                <span class="ss-app-tag" data-i18n="ss.app.deep_foundations">Deep Foundations</span>
+                <span class="ss-app-tag" data-i18n="ss.app.offshore">Offshore Infrastructure</span>
+              </div>
+            </div>
+            <div>
+              <span class="ss-meta-label" data-i18n="ss.meta.standards">Standards</span>
+              <div class="ss-grades">
+                <span class="ss-grade-tag">ASTM A252</span>
+                <span class="ss-grade-tag">ASTM A500</span>
+                <span class="ss-grade-tag">EN10219</span>
+              </div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="ss-prod-cta"><span data-i18n="ss.meta.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+      <div class="ss-prod-card ss-prod-card--light ss-fade ss-fade-d2">
+        <div class="img-ph img-ph--prod img-ph--light" role="img" aria-label="Square structural tubing">
+          <div class="img-ph-inner"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="8" y="8" width="16" height="16"/><rect x="12" y="12" width="8" height="8"/></svg><span>Product Photography</span></div>
+        </div>
+        <div class="ss-prod-card-content">
+          <span class="ss-prod-tag" data-i18n="ss.s3.p2.tag">Structural Tubing</span>
+          <h3 class="ss-prod-name" data-i18n="ss.s3.p2.name">Square Structural Tubing</h3>
+          <p class="ss-prod-desc" data-i18n="ss.s3.p2.desc">Precision structural tubing designed for commercial, industrial, and infrastructure applications requiring dimensional consistency and high load-bearing capacity.</p>
+          <div class="ss-prod-meta">
+            <div>
+              <span class="ss-meta-label" data-i18n="ss.meta.applications">Applications</span>
+              <div class="ss-apps">
+                <span class="ss-app-tag" data-i18n="ss.app.buildings">Buildings</span>
+                <span class="ss-app-tag" data-i18n="ss.app.ind_facilities">Industrial Facilities</span>
+                <span class="ss-app-tag" data-i18n="ss.app.equip_structures">Equipment Structures</span>
+                <span class="ss-app-tag" data-i18n="ss.app.infra_supports">Infrastructure Supports</span>
+              </div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="ss-prod-cta"><span data-i18n="ss.meta.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 4 — STRUCTURAL STEEL
+══════════════════════════════════════════════════════════ -->
+<div id="ss-structural-steel">
+  <div class="ss-cat-header">
+    <div class="ss-cat-header-inner ss-fade">
+      <span class="ss-cat-num" data-i18n="ss.s4.num">Section 04</span>
+      <h2 class="ss-cat-title" data-i18n="ss.s4.title">Structural Steel Systems</h2>
+      <p class="ss-cat-intro" data-i18n="ss.s4.intro">Sheet piling, beams, channels, and wide flange sections engineered for construction, retention, and heavy infrastructure projects worldwide.</p>
+    </div>
+    <div class="ss-cat-banner-img">
+      <div class="img-ph img-ph--banner" role="img" aria-label="Structural steel construction photography">
+        <div class="img-ph-inner"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M6 34V6M34 34V6M6 20h28M10 6h20M10 34h20"/></svg><span>Structural Steel Photography</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ss-products-body ss-products-body--dark">
+    <div class="ss-products-inner">
+
+      <div class="ss-prod-card ss-prod-card--dark ss-fade">
+        <div class="img-ph img-ph--prod" role="img" aria-label="Steel sheet piles">
+          <div class="img-ph-inner"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M6 4v24M12 4v24M18 4v24M24 4v24"/></svg><span>Product Photography</span></div>
+        </div>
+        <div class="ss-prod-card-content">
+          <span class="ss-prod-tag" data-i18n="ss.s4.p1.tag">Earth Retention</span>
+          <h3 class="ss-prod-name" data-i18n="ss.s4.p1.name">Sheet Piles</h3>
+          <p class="ss-prod-desc" data-i18n="ss.s4.p1.desc">Steel sheet piling systems designed for earth retention, waterfront structures, excavation support, flood protection, and marine construction. Available in a range of standard profiles to match project-specific structural requirements.</p>
+          <div class="ss-prod-meta">
+            <div>
+              <span class="ss-meta-label" data-i18n="ss.meta.applications">Applications</span>
+              <div class="ss-apps">
+                <span class="ss-app-tag" data-i18n="ss.app.retaining_walls">Retaining Walls</span>
+                <span class="ss-app-tag" data-i18n="ss.app.ports">Ports</span>
+                <span class="ss-app-tag" data-i18n="ss.app.cofferdams">Cofferdams</span>
+                <span class="ss-app-tag" data-i18n="ss.app.flood_protection">Flood Protection</span>
+                <span class="ss-app-tag" data-i18n="ss.app.marine_infra">Marine Infrastructure</span>
+              </div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="ss-prod-cta"><span data-i18n="ss.meta.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+      <div class="ss-prod-card ss-prod-card--dark ss-fade ss-fade-d1">
+        <div class="img-ph img-ph--prod" role="img" aria-label="H-beams structural steel">
+          <div class="img-ph-inner"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M6 4v24M26 4v24M6 16h20M6 4h5M21 4h5M6 28h5M21 28h5"/></svg><span>Product Photography</span></div>
+        </div>
+        <div class="ss-prod-card-content">
+          <span class="ss-prod-tag" data-i18n="ss.s4.p2.tag">Structural Sections</span>
+          <h3 class="ss-prod-name" data-i18n="ss.s4.p2.name">H-Beams</h3>
+          <p class="ss-prod-desc" data-i18n="ss.s4.p2.desc">Structural steel beams engineered to support heavy loads while maintaining exceptional structural efficiency and long-term performance across building, bridge, and infrastructure applications.</p>
+          <div class="ss-prod-meta">
+            <div>
+              <span class="ss-meta-label" data-i18n="ss.meta.applications">Applications</span>
+              <div class="ss-apps">
+                <span class="ss-app-tag" data-i18n="ss.app.buildings">Buildings</span>
+                <span class="ss-app-tag" data-i18n="ss.app.ind_structures">Industrial Structures</span>
+                <span class="ss-app-tag" data-i18n="ss.app.bridges">Bridges</span>
+                <span class="ss-app-tag" data-i18n="ss.app.infrastructure">Infrastructure</span>
+              </div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="ss-prod-cta"><span data-i18n="ss.meta.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+      <div class="ss-prod-card ss-prod-card--dark ss-fade ss-fade-d2">
+        <div class="img-ph img-ph--prod" role="img" aria-label="U-channel structural steel">
+          <div class="img-ph-inner"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M8 6v20h16V6"/></svg><span>Product Photography</span></div>
+        </div>
+        <div class="ss-prod-card-content">
+          <span class="ss-prod-tag" data-i18n="ss.s4.p3.tag">Structural Sections</span>
+          <h3 class="ss-prod-name" data-i18n="ss.s4.p3.name">U-Channels</h3>
+          <p class="ss-prod-desc" data-i18n="ss.s4.p3.desc">Hot-rolled structural channels used in framing systems, support structures, foundations, and industrial applications requiring reliable load distribution and dimensional precision.</p>
+          <div class="ss-prod-meta">
+            <div>
+              <span class="ss-meta-label" data-i18n="ss.meta.applications">Applications</span>
+              <div class="ss-apps">
+                <span class="ss-app-tag" data-i18n="ss.app.structural_frames">Structural Frames</span>
+                <span class="ss-app-tag" data-i18n="ss.app.equip_foundations">Equipment Foundations</span>
+                <span class="ss-app-tag" data-i18n="ss.app.ind_facilities">Industrial Facilities</span>
+                <span class="ss-app-tag" data-i18n="ss.app.infra_projects">Infrastructure Projects</span>
+              </div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="ss-prod-cta"><span data-i18n="ss.meta.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+      <div class="ss-prod-card ss-prod-card--dark ss-fade ss-fade-d3">
+        <div class="img-ph img-ph--prod" role="img" aria-label="Wide flange beams">
+          <div class="img-ph-inner"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M4 4h24M4 28h24M16 4v24"/></svg><span>Product Photography</span></div>
+        </div>
+        <div class="ss-prod-card-content">
+          <span class="ss-prod-tag" data-i18n="ss.s4.p4.tag">High-Capacity Sections</span>
+          <h3 class="ss-prod-name" data-i18n="ss.s4.p4.name">Wide Flange Beams</h3>
+          <p class="ss-prod-desc" data-i18n="ss.s4.p4.desc">High-capacity structural sections designed for demanding construction and infrastructure applications where superior load distribution and structural efficiency are required.</p>
+          <div class="ss-prod-meta">
+            <div>
+              <span class="ss-meta-label" data-i18n="ss.meta.applications">Applications</span>
+              <div class="ss-apps">
+                <span class="ss-app-tag" data-i18n="ss.app.commercial_bldgs">Commercial Buildings</span>
+                <span class="ss-app-tag" data-i18n="ss.app.warehouses">Warehouses</span>
+                <span class="ss-app-tag" data-i18n="ss.app.ind_facilities">Industrial Facilities</span>
+                <span class="ss-app-tag" data-i18n="ss.app.transport_infra">Transportation Infrastructure</span>
+              </div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="ss-prod-cta"><span data-i18n="ss.meta.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 5 — STEEL STRUCTURES
+══════════════════════════════════════════════════════════ -->
+<div id="ss-structures">
+  <div class="ss-cat-header">
+    <div class="ss-cat-header-inner ss-fade">
+      <span class="ss-cat-num" data-i18n="ss.s5.num">Section 05</span>
+      <h2 class="ss-cat-title" data-i18n="ss.s5.title">Steel Structures</h2>
+      <p class="ss-cat-intro" data-i18n="ss.s5.intro">Custom-engineered prefabricated steel structures and industrial stair systems designed for rapid deployment, long-term durability, and demanding project environments.</p>
+    </div>
+    <div class="ss-cat-banner-img">
+      <div class="img-ph img-ph--banner" role="img" aria-label="Industrial steel structure photography">
+        <div class="img-ph-inner"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><rect x="6" y="18" width="28" height="16"/><path d="M6 18L20 6l14 12"/><line x1="14" y1="34" x2="14" y2="24"/><line x1="26" y1="34" x2="26" y2="24"/></svg><span>Industrial Project Photography</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ss-products-body">
+    <div class="ss-products-inner">
+
+      <div class="ss-prod-card ss-prod-card--light ss-fade">
+        <div class="img-ph img-ph--prod img-ph--light" role="img" aria-label="Prefabricated steel buildings">
+          <div class="img-ph-inner"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><rect x="4" y="16" width="24" height="12"/><path d="M4 16L16 6l12 10"/><line x1="12" y1="28" x2="12" y2="20"/><line x1="20" y1="28" x2="20" y2="20"/></svg><span>Product Photography</span></div>
+        </div>
+        <div class="ss-prod-card-content">
+          <span class="ss-prod-tag" data-i18n="ss.s5.p1.tag">Prefabricated Structures</span>
+          <h3 class="ss-prod-name" data-i18n="ss.s5.p1.name">Prefabricated Steel Buildings</h3>
+          <p class="ss-prod-desc" data-i18n="ss.s5.p1.desc">Custom-engineered steel structures designed for industrial, logistics, commercial, and infrastructure projects requiring rapid deployment and long-term durability. Each structure is designed and fabricated according to project-specific requirements and load conditions.</p>
+          <div class="ss-prod-meta">
+            <div>
+              <span class="ss-meta-label" data-i18n="ss.meta.applications">Applications</span>
+              <div class="ss-apps">
+                <span class="ss-app-tag" data-i18n="ss.app.warehouses">Warehouses</span>
+                <span class="ss-app-tag" data-i18n="ss.app.manufacturing">Manufacturing Facilities</span>
+                <span class="ss-app-tag" data-i18n="ss.app.logistics">Logistics Centers</span>
+                <span class="ss-app-tag" data-i18n="ss.app.ind_buildings">Industrial Buildings</span>
+              </div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="ss-prod-cta"><span data-i18n="ss.meta.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+      <div class="ss-prod-card ss-prod-card--light ss-fade ss-fade-d2">
+        <div class="img-ph img-ph--prod img-ph--light" role="img" aria-label="Industrial steel stair systems">
+          <div class="img-ph-inner"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M6 26h4V20h4V14h4V8h4V4"/><line x1="6" y1="26" x2="26" y2="26"/></svg><span>Product Photography</span></div>
+        </div>
+        <div class="ss-prod-card-content">
+          <span class="ss-prod-tag" data-i18n="ss.s5.p2.tag">Industrial Access</span>
+          <h3 class="ss-prod-name" data-i18n="ss.s5.p2.name">Industrial Steel Stair Systems</h3>
+          <p class="ss-prod-desc" data-i18n="ss.s5.p2.desc">Galvanized steel stair systems designed for industrial facilities, ports, energy installations, and commercial structures requiring durability and corrosion resistance in demanding operational environments.</p>
+          <div class="ss-prod-meta">
+            <div>
+              <span class="ss-meta-label" data-i18n="ss.meta.applications">Applications</span>
+              <div class="ss-apps">
+                <span class="ss-app-tag" data-i18n="ss.app.ports">Ports</span>
+                <span class="ss-app-tag" data-i18n="ss.app.processing">Processing Facilities</span>
+                <span class="ss-app-tag" data-i18n="ss.app.ind_facilities">Industrial Facilities</span>
+                <span class="ss-app-tag" data-i18n="ss.app.infra_projects">Infrastructure Projects</span>
+              </div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="ss-prod-cta"><span data-i18n="ss.meta.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 6 — STEEL GRATING & FABRICATION
+══════════════════════════════════════════════════════════ -->
+<div id="ss-grating">
+  <div class="ss-cat-header">
+    <div class="ss-cat-header-inner ss-fade">
+      <span class="ss-cat-num" data-i18n="ss.s6.num">Section 06</span>
+      <h2 class="ss-cat-title" data-i18n="ss.s6.title">Steel Grating &amp; Fabrication</h2>
+      <p class="ss-cat-intro" data-i18n="ss.s6.intro">Heavy-duty grating systems and custom fabricated steel components for industrial platforms, energy facilities, and project-specific structural requirements.</p>
+    </div>
+    <div class="ss-cat-banner-img">
+      <div class="img-ph img-ph--banner" role="img" aria-label="Industrial fabrication photography">
+        <div class="img-ph-inner"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3"><line x1="6" y1="6" x2="6" y2="34"/><line x1="14" y1="6" x2="14" y2="34"/><line x1="22" y1="6" x2="22" y2="34"/><line x1="30" y1="6" x2="30" y2="34"/><line x1="6" y1="12" x2="34" y2="12"/><line x1="6" y1="22" x2="34" y2="22"/><line x1="6" y1="32" x2="34" y2="32"/></svg><span>Industrial Fabrication Photography</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ss-products-body ss-products-body--dark">
+    <div class="ss-products-inner ss-products-inner--3col">
+
+      <div class="ss-prod-card ss-prod-card--dark ss-fade">
+        <div class="img-ph img-ph--prod" role="img" aria-label="Steel grating">
+          <div class="img-ph-inner"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3"><line x1="6" y1="4" x2="6" y2="28"/><line x1="13" y1="4" x2="13" y2="28"/><line x1="20" y1="4" x2="20" y2="28"/><line x1="27" y1="4" x2="27" y2="28"/><line x1="4" y1="10" x2="28" y2="10"/><line x1="4" y1="18" x2="28" y2="18"/><line x1="4" y1="26" x2="28" y2="26"/></svg><span>Product Photography</span></div>
+        </div>
+        <div class="ss-prod-card-content">
+          <span class="ss-prod-tag" data-i18n="ss.s6.p1.tag">Industrial Grating</span>
+          <h3 class="ss-prod-name" data-i18n="ss.s6.p1.name">Steel Grating</h3>
+          <p class="ss-prod-desc" data-i18n="ss.s6.p1.desc">Heavy-duty galvanized grating systems designed for industrial platforms, trench covers, walkways, and maintenance access systems requiring structural strength and corrosion resistance.</p>
+          <div class="ss-prod-meta">
+            <div>
+              <span class="ss-meta-label" data-i18n="ss.meta.applications">Applications</span>
+              <div class="ss-apps">
+                <span class="ss-app-tag" data-i18n="ss.app.ind_facilities">Industrial Platforms</span>
+                <span class="ss-app-tag" data-i18n="ss.app.walkways">Walkways</span>
+                <span class="ss-app-tag" data-i18n="ss.app.trench_covers">Trench Covers</span>
+                <span class="ss-app-tag" data-i18n="ss.app.energy_facilities">Energy Facilities</span>
+              </div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="ss-prod-cta"><span data-i18n="ss.meta.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+      <div class="ss-prod-card ss-prod-card--dark ss-fade ss-fade-d2">
+        <div class="img-ph img-ph--prod" role="img" aria-label="Press-locked grating">
+          <div class="img-ph-inner"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3"><line x1="8" y1="4" x2="8" y2="28"/><line x1="16" y1="4" x2="16" y2="28"/><line x1="24" y1="4" x2="24" y2="28"/><line x1="4" y1="8" x2="28" y2="8"/><line x1="4" y1="16" x2="28" y2="16"/><line x1="4" y1="24" x2="28" y2="24"/></svg><span>Product Photography</span></div>
+        </div>
+        <div class="ss-prod-card-content">
+          <span class="ss-prod-tag" data-i18n="ss.s6.p2.tag">Precision Grating</span>
+          <h3 class="ss-prod-name" data-i18n="ss.s6.p2.name">Press-Locked Grating</h3>
+          <p class="ss-prod-desc" data-i18n="ss.s6.p2.desc">Precision-manufactured grating offering exceptional strength, clean aesthetics, and dimensional consistency for industrial and architectural projects where performance and appearance are both priorities.</p>
+          <div class="ss-prod-meta">
+            <div>
+              <span class="ss-meta-label" data-i18n="ss.meta.applications">Applications</span>
+              <div class="ss-apps">
+                <span class="ss-app-tag" data-i18n="ss.app.arch_floors">Architectural Floors</span>
+                <span class="ss-app-tag" data-i18n="ss.app.mezzanines">Mezzanines</span>
+                <span class="ss-app-tag" data-i18n="ss.app.ind_access">Industrial Access</span>
+                <span class="ss-app-tag" data-i18n="ss.app.marine_decks">Marine Decks</span>
+              </div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="ss-prod-cta"><span data-i18n="ss.meta.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+      <div class="ss-prod-card ss-prod-card--dark ss-fade ss-fade-d3">
+        <div class="img-ph img-ph--prod" role="img" aria-label="Custom steel fabrication">
+          <div class="img-ph-inner"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M6 26l4-8 5 4 4-10 7 14"/><circle cx="22" cy="8" r="4"/></svg><span>Product Photography</span></div>
+        </div>
+        <div class="ss-prod-card-content">
+          <span class="ss-prod-tag" data-i18n="ss.s6.p3.tag">Custom Engineering</span>
+          <h3 class="ss-prod-name" data-i18n="ss.s6.p3.name">Custom Steel Fabrication</h3>
+          <p class="ss-prod-desc" data-i18n="ss.s6.p3.desc">Custom-fabricated steel components manufactured according to project specifications, including cutting, welding, bending, and engineered structural assemblies for critical applications.</p>
+          <div class="ss-prod-meta">
+            <div>
+              <span class="ss-meta-label" data-i18n="ss.meta.applications">Applications</span>
+              <div class="ss-apps">
+                <span class="ss-app-tag" data-i18n="ss.app.infra_projects">Infrastructure Projects</span>
+                <span class="ss-app-tag" data-i18n="ss.app.ind_facilities">Industrial Facilities</span>
+                <span class="ss-app-tag" data-i18n="ss.app.custom_eng">Custom Engineering Works</span>
+              </div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="ss-prod-cta"><span data-i18n="ss.meta.cta.discuss">Discuss Requirements</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     INDUSTRIES
+══════════════════════════════════════════════════════════ -->
+<section id="ss-industries">
+  <div class="ss-ind-inner">
+    <span class="ss-eyebrow ss-fade" data-i18n="ss.ind.eyebrow">Market Coverage</span>
+    <h2 class="ss-fade ss-fade-d1" data-i18n="ss.ind.h2">Industries We Serve</h2>
+    <div class="ss-ind-grid">
+
+      <div class="ss-ind-card ss-fade">
+        <div class="ss-ind-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 3C6.5 3 3 6.5 3 11s3.5 8 8 8 8-3.5 8-8-3.5-8-8-8z"/><path d="M3 11h4M15 11h4M11 3v4M11 15v4"/><circle cx="11" cy="11" r="2.5"/></svg></div>
+        <div><div class="ss-ind-label" data-i18n="ss.ind.1.label">Marine Infrastructure</div><div class="ss-ind-desc" data-i18n="ss.ind.1.desc">Sheet piles, pipe piles, and structural steel for waterfront and coastal projects.</div></div>
+      </div>
+
+      <div class="ss-ind-card ss-fade ss-fade-d1">
+        <div class="ss-ind-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="10" width="16" height="9"/><path d="M1 19h20M6 10V8a5 5 0 0110 0v2"/><line x1="11" y1="10" x2="11" y2="19"/></svg></div>
+        <div><div class="ss-ind-label" data-i18n="ss.ind.2.label">Ports &amp; Harbors</div><div class="ss-ind-desc" data-i18n="ss.ind.2.desc">Structural systems for quay walls, berths, and marine terminal foundations.</div></div>
+      </div>
+
+      <div class="ss-ind-card ss-fade ss-fade-d2">
+        <div class="ss-ind-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 2v4M11 16v4M2 11h4M16 11h4"/><path d="M5.6 5.6l2.8 2.8M13.6 13.6l2.8 2.8M5.6 16.4l2.8-2.8M13.6 8.4l2.8-2.8"/><circle cx="11" cy="11" r="3"/></svg></div>
+        <div><div class="ss-ind-label" data-i18n="ss.ind.3.label">Oil &amp; Gas</div><div class="ss-ind-desc" data-i18n="ss.ind.3.desc">API-grade seamless and welded pipe for upstream and downstream operations.</div></div>
+      </div>
+
+      <div class="ss-ind-card ss-fade ss-fade-d3">
+        <div class="ss-ind-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 3v3M7 5.3l1.5 2.6M4.3 9l2.6 1.5M3 13h3M4.3 17l2.6-1.5M7 20.7l1.5-2.6M11 19v3M15 20.7l-1.5-2.6M17.7 17l-2.6-1.5M19 13h-3M17.7 9l-2.6 1.5M15 5.3l-1.5 2.6"/><circle cx="11" cy="13" r="4"/></svg></div>
+        <div><div class="ss-ind-label" data-i18n="ss.ind.4.label">Energy</div><div class="ss-ind-desc" data-i18n="ss.ind.4.desc">Steel systems for power generation, renewables, and transmission infrastructure.</div></div>
+      </div>
+
+      <div class="ss-ind-card ss-fade">
+        <div class="ss-ind-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 15c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 11h18M6 11V7M16 11V7M6 7h10"/></svg></div>
+        <div><div class="ss-ind-label" data-i18n="ss.ind.5.label">Transportation</div><div class="ss-ind-desc" data-i18n="ss.ind.5.desc">Bridge foundations, structural sections, and pipe systems for road and rail projects.</div></div>
+      </div>
+
+      <div class="ss-ind-card ss-fade ss-fade-d1">
+        <div class="ss-ind-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 2a6 6 0 016 6 8 8 0 01-6 12A8 8 0 015 8a6 6 0 016-6z"/><circle cx="11" cy="9" r="2.5"/></svg></div>
+        <div><div class="ss-ind-label" data-i18n="ss.ind.6.label">Water Infrastructure</div><div class="ss-ind-desc" data-i18n="ss.ind.6.desc">Line pipe and structural steel for water treatment, transmission, and retention systems.</div></div>
+      </div>
+
+      <div class="ss-ind-card ss-fade ss-fade-d2">
+        <div class="ss-ind-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="8" width="16" height="11"/><path d="M3 12h16M8 12v7M14 12v7M7 8V6a4 4 0 018 0v2"/></svg></div>
+        <div><div class="ss-ind-label" data-i18n="ss.ind.7.label">Industrial Facilities</div><div class="ss-ind-desc" data-i18n="ss.ind.7.desc">Structural steel, grating, and prefabricated systems for industrial plant construction.</div></div>
+      </div>
+
+      <div class="ss-ind-card ss-fade ss-fade-d3">
+        <div class="ss-ind-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 3l2 6h6l-5 3.6 1.9 6L11 15l-4.9 3.6L8 12.6 3 9h6L11 3z"/></svg></div>
+        <div><div class="ss-ind-label" data-i18n="ss.ind.8.label">Mining</div><div class="ss-ind-desc" data-i18n="ss.ind.8.desc">Heavy-duty steel solutions for mine infrastructure, processing facilities, and retaining systems.</div></div>
+      </div>
+
+      <div class="ss-ind-card ss-fade">
+        <div class="ss-ind-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="13" width="16" height="6"/><path d="M3 13l4-5h8l4 5M11 8V4M8 6l3-3 3 3"/></svg></div>
+        <div><div class="ss-ind-label" data-i18n="ss.ind.9.label">Heavy Civil Construction</div><div class="ss-ind-desc" data-i18n="ss.ind.9.desc">Structural sections and pipe systems for large-scale earthworks and civil infrastructure.</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     CTA
+══════════════════════════════════════════════════════════ -->
+<section id="ss-cta">
+  <div class="ss-cta-bg">
+    <div class="img-ph img-ph--cta" role="img" aria-label="Steel infrastructure project photography">
+      <div class="img-ph-inner"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><rect x="4" y="12" width="32" height="22" rx="3"/><circle cx="20" cy="23" r="6"/><path d="M14 12V10a2 2 0 012-2h8a2 2 0 012 2v2"/></svg><span>Project Photography</span></div>
+    </div>
+    <div class="ss-cta-overlay"></div>
+  </div>
+  <div class="ss-cta-inner">
+    <div class="ss-fade">
+      <span class="ss-cta-label" data-i18n="ss.cta.label">Start a Project</span>
+      <h2 class="ss-cta-h2" data-i18n="ss.cta.h2">Need Steel for Your Next Project?</h2>
+      <p class="ss-cta-body" data-i18n="ss.cta.body">Our engineering team can help identify the most suitable steel systems for your project requirements, specifications, and performance objectives.</p>
+      <div class="ss-cta-btns">
+        <a href="index.html#contact" class="ss-btn ss-btn--solid" data-i18n="ss.cta.btn1">Request a Quote</a>
+        <a href="index.html#contact" class="ss-btn ss-btn--outline-light" data-i18n="ss.cta.btn2">Speak with an Expert</a>
+      </div>
+    </div>
+    <div class="ss-cta-stats ss-fade ss-fade-d2">
+      <div class="ss-cta-stat">
+        <span class="ss-cta-stat-num">+50</span>
+        <span class="ss-cta-stat-label" data-i18n="ss.cta.stat1">Infrastructure projects supported across Latin America</span>
+      </div>
+      <div class="ss-cta-stat">
+        <span class="ss-cta-stat-num">40+</span>
+        <span class="ss-cta-stat-label" data-i18n="ss.cta.stat2">Countries within our global sourcing network</span>
+      </div>
+      <div class="ss-cta-stat">
+        <span class="ss-cta-stat-num">ISO</span>
+        <span class="ss-cta-stat-label" data-i18n="ss.cta.stat3">9001 certified quality management standards</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./images/INGEMAT ICON.png" alt="INGE&MAT icon" class="footer-brand-icon" />
+      <div>
+        <span class="footer-brand-name">INGE&amp;MAT S.A.S</span>
+        <span class="footer-brand-sub">Ingeniería y Materiales</span>
+      </div>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="docs/Politica_Privacidad_INGEMAT.pdf" target="_blank" class="footer-link" data-i18n="footer.privacy">Privacy Policy</a>
+      <a href="#" class="footer-link" data-i18n="footer.terms">Terms of Service</a>
+      <a href="#" class="footer-link" data-i18n="footer.sustainability">Sustainability</a>
+    </nav>
+    <span class="footer-copy" data-i18n="footer.copy">© 2024 INGE&amp;MAT. All rights reserved.</span>
+  </div>
+</footer>
+
+<a href="https://wa.link/trjia4" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contact us on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="#fff">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.738 5.48 2.031 7.785L0 32l8.438-2.01A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.771-1.854l-.486-.29-5.01 1.195 1.234-4.87-.318-.5A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.908c-.398-.199-2.354-1.162-2.719-1.294-.365-.133-.63-.199-.896.199-.265.398-1.029 1.294-1.261 1.56-.232.265-.465.298-.863.1-.398-.2-1.681-.62-3.202-1.977-1.183-1.056-1.982-2.36-2.214-2.758-.232-.398-.025-.613.174-.811.179-.178.398-.465.597-.697.199-.232.265-.398.398-.664.133-.265.066-.497-.033-.697-.1-.199-.896-2.16-1.228-2.957-.323-.776-.651-.671-.896-.683l-.763-.013c-.265 0-.697.1-.1063.497-.365.398-1.394 1.362-1.394 3.322s1.427 3.854 1.626 4.12c.199.265 2.808 4.287 6.803 6.013.951.41 1.693.655 2.271.839.954.304 1.823.261 2.51.158.765-.114 2.354-.962 2.686-1.892.332-.93.332-1.727.232-1.892-.099-.166-.365-.265-.763-.464z"/>
+  </svg>
+</a>
+
+<script type="module" src="steel-solutions.js"></script>
+</body>
+</html>
