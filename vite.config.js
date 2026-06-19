@@ -5,4 +5,12 @@ export default defineConfig({
     host: '127.0.0.1',
     allowedHosts: true,
   },
+  build: {
+    rollupOptions: {
+      input: {
+        main:  './index.html',
+        steel: './steel-solutions.html',
+      },
+    },
+  },
 })

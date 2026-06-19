@@ -2,7 +2,7 @@
    STEEL SOLUTIONS PAGE — JS
    ============================================================ */
 
-const NAV_H = 68;
+import { initNavScroll, initSmoothScroll, initMobileMenu } from './js/nav-utils.js';
 
 /* ── TRANSLATIONS ──────────────────────────────────────────── */
 const translations = {
@@ -35,15 +35,15 @@ const translations = {
     /* — Product nav — */
     'ss.nav.eyebrow': 'Product Portfolio',
     'ss.nav.h2':      'Steel Product Lines',
-    'ss.nav.c1.title':'Seamless Steel Pipe',
+    'ss.nav.c1.title':'Seamless Steel Products',
     'ss.nav.c1.desc': 'API 5L line pipe and oilfield casing for pressure-critical transmission and energy applications.',
-    'ss.nav.c2.title':'Welded Steel Pipe',
+    'ss.nav.c2.title':'Welded Steel Products',
     'ss.nav.c2.desc': 'ERW, API 5L welded, and EFW pipe for industrial, utility, and energy infrastructure projects.',
-    'ss.nav.c3.title':'Structural Steel Beams',
+    'ss.nav.c3.title':'Structural Steel Systems',
     'ss.nav.c3.desc': 'Heavy-duty pipe piles and structural tubing for foundations, bridges, and marine infrastructure.',
-    'ss.nav.c4.title':'Sheet Piles',
+    'ss.nav.c4.title':'Sheet Pile Systems',
     'ss.nav.c4.desc': 'Sheet piles, H-beams, wide flange sections, and channels for construction and retention systems.',
-    'ss.nav.c5.title':'Steel Structures',
+    'ss.nav.c5.title':'Steel Fabrication & Components',
     'ss.nav.c5.desc': 'Prefabricated buildings and industrial stair systems engineered for rapid deployment and durability.',
     'ss.nav.c6.title':'Steel Grating & Fabrication',
     'ss.nav.c6.desc': 'Industrial grating systems and custom fabricated steel components for demanding project environments.',
@@ -86,7 +86,7 @@ const translations = {
 
     /* — Section 4 — Structural Steel — */
     'ss.s4.num':   'Section 04',
-    'ss.s4.title': 'Structural Steel Systems',
+    'ss.s4.title': 'Sheet Pile Systems',
     'ss.s4.intro': 'Sheet piling, beams, channels, and wide flange sections engineered for construction, retention, and heavy infrastructure projects worldwide.',
     'ss.s4.p1.tag':  'Earth Retention',
     'ss.s4.p1.name': 'Sheet Piles',
@@ -265,17 +265,17 @@ const translations = {
     /* — Product nav — */
     'ss.nav.eyebrow': 'Portafolio de Productos',
     'ss.nav.h2':      'Líneas de Productos de Acero',
-    'ss.nav.c1.title':'Tubería Sin Costura',
+    'ss.nav.c1.title':'Productos de Acero Sin Costura',
     'ss.nav.c1.desc': 'Tubería de línea API 5L y revestimiento para transmisión a presión crítica y aplicaciones energéticas.',
-    'ss.nav.c2.title':'Tubería Soldada',
+    'ss.nav.c2.title':'Productos de Acero Soldado',
     'ss.nav.c2.desc': 'Tubería ERW, API 5L soldada y EFW para proyectos industriales, de servicios e infraestructura energética.',
-    'ss.nav.c3.title':'Vigas de Acero Estructural',
+    'ss.nav.c3.title':'Sistemas de Acero Estructural',
     'ss.nav.c3.desc': 'Pilotes de tubería y perfiles estructurales para cimentaciones, puentes e infraestructura marina.',
-    'ss.nav.c4.title':'Tablaestacas',
+    'ss.nav.c4.title':'Sistemas de Tablestacas',
     'ss.nav.c4.desc': 'Tablestacas, vigas H, perfiles de ala ancha y canales para sistemas de construcción y contención.',
-    'ss.nav.c5.title':'Estructuras de Acero',
+    'ss.nav.c5.title':'Fabricación y Componentes de Acero',
     'ss.nav.c5.desc': 'Edificios prefabricados y escaleras industriales diseñados para despliegue rápido y durabilidad.',
-    'ss.nav.c6.title':'Rejillas y Fabricación',
+    'ss.nav.c6.title':'Rejillas y Fabricación en Acero',
     'ss.nav.c6.desc': 'Sistemas de rejilla industrial y componentes fabricados a medida para entornos de proyecto exigentes.',
 
     /* — Section 1 — */
@@ -316,7 +316,7 @@ const translations = {
 
     /* — Section 4 — */
     'ss.s4.num':   'Sección 04',
-    'ss.s4.title': 'Sistemas de Acero Estructural',
+    'ss.s4.title': 'Sistemas de Tablaestacados',
     'ss.s4.intro': 'Tablestacas, vigas, canales y perfiles de ala ancha diseñados para proyectos de construcción, contención e infraestructura pesada en todo el mundo.',
     'ss.s4.p1.tag':  'Contención de Tierras',
     'ss.s4.p1.name': 'Tablestacas',
@@ -498,25 +498,9 @@ document.getElementById('lang-toggle').addEventListener('click', () => {
 
 applyLang('en');
 
-/* ── NAV SCROLL BEHAVIOUR ──────────────────────────────────── */
-const navEl = document.getElementById('nav');
-function updateNav() {
-  navEl.classList.toggle('nav--scrolled', window.scrollY > 80);
-}
-window.addEventListener('scroll', updateNav, { passive: true });
-updateNav();
-
-/* ── SMOOTH SCROLL ─────────────────────────────────────────── */
-document.querySelectorAll('a[href^="#"]').forEach((a) => {
-  a.addEventListener('click', (e) => {
-    const id = a.getAttribute('href').slice(1);
-    const target = document.getElementById(id);
-    if (!target) return;
-    e.preventDefault();
-    const top = target.getBoundingClientRect().top + window.scrollY - NAV_H;
-    window.scrollTo({ top, behavior: 'smooth' });
-  });
-});
+/* ── NAV + SCROLL ──────────────────────────────────────────── */
+initNavScroll();
+initSmoothScroll();
 
 /* ── SCROLL ANIMATIONS ─────────────────────────────────────── */
 const observer = new IntersectionObserver(
@@ -533,34 +517,4 @@ const observer = new IntersectionObserver(
 document.querySelectorAll('.ss-fade').forEach((el) => observer.observe(el));
 
 /* ── MOBILE MENU ───────────────────────────────────────────── */
-(function () {
-  const hamburger  = document.getElementById('nav-hamburger');
-  const mobileMenu = document.getElementById('nav-mobile');
-
-  function closeMenu() {
-    hamburger.classList.remove('is-open');
-    hamburger.setAttribute('aria-expanded', 'false');
-    mobileMenu.classList.remove('is-open');
-    mobileMenu.setAttribute('aria-hidden', 'true');
-  }
-
-  hamburger.addEventListener('click', () => {
-    const open = hamburger.classList.toggle('is-open');
-    hamburger.setAttribute('aria-expanded', String(open));
-    mobileMenu.classList.toggle('is-open', open);
-    mobileMenu.setAttribute('aria-hidden', String(!open));
-  });
-
-  mobileMenu.querySelectorAll('.nav-mobile-trigger').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const sub  = btn.nextElementSibling;
-      const open = btn.classList.toggle('is-open');
-      btn.setAttribute('aria-expanded', String(open));
-      sub.classList.toggle('is-open', open);
-    });
-  });
-
-  mobileMenu.querySelectorAll('a').forEach((a) => {
-    a.addEventListener('click', closeMenu);
-  });
-})();
+initMobileMenu();
