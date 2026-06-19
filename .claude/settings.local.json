@@ -11,7 +11,14 @@
       "PowerShell(Start-Process -FilePath \"npm\" -ArgumentList \"run\",\"dev\",\"--\",\"--host\",\"127.0.0.1\" -WorkingDirectory \"D:\\\\Ingemat vsc claude\" -WindowStyle Hidden -PassThru)",
       "Bash(npm run *)",
       "Skill(run)",
-      "Bash(npm --version)"
+      "Bash(npm --version)",
+      "Bash(python3 *)",
+      "Read(//tmp/**)",
+      "Bash(chromium-cli --help)",
+      "Bash(npx --yes playwright --version)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
     ]
   }
 }
