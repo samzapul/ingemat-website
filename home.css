@@ -97,7 +97,7 @@
 .hm-manifesto {
   position: relative;
   background: #ffffff;
-  padding: 200px 48px;
+  padding: 200px 48px 124px; /* bottom trimmed 2cm (~76px) to tighten the gap before Section 2 */
   overflow: hidden;
 }
 
@@ -361,26 +361,31 @@
 ══════════════════════════════════════════════════════════ */
 .hm-materials {
   background: #ffffff;
-  padding: 140px 0 0;
+  padding: 140px 0;
 }
 
 .hm-materials-head {
   text-align: center;
   max-width: 700px;
-  margin: 0 auto 64px;
+  margin: 0 auto 48px;
+  padding: 0 48px;
+}
+
+/* Compact horizontal row — all 3 product cards side by side */
+.hm-materials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1300px;
+  margin: 0 auto;
   padding: 0 48px;
 }
 
 .hm-mat-hero {
   position: relative;
   display: block;
-  width: calc(100% - 96px);
-  max-width: 1440px;
-  height: 76vh;
-  min-height: 460px;
-  max-height: 740px;
-  margin: 0 auto 32px;
-  border-radius: 32px;
+  height: 320px;
+  border-radius: 20px;
   overflow: hidden;
   text-decoration: none;
   color: #ffffff;
@@ -400,58 +405,57 @@
 .hm-mat-scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgba(8,17,29,0.82) 0%, rgba(8,17,29,0.25) 45%, transparent 70%);
+  background: linear-gradient(0deg, rgba(8,17,29,0.85) 0%, rgba(8,17,29,0.3) 50%, transparent 75%);
 }
 
 .hm-mat-body {
   position: absolute;
-  left: 0; bottom: 0;
+  left: 0; right: 0; bottom: 0;
   z-index: 2;
-  padding: 52px 56px;
-  max-width: 600px;
+  padding: 22px 24px;
 }
 
 .hm-mat-num {
   display: block;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.14em;
   color: #ddcc0f;
-  margin-bottom: 14px;
+  margin-bottom: 8px;
 }
 
 .hm-mat-title {
-  font-size: clamp(34px, 5vw, 60px);
+  font-size: clamp(20px, 1.8vw, 26px);
   font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1;
-  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 6px;
 }
 
 .hm-mat-line {
-  font-size: 16px;
+  font-size: 12.5px;
   font-weight: 600;
   color: rgba(255,255,255,0.9);
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .hm-mat-sub {
-  font-size: 15px;
+  font-size: 12.5px;
   color: rgba(255,255,255,0.65);
-  margin-bottom: 22px;
+  margin-bottom: 12px;
 }
 
 .hm-mat-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 12px;
+  gap: 6px;
+  font-size: 10.5px;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   color: #ffffff;
   border-bottom: 1px solid rgba(255,255,255,0.4);
-  padding-bottom: 4px;
+  padding-bottom: 3px;
   transition: color 0.25s, border-color 0.25s;
 }
 .hm-mat-hero:hover .hm-mat-btn { color: #ddcc0f; border-color: #ddcc0f; }
@@ -830,11 +834,12 @@
   .hm-how-num { margin: 0; flex-shrink: 0; }
   .hm-how-desc { margin: 0; max-width: none; }
 
-  .hm-mat-hero { width: calc(100% - 48px); }
+  .hm-materials-grid { padding: 0 24px; gap: 16px; }
+  .hm-mat-hero { height: 280px; }
 }
 
 @media (max-width: 768px) {
-  .hm-manifesto { padding: 120px 24px; }
+  .hm-manifesto { padding: 120px 24px 44px; }
   .hm-manifesto-sketch { width: 70%; opacity: 0.125; }
   .hm-manifesto-sub { font-size: 16px; }
 
@@ -851,10 +856,11 @@
   .hm-node--material { padding: 10px 18px; font-size: 12px; }
   .hm-diagram-svg { display: none; }
 
-  .hm-materials { padding: 90px 0 0; }
+  .hm-materials { padding: 90px 0; }
   .hm-materials-head { padding: 0 24px; }
-  .hm-mat-hero { width: calc(100% - 24px); height: 66vh; min-height: 420px; }
-  .hm-mat-body { padding: 32px 28px; }
+  .hm-materials-grid { grid-template-columns: 1fr; gap: 14px; padding: 0 24px; }
+  .hm-mat-hero { height: 260px; }
+  .hm-mat-body { padding: 22px 24px; }
 
   .hm-industries { padding: 90px 0; }
   .hm-industries-inner { padding: 0 24px; }
