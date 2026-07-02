@@ -1,0 +1,657 @@
+/* ============================================================
+   GEOSYNTHETICS SOLUTIONS PAGE — Specific Styles
+   Bright / premium / editorial variant of the Steel page system.
+   All selectors are gs- prefixed and self-contained — nothing here
+   touches or is touched by steel-solutions.css.
+   ============================================================ */
+
+/* ── PAGE BASE OVERRIDE ───────────────────────────────────────
+   style.css sets a dark global body for the rest of the site;
+   this page is intentionally bright, so we override locally. */
+body.gs-page {
+  background: #fbfaf8;
+  color: #1f2328;
+}
+
+/* ── SHARED UTILITIES ──────────────────────────────────────── */
+.gs-eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #b3950a;
+  margin-bottom: 16px;
+}
+.gs-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 3px;
+  padding: 14px 30px;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.gs-btn--solid {
+  background: #1f2328;
+  color: #fbfaf8;
+  border-color: #1f2328;
+}
+.gs-btn--solid:hover { background: #34393f; border-color: #34393f; }
+.gs-btn--gold {
+  background: #ddcc0f;
+  color: #1f2328;
+  border-color: #ddcc0f;
+}
+.gs-btn--gold:hover { background: #c8b90e; border-color: #c8b90e; }
+.gs-btn--outline-dark {
+  background: transparent;
+  color: #1f2328;
+  border-color: rgba(31,35,40,0.25);
+}
+.gs-btn--outline-dark:hover { background: rgba(31,35,40,0.05); }
+.gs-btn--outline-light {
+  background: transparent;
+  color: #f0eeec;
+  border-color: rgba(255,255,255,0.3);
+}
+.gs-btn--outline-light:hover { background: rgba(255,255,255,0.08); }
+
+/* "Liquid Glass" buttons — same translucent/blur treatment as the
+   main page hero (.hero-btn) and the nav bar, for buttons sitting
+   on top of photography rather than a flat background. */
+.gs-btn--glass-gold {
+  background: rgba(0,0,0,0.32);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ddcc0f;
+  border-color: rgba(221,204,15,0.55);
+}
+.gs-btn--glass-gold:hover {
+  background: rgba(221,204,15,0.13);
+  border-color: rgba(221,204,15,0.8);
+}
+.gs-btn--glass-light {
+  background: rgba(0,0,0,0.32);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #f0eeec;
+  border-color: rgba(255,255,255,0.3);
+}
+.gs-btn--glass-light:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.5);
+}
+
+/* ── IMAGE PLACEHOLDERS (bright variant) ──────────────────────
+   Premium "empty state" — soft gradient + faint dotted grid +
+   centered label, so the layout reads intentionally even with
+   no photography in place yet. */
+.gs-img-ph {
+  background: linear-gradient(135deg, #f1efe9 0%, #e6e2d9 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.gs-img-ph::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(31,35,40,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31,35,40,0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.gs-img-ph-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  color: #aba596;
+  pointer-events: none;
+  user-select: none;
+}
+.gs-img-ph-inner svg { color: #b0aa9c; }
+.gs-img-ph img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gs-img-ph-inner span {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #aba596;
+}
+/* dark variant — used only inside the hero / CTA bookend bands */
+.gs-img-ph--dark {
+  background: linear-gradient(135deg, #14171c 0%, #1f242b 100%);
+}
+.gs-img-ph--dark::before {
+  background-image:
+    linear-gradient(rgba(221,204,15,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(221,204,15,0.06) 1px, transparent 1px);
+}
+.gs-img-ph--dark .gs-img-ph-inner,
+.gs-img-ph--dark .gs-img-ph-inner svg,
+.gs-img-ph--dark .gs-img-ph-inner span { color: rgba(240,238,236,0.4); }
+
+.gs-img-ph--hero    { height: 100%; min-height: 100vh; }
+.gs-img-ph--intro   { height: 540px; border-radius: 18px; }
+.gs-img-ph--card    { height: 220px; border-radius: 14px 14px 0 0; }
+.gs-img-ph--card-lg { height: 320px; border-radius: 14px 14px 0 0; }
+.gs-img-ph--prod    { height: 240px; border-radius: 10px; flex-shrink: 0; }
+.gs-img-ph--banner  { height: 360px; border-radius: 18px; }
+.gs-img-ph--cta     { height: 100%; min-height: 440px; }
+.gs-img-ph--flush   { border-radius: 0; }
+
+/* ── SCROLL ANIMATION ──────────────────────────────────────── */
+.gs-fade {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.gs-fade.is-visible {
+  opacity: 1;
+  transform: none;
+}
+.gs-fade-d1 { transition-delay: 0.1s; }
+.gs-fade-d2 { transition-delay: 0.2s; }
+.gs-fade-d3 { transition-delay: 0.3s; }
+.gs-fade-d4 { transition-delay: 0.4s; }
+.gs-fade-d5 { transition-delay: 0.5s; }
+
+/* ── BREADCRUMB (on dark hero) ─────────────────────────────── */
+.gs-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+.gs-breadcrumb a {
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.gs-breadcrumb a:hover { color: #ddcc0f; }
+.gs-breadcrumb span:last-child { color: #ddcc0f; }
+
+/* ── HERO ──────────────────────────────────────────────────── */
+#gs-hero {
+  position: relative;
+  min-height: 86vh;
+  display: flex;
+  align-items: center;
+  padding-top: 68px;
+  overflow: hidden;
+  background: #14171c;
+}
+.gs-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url("./images/Geosynthetics Page/Geosynthetics hero.webp");
+  background-size: cover;
+  background-position: center;
+}
+.gs-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(105deg, rgba(16,18,22,0.88) 0%, rgba(16,18,22,0.62) 48%, rgba(16,18,22,0.3) 100%),
+    linear-gradient(180deg, rgba(16,18,22,0.2) 0%, rgba(16,18,22,0.5) 80%, rgba(16,18,22,0.85) 100%);
+  z-index: 1;
+}
+.gs-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 48px;
+  width: 100%;
+}
+.gs-hero-h1 {
+  font-size: clamp(34px, 5.2vw, 68px);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  color: #f7f6f3;
+  margin-bottom: 24px;
+  max-width: 780px;
+}
+.gs-hero-h1 em {
+  font-style: normal;
+  color: #b7b5b4;
+}
+.gs-hero-sub {
+  font-size: clamp(14px, 1.6vw, 18px);
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(247,246,243,0.78);
+  max-width: 640px;
+  margin-bottom: 20px;
+}
+.gs-hero-body {
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(247,246,243,0.5);
+  max-width: 580px;
+  margin-bottom: 44px;
+}
+.gs-hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ── INTRO SECTION ─────────────────────────────────────────── */
+#gs-intro {
+  background: #fbfaf8;
+  position: relative;
+  z-index: 2;
+  padding: 100px 0;
+}
+.gs-intro-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+#gs-intro h2 {
+  font-size: clamp(26px, 3.2vw, 42px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.06;
+  color: #1f2328;
+  margin-bottom: 24px;
+}
+#gs-intro p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #5b5e64;
+  margin-bottom: 16px;
+}
+#gs-intro p:last-child { margin-bottom: 0; }
+
+/* ── FEATURED SOLUTIONS OVERVIEW ──────────────────────────── */
+#gs-products {
+  background: #f3f1ec;
+  padding: 100px 0 110px;
+}
+#gs-products h2 {
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #1f2328;
+  margin-bottom: 52px;
+}
+.gs-section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+.gs-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.gs-nav-card {
+  background: #fff;
+  border: 1px solid rgba(31,35,40,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 18px rgba(31,35,40,0.04);
+}
+.gs-nav-card:hover {
+  border-color: rgba(221,204,15,0.55);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 48px rgba(31,35,40,0.1);
+}
+.gs-nav-card--featured { grid-column: span 2; }
+.gs-nav-card--featured .gs-img-ph { height: 320px; }
+.gs-nav-card-img { position: relative; }
+.gs-nav-card-num {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #b3950a;
+  margin-bottom: 8px;
+}
+.gs-nav-card-body {
+  padding: 26px 28px 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.gs-nav-card--featured .gs-nav-card-title { font-size: 20px; }
+.gs-nav-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #1f2328;
+  margin-bottom: 10px;
+}
+.gs-nav-card-desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #6b6e74;
+  flex: 1;
+}
+.gs-nav-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #b3950a;
+}
+.gs-nav-card:hover .gs-nav-card-link { gap: 10px; }
+
+/* ── PER-FAMILY SECTION HEADER ─────────────────────────────── */
+.gs-cat-header {
+  padding: 84px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+.gs-cat-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px 56px;
+  position: relative;
+  z-index: 2;
+}
+.gs-cat-num {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #b3950a;
+  margin-bottom: 12px;
+  display: block;
+}
+.gs-cat-title {
+  font-size: clamp(26px, 3.6vw, 46px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+  color: #1f2328;
+  margin-bottom: 18px;
+}
+.gs-cat-intro {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #5b5e64;
+  max-width: 640px;
+}
+.gs-cat-banner-img { position: relative; }
+.gs-cat-banner-photo {
+  display: block;
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
+.gs-prod-photo {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* alternating soft-tint band so sections aren't visually flat */
+.gs-cat-header--tint,
+.gs-products-body--tint { background: #f3f1ec; }
+.gs-cat-header--plain,
+.gs-products-body--plain { background: #fbfaf8; }
+
+/* ── PRODUCT CARDS ─────────────────────────────────────────── */
+.gs-products-body {
+  padding: 64px 0 96px;
+}
+.gs-products-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+.gs-products-inner--3col { grid-template-columns: repeat(3, 1fr); }
+.gs-products-inner--4col { max-width: none; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.gs-products-inner--1col { grid-template-columns: 1fr; max-width: 640px; }
+
+.gs-prod-card {
+  background: #fff;
+  border: 1px solid rgba(31,35,40,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 18px rgba(31,35,40,0.04);
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+.gs-prod-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(221,204,15,0.5);
+  box-shadow: 0 18px 44px rgba(31,35,40,0.1);
+}
+.gs-prod-card-content {
+  padding: 28px 28px 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.gs-prod-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8a7708;
+  background: rgba(221,204,15,0.12);
+  border: 1px solid rgba(221,204,15,0.3);
+  padding: 4px 11px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+  align-self: flex-start;
+}
+.gs-prod-name {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+  line-height: 1.2;
+  color: #1f2328;
+}
+.gs-prod-desc {
+  font-size: 14px;
+  line-height: 1.68;
+  margin-bottom: 20px;
+  color: #6b6e74;
+  flex: 1;
+}
+.gs-prod-meta { margin-bottom: 22px; }
+.gs-meta-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #9a9d9f;
+  margin-bottom: 10px;
+}
+.gs-apps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.gs-app-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: #45484d;
+  background: #f1efe9;
+  border: 1px solid rgba(31,35,40,0.08);
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+.gs-prod-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #8a7708;
+  margin-top: auto;
+  transition: gap 0.2s;
+}
+.gs-prod-cta:hover { gap: 10px; }
+
+/* ── CTA SECTION (dark bookend) ────────────────────────────── */
+#gs-cta {
+  position: relative;
+  overflow: hidden;
+  background: #14171c;
+}
+.gs-cta-bg { position: absolute; inset: 0; }
+.gs-cta-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gs-cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(16,18,22,0.92) 0%, rgba(16,18,22,0.74) 50%, rgba(16,18,22,0.9) 100%);
+  z-index: 1;
+}
+.gs-cta-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.gs-cta-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ddcc0f;
+  margin-bottom: 18px;
+}
+.gs-cta-h2 {
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: #f7f6f3;
+  margin-bottom: 20px;
+}
+.gs-cta-body {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(247,246,243,0.6);
+  margin-bottom: 36px;
+}
+.gs-cta-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.gs-cta-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.gs-cta-stat {
+  border-left: 2px solid rgba(221,204,15,0.4);
+  padding-left: 20px;
+}
+.gs-cta-stat-num {
+  display: block;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #ddcc0f;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.gs-cta-stat-label {
+  font-size: 12px;
+  color: rgba(247,246,243,0.5);
+  letter-spacing: 0.04em;
+}
+
+/* ── RESPONSIVE ────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .gs-nav-grid { grid-template-columns: repeat(2, 1fr); }
+  .gs-nav-card--featured { grid-column: span 2; }
+}
+@media (max-width: 900px) {
+  .gs-hero-content { padding: 60px 24px; }
+  .gs-intro-inner { grid-template-columns: 1fr; gap: 40px; }
+  .gs-section-inner,
+  .gs-cat-header-inner,
+  .gs-products-inner { padding: 0 24px; }
+  .gs-products-inner { grid-template-columns: 1fr; }
+  .gs-products-inner--3col { grid-template-columns: 1fr; }
+  .gs-products-inner--4col { grid-template-columns: 1fr; }
+  .gs-cta-inner { grid-template-columns: 1fr; gap: 48px; padding: 60px 24px; }
+  .gs-nav-grid { grid-template-columns: 1fr; gap: 16px; }
+  .gs-nav-card--featured { grid-column: span 1; }
+  .gs-nav-card--featured .gs-img-ph { height: 220px; }
+  #gs-products h2 { margin-bottom: 32px; }
+  .gs-img-ph--intro { height: 340px; }
+  .gs-img-ph--banner { height: 260px; }
+  .gs-cat-banner-photo { height: 260px; }
+}
+@media (max-width: 560px) {
+  .gs-hero-btns { flex-direction: column; align-items: flex-start; }
+  .gs-cta-btns { flex-direction: column; align-items: flex-start; }
+}
+
+/* Comfortable tap targets on coarse pointers */
+@media (max-width: 900px) {
+  .gs-breadcrumb a { padding: 10px 6px; margin: -10px -6px; }
+  .gs-prod-cta { padding: 10px 0; }
+}

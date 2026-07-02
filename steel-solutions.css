@@ -154,7 +154,7 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-image: url("./images/steel hero.png");
+  background-image: url("./images/Steel Page/steel hero.webp");
   background-size: cover;
   background-position: center;
 }
@@ -756,4 +756,10 @@
   .ss-ind-grid { grid-template-columns: 1fr; }
   .ss-hero-btns { flex-direction: column; align-items: flex-start; }
   .ss-cta-btns { flex-direction: column; align-items: flex-start; }
+}
+
+/* Comfortable tap targets on coarse pointers */
+@media (max-width: 900px) {
+  .ss-breadcrumb a { padding: 10px 6px; margin: -10px -6px; }
+  .ss-prod-cta { padding: 10px 0; }
 }

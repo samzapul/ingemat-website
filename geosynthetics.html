@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geosynthetics — INGE&amp;MAT</title>
+  <meta name="description" content="Specialized geosynthetic solutions for infrastructure, geotechnical, hydraulic, transportation, environmental, mining, and construction projects — soil reinforcement, geotextiles, cellular confinement, mining reinforcement, and synthetic fiber systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Nunito:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="./images/INGEMAT ICON.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="geosynthetics.css" />
+</head>
+<body class="gs-page">
+
+<!-- ══════════════════════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════════════════════ -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="./images/INGEMAT ICON.png" alt="INGE&MAT icon" class="nav-logo-icon" />
+      INGE&amp;MAT S.A.S
+      <span class="nav-logo-sub">Ingeniería y Materiales</span>
+    </a>
+    <div class="nav-center">
+      <div class="nav-links">
+        <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+        <div class="nav-item nav-item--dropdown">
+          <a href="index.html#solutions" class="nav-link" data-i18n="nav.solutions">Solutions</a>
+          <div class="mega-menu">
+            <a href="coastal-protection.html" class="mega-sub" data-i18n="nav.sub.coastal">Coastal Protection</a>
+            <a href="ground-stabilization.html" class="mega-sub" data-i18n="nav.sub.ground">Ground Stabilization</a>
+            <a href="index.html#solutions" class="mega-sub" data-i18n="nav.sub.marine">Marine Infrastructure</a>
+            <a href="index.html#solutions" class="mega-sub" data-i18n="nav.sub.retaining">Retaining Structures</a>
+            <a href="index.html#solutions" class="mega-sub" data-i18n="nav.sub.mining">Mining &amp; Energy</a>
+          </div>
+        </div>
+        <div class="nav-item nav-item--dropdown">
+          <a href="#" class="nav-link active" data-i18n="nav.products">Products</a>
+          <div class="mega-menu">
+            <a href="steel-solutions.html" class="mega-sub" data-i18n="nav.sub.steel">Steel</a>
+            <a href="geosynthetics.html" class="mega-sub" style="color:#ddcc0f;" data-i18n="nav.sub.geosyn">Geosynthetics</a>
+            <a href="amorphous-gabions.html" class="mega-sub" data-i18n="nav.sub.rocks">Amorphous Gabions</a>
+          </div>
+        </div>
+        <a href="index.html#capabilities" class="nav-link" data-i18n="nav.capabilities">Capabilities</a>
+        <a href="index.html#about"        class="nav-link" data-i18n="nav.about">About</a>
+        <a href="index.html#contact"      class="nav-link" data-i18n="nav.contact">Contact</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
+        <span class="lang-opt lang-active" id="lang-en">EN</span>
+        <span class="lang-sep">/</span>
+        <span class="lang-opt" id="lang-es">ES</span>
+      </button>
+      <a href="index.html#contact" class="nav-cta" data-i18n="nav.enquire">Enquire</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+    <div class="nav-mobile-links">
+      <a href="index.html" class="nav-mobile-link" data-i18n="nav.home">Home</a>
+      <div class="nav-mobile-item">
+        <button class="nav-mobile-trigger" aria-expanded="false">
+          <span data-i18n="nav.solutions">Solutions</span>
+          <svg class="nav-mobile-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="nav-mobile-sub">
+          <a href="coastal-protection.html" class="nav-mobile-sub-link" data-i18n="nav.sub.coastal">Coastal Protection</a>
+          <a href="ground-stabilization.html" class="nav-mobile-sub-link" data-i18n="nav.sub.ground">Ground Stabilization</a>
+          <a href="index.html#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.marine">Marine Infrastructure</a>
+          <a href="index.html#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.retaining">Retaining Structures</a>
+          <a href="index.html#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.mining">Mining &amp; Energy</a>
+        </div>
+      </div>
+      <div class="nav-mobile-item">
+        <button class="nav-mobile-trigger is-open" aria-expanded="true">
+          <span data-i18n="nav.products">Products</span>
+          <svg class="nav-mobile-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="nav-mobile-sub is-open">
+          <a href="steel-solutions.html" class="nav-mobile-sub-link" data-i18n="nav.sub.steel">Steel</a>
+          <a href="geosynthetics.html" class="nav-mobile-sub-link" style="color:#ddcc0f;" data-i18n="nav.sub.geosyn">Geosynthetics</a>
+          <a href="amorphous-gabions.html" class="nav-mobile-sub-link" data-i18n="nav.sub.rocks">Amorphous Gabions</a>
+        </div>
+      </div>
+      <a href="index.html#capabilities" class="nav-mobile-link" data-i18n="nav.capabilities">Capabilities</a>
+      <a href="index.html#about"        class="nav-mobile-link" data-i18n="nav.about">About</a>
+      <a href="index.html#contact"      class="nav-mobile-link" data-i18n="nav.contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 01 — HERO
+══════════════════════════════════════════════════════════ -->
+<section id="gs-hero">
+  <div class="gs-hero-bg">
+    <div class="gs-hero-overlay"></div>
+  </div>
+  <div class="gs-hero-content">
+    <nav class="gs-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <span aria-hidden="true">›</span>
+      <span data-i18n="gs.crumb.products">Products</span>
+      <span aria-hidden="true">›</span>
+      <span data-i18n="gs.crumb.page">Geosynthetics</span>
+    </nav>
+    <h1 class="gs-hero-h1 gs-fade" data-i18n-html="gs.hero.h1">
+      Geosynthetic Solutions for<br /><em>Resilient Ground Engineering</em>
+    </h1>
+    <p class="gs-hero-sub gs-fade gs-fade-d1" data-i18n="gs.hero.sub">
+      Specialized geosynthetic systems engineered to reinforce soil, control erosion, and support drainage across infrastructure, geotechnical, and industrial projects.
+    </p>
+    <p class="gs-hero-body gs-fade gs-fade-d2" data-i18n="gs.hero.body">
+      INGE&amp;MAT sources and delivers engineered geosynthetic solutions for infrastructure, hydraulic, transportation, environmental, mining, and construction projects — combining technical credibility with dependable project support.
+    </p>
+    <div class="gs-hero-btns gs-fade gs-fade-d3">
+      <a href="#gs-products" class="gs-btn gs-btn--glass-gold" data-i18n="gs.hero.btn1">Explore Solutions</a>
+      <a href="index.html#contact" class="gs-btn gs-btn--glass-light" data-i18n="gs.hero.btn2">Request a Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     INTRO
+══════════════════════════════════════════════════════════ -->
+<section id="gs-intro">
+  <div class="gs-intro-inner">
+    <div class="gs-fade">
+      <span class="gs-eyebrow" data-i18n="gs.intro.eyebrow">Geosynthetic Engineering</span>
+      <h2 data-i18n="gs.intro.h2">Specialized Solutions for Critical Ground Engineering</h2>
+      <p data-i18n="gs.intro.p1">Geosynthetic systems play a defining role in how infrastructure performs over time — improving soil behavior, controlling erosion, supporting drainage, and reinforcing critical ground conditions across complex projects.</p>
+      <p data-i18n="gs.intro.p2">INGE&amp;MAT operates as a specialized sourcing and solutions partner, supporting infrastructure, geotechnical, hydraulic, transportation, environmental, mining, and construction projects with engineered geosynthetic systems selected for performance and reliability.</p>
+    </div>
+    <div class="gs-fade gs-fade-d2">
+      <div class="gs-img-ph gs-img-ph--intro">
+        <img src="./images/Geosynthetics Page/Geosynthetics project.webp" alt="Geosynthetic engineering project" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 02 — FEATURED SOLUTIONS OVERVIEW
+══════════════════════════════════════════════════════════ -->
+<section id="gs-products">
+  <div class="gs-section-inner">
+    <span class="gs-eyebrow gs-fade" data-i18n="gs.nav.eyebrow">Solution Portfolio</span>
+    <h2 class="gs-fade gs-fade-d1" data-i18n="gs.nav.h2">Geosynthetic Solution Families</h2>
+    <div class="gs-nav-grid">
+
+      <a href="#gs-soil-reinforcement" class="gs-nav-card gs-nav-card--featured gs-fade">
+        <div class="gs-nav-card-img">
+          <div class="gs-img-ph gs-img-ph--card-lg">
+            <img src="./images/Geosynthetics Page/Biaxial Geocell.webp" alt="Soil reinforcement systems" />
+          </div>
+        </div>
+        <div class="gs-nav-card-body">
+          <span class="gs-nav-card-num">01</span>
+          <div class="gs-nav-card-title" data-i18n="gs.nav.c1.title">Soil Reinforcement Systems</div>
+          <p class="gs-nav-card-desc" data-i18n="gs.nav.c1.desc">Reinforcement systems engineered to improve load distribution and long-term ground performance.</p>
+          <span class="gs-nav-card-link"><span data-i18n="gs.meta.view">View Solutions</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></span>
+        </div>
+      </a>
+
+      <a href="#gs-geotextiles" class="gs-nav-card gs-fade gs-fade-d1">
+        <div class="gs-nav-card-img">
+          <div class="gs-img-ph gs-img-ph--card">
+            <img src="./images/Geosynthetics Page/Non-woven geotextile rolls.webp" alt="Geotextile solutions" />
+          </div>
+        </div>
+        <div class="gs-nav-card-body">
+          <span class="gs-nav-card-num">02</span>
+          <div class="gs-nav-card-title" data-i18n="gs.nav.c2.title">Geotextile Solutions</div>
+          <p class="gs-nav-card-desc" data-i18n="gs.nav.c2.desc">Woven and nonwoven fabrics for separation, filtration, drainage, and protection.</p>
+          <span class="gs-nav-card-link"><span data-i18n="gs.meta.view">View Solutions</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></span>
+        </div>
+      </a>
+
+      <a href="#gs-cellular-confinement" class="gs-nav-card gs-fade gs-fade-d2">
+        <div class="gs-nav-card-img">
+          <div class="gs-img-ph gs-img-ph--card">
+            <img src="./images/Geosynthetics Page/Textured HDPE Geocell.webp" alt="Cellular confinement systems" />
+          </div>
+        </div>
+        <div class="gs-nav-card-body">
+          <span class="gs-nav-card-num">03</span>
+          <div class="gs-nav-card-title" data-i18n="gs.nav.c3.title">Cellular Confinement Systems</div>
+          <p class="gs-nav-card-desc" data-i18n="gs.nav.c3.desc">Three-dimensional confinement for soil stabilization and erosion control.</p>
+          <span class="gs-nav-card-link"><span data-i18n="gs.meta.view">View Solutions</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></span>
+        </div>
+      </a>
+
+      <a href="#gs-mining-reinforcement" class="gs-nav-card gs-fade gs-fade-d3">
+        <div class="gs-nav-card-img">
+          <div class="gs-img-ph gs-img-ph--card">
+            <img src="./images/Geosynthetics Page/Mining grid.webp" alt="Mining and industrial reinforcement" />
+          </div>
+        </div>
+        <div class="gs-nav-card-body">
+          <span class="gs-nav-card-num">04</span>
+          <div class="gs-nav-card-title" data-i18n="gs.nav.c4.title">Mining &amp; Industrial Reinforcement</div>
+          <p class="gs-nav-card-desc" data-i18n="gs.nav.c4.desc">Heavy-duty reinforcement built for demanding mining and industrial environments.</p>
+          <span class="gs-nav-card-link"><span data-i18n="gs.meta.view">View Solutions</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></span>
+        </div>
+      </a>
+
+      <a href="#gs-synthetic-fiber" class="gs-nav-card gs-fade gs-fade-d4">
+        <div class="gs-nav-card-img">
+          <div class="gs-img-ph gs-img-ph--card">
+            <img src="./images/Geosynthetics Page/Concrete fibers.webp" alt="Synthetic fiber solutions" />
+          </div>
+        </div>
+        <div class="gs-nav-card-body">
+          <span class="gs-nav-card-num">05</span>
+          <div class="gs-nav-card-title" data-i18n="gs.nav.c5.title">Synthetic Fiber Solutions</div>
+          <p class="gs-nav-card-desc" data-i18n="gs.nav.c5.desc">Fiber reinforcement that improves crack control and durability in concrete.</p>
+          <span class="gs-nav-card-link"><span data-i18n="gs.meta.view">View Solutions</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SOIL REINFORCEMENT SYSTEMS
+══════════════════════════════════════════════════════════ -->
+<div id="gs-soil-reinforcement">
+  <div class="gs-cat-header gs-cat-header--plain">
+    <div class="gs-cat-header-inner gs-fade">
+      <span class="gs-cat-num" data-i18n="gs.f1.num">Section 01</span>
+      <h2 class="gs-cat-title" data-i18n="gs.f1.title">Soil Reinforcement Systems</h2>
+      <p class="gs-cat-intro" data-i18n="gs.f1.intro">High-performance reinforcement solutions designed to improve load distribution, structural stability, and long-term performance across infrastructure and geotechnical projects.</p>
+    </div>
+    <div class="gs-cat-banner-img">
+      <img src="./images/Geosynthetics Page/Soil Reinforcement Systems Banner.webp" alt="Soil reinforcement systems photography" class="gs-cat-banner-photo" />
+    </div>
+  </div>
+
+  <div class="gs-products-body gs-products-body--plain">
+    <div class="gs-products-inner gs-products-inner--4col">
+
+      <div class="gs-prod-card gs-fade">
+        <div class="gs-img-ph gs-img-ph--prod">
+          <img src="./images/Geosynthetics Page/Biaxial Reinforcement System.webp" alt="Biaxial reinforcement system" />
+        </div>
+        <div class="gs-prod-card-content">
+          <span class="gs-prod-tag" data-i18n="gs.f1.p1.tag">Multi-Directional Support</span>
+          <h3 class="gs-prod-name" data-i18n="gs.f1.p1.name">Biaxial Reinforcement System</h3>
+          <p class="gs-prod-desc" data-i18n="gs.f1.p1.desc">Engineered reinforcement structure that distributes loads evenly in two directions, improving subgrade stability beneath roads, platforms, and paved surfaces.</p>
+          <div class="gs-prod-meta">
+            <span class="gs-meta-label" data-i18n="gs.meta.applications">Applications</span>
+            <div class="gs-apps">
+              <span class="gs-app-tag" data-i18n="gs.app.road_subgrades">Road Subgrades</span>
+              <span class="gs-app-tag" data-i18n="gs.app.platforms">Platforms</span>
+              <span class="gs-app-tag" data-i18n="gs.app.paved_surfaces">Paved Surfaces</span>
+            </div>
+          </div>
+          <a href="index.html#contact" class="gs-prod-cta"><span data-i18n="gs.meta.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+      <div class="gs-prod-card gs-fade gs-fade-d1">
+        <div class="gs-img-ph gs-img-ph--prod">
+          <img src="./images/Geosynthetics Page/Uniaxial Reinforcement System.webp" alt="Uniaxial reinforcement system" />
+        </div>
+        <div class="gs-prod-card-content">
+          <span class="gs-prod-tag" data-i18n="gs.f1.p2.tag">Directional Strength</span>
+          <h3 class="gs-prod-name" data-i18n="gs.f1.p2.name">Uniaxial Reinforcement System</h3>
+          <p class="gs-prod-desc" data-i18n="gs.f1.p2.desc">High-tensile reinforcement solution engineered for slopes, retaining structures, and applications requiring strength along a primary direction.</p>
+          <div class="gs-prod-meta">
+            <span class="gs-meta-label" data-i18n="gs.meta.applications">Applications</span>
+            <div class="gs-apps">
+              <span class="gs-app-tag" data-i18n="gs.app.slope_stabilization">Slope Stabilization</span>
+              <span class="gs-app-tag" data-i18n="gs.app.retaining_structures">Retaining Structures</span>
+              <span class="gs-app-tag" data-i18n="gs.app.embankments">Embankments</span>
+            </div>
+          </div>
+          <a href="index.html#contact" class="gs-prod-cta"><span data-i18n="gs.meta.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+      <div class="gs-prod-card gs-fade gs-fade-d2">
+        <div class="gs-img-ph gs-img-ph--prod">
+          <img src="./images/Geosynthetics Page/Triaxial Reinforcement System.webp" alt="Triaxial reinforcement system" />
+        </div>
+        <div class="gs-prod-card-content">
+          <span class="gs-prod-tag" data-i18n="gs.f1.p3.tag">Triangular Aperture Technology</span>
+          <h3 class="gs-prod-name" data-i18n="gs.f1.p3.name">Triaxial Reinforcement System</h3>
+          <p class="gs-prod-desc" data-i18n="gs.f1.p3.desc">Reinforcement system with a triangular aperture geometry that delivers multi-directional confinement and superior load distribution for unpaved roads and base layers.</p>
+          <div class="gs-prod-meta">
+            <span class="gs-meta-label" data-i18n="gs.meta.applications">Applications</span>
+            <div class="gs-apps">
+              <span class="gs-app-tag" data-i18n="gs.app.unpaved_roads">Unpaved Roads</span>
+              <span class="gs-app-tag" data-i18n="gs.app.base_layers">Base Layers</span>
+              <span class="gs-app-tag" data-i18n="gs.app.working_platforms">Working Platforms</span>
+            </div>
+          </div>
+          <a href="index.html#contact" class="gs-prod-cta"><span data-i18n="gs.meta.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+      <div class="gs-prod-card gs-fade gs-fade-d3">
+        <div class="gs-img-ph gs-img-ph--prod">
+          <img src="./images/Geosynthetics Page/Composite Reinforcement System.webp" alt="Composite reinforcement system" />
+        </div>
+        <div class="gs-prod-card-content">
+          <span class="gs-prod-tag" data-i18n="gs.f1.p4.tag">Combined Function Design</span>
+          <h3 class="gs-prod-name" data-i18n="gs.f1.p4.name">Composite Reinforcement System</h3>
+          <p class="gs-prod-desc" data-i18n="gs.f1.p4.desc">Layered reinforcement solution that combines structural support with filtration or separation performance for demanding ground-improvement applications.</p>
+          <div class="gs-prod-meta">
+            <span class="gs-meta-label" data-i18n="gs.meta.applications">Applications</span>
+            <div class="gs-apps">
+              <span class="gs-app-tag" data-i18n="gs.app.ground_improvement">Ground Improvement</span>
+              <span class="gs-app-tag" data-i18n="gs.app.separation_reinforcement">Separation &amp; Reinforcement</span>
+              <span class="gs-app-tag" data-i18n="gs.app.embankments">Embankments</span>
+            </div>
+          </div>
+          <a href="index.html#contact" class="gs-prod-cta"><span data-i18n="gs.meta.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 04 — GEOTEXTILE SOLUTIONS
+══════════════════════════════════════════════════════════ -->
+<div id="gs-geotextiles">
+  <div class="gs-cat-header gs-cat-header--tint">
+    <div class="gs-cat-header-inner gs-fade">
+      <span class="gs-cat-num" data-i18n="gs.f2.num">Section 02</span>
+      <h2 class="gs-cat-title" data-i18n="gs.f2.title">Geotextile Solutions</h2>
+      <p class="gs-cat-intro" data-i18n="gs.f2.intro">Engineered geosynthetic materials that support separation, filtration, drainage, reinforcement, and protection in civil and environmental applications.</p>
+    </div>
+    <div class="gs-cat-banner-img">
+      <img src="./images/Geosynthetics Page/Geotextile Solutions Banner.webp" alt="Geotextile solutions photography" class="gs-cat-banner-photo" />
+    </div>
+  </div>
+
+  <div class="gs-products-body gs-products-body--tint">
+    <div class="gs-products-inner">
+
+      <div class="gs-prod-card gs-fade">
+        <div class="gs-img-ph gs-img-ph--prod">
+          <img src="./images/Geosynthetics Page/Woven Geotextiles.webp" alt="Woven geotextiles" />
+        </div>
+        <div class="gs-prod-card-content">
+          <span class="gs-prod-tag" data-i18n="gs.f2.p1.tag">High-Strength Separation</span>
+          <h3 class="gs-prod-name" data-i18n="gs.f2.p1.name">Woven Geotextiles</h3>
+          <p class="gs-prod-desc" data-i18n="gs.f2.p1.desc">Tightly woven fabric engineered for soil separation and reinforcement in roadways, embankments, and load-bearing applications.</p>
+          <div class="gs-prod-meta">
+            <span class="gs-meta-label" data-i18n="gs.meta.applications">Applications</span>
+            <div class="gs-apps">
+              <span class="gs-app-tag" data-i18n="gs.app.roadways">Roadways</span>
+              <span class="gs-app-tag" data-i18n="gs.app.embankments">Embankments</span>
+              <span class="gs-app-tag" data-i18n="gs.app.load_bearing_platforms">Load-Bearing Platforms</span>
+            </div>
+          </div>
+          <a href="index.html#contact" class="gs-prod-cta"><span data-i18n="gs.meta.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+      <div class="gs-prod-card gs-fade gs-fade-d1">
+        <div class="gs-img-ph gs-img-ph--prod">
+          <img src="./images/Geosynthetics Page/Non-woven geotextile.webp" alt="Nonwoven geotextiles" />
+        </div>
+        <div class="gs-prod-card-content">
+          <span class="gs-prod-tag" data-i18n="gs.f2.p2.tag">Filtration &amp; Drainage</span>
+          <h3 class="gs-prod-name" data-i18n="gs.f2.p2.name">Nonwoven Geotextiles</h3>
+          <p class="gs-prod-desc" data-i18n="gs.f2.p2.desc">Permeable fabric designed for filtration, drainage, and protection layers across drainage systems, erosion control, and civil works.</p>
+          <div class="gs-prod-meta">
+            <span class="gs-meta-label" data-i18n="gs.meta.applications">Applications</span>
+            <div class="gs-apps">
+              <span class="gs-app-tag" data-i18n="gs.app.drainage_systems">Drainage Systems</span>
+              <span class="gs-app-tag" data-i18n="gs.app.erosion_control">Erosion Control</span>
+              <span class="gs-app-tag" data-i18n="gs.app.civil_works">Civil Works</span>
+            </div>
+          </div>
+          <a href="index.html#contact" class="gs-prod-cta"><span data-i18n="gs.meta.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 05 — CELLULAR CONFINEMENT SYSTEMS
+══════════════════════════════════════════════════════════ -->
+<div id="gs-cellular-confinement">
+  <div class="gs-cat-header gs-cat-header--plain">
+    <div class="gs-cat-header-inner gs-fade">
+      <span class="gs-cat-num" data-i18n="gs.f3.num">Section 03</span>
+      <h2 class="gs-cat-title" data-i18n="gs.f3.title">Cellular Confinement Systems</h2>
+      <p class="gs-cat-intro" data-i18n="gs.f3.intro">Three-dimensional confinement solutions that help stabilize soil, improve load support, and control erosion in demanding site conditions.</p>
+    </div>
+    <div class="gs-cat-banner-img">
+      <img src="./images/Geosynthetics Page/Cellular Confinement Systems.webp" alt="Cellular confinement systems photography" class="gs-cat-banner-photo" />
+    </div>
+  </div>
+
+  <div class="gs-products-body gs-products-body--plain">
+    <div class="gs-products-inner">
+
+      <div class="gs-prod-card gs-fade">
+        <div class="gs-img-ph gs-img-ph--prod">
+          <img src="./images/Geosynthetics Page/Smooth HDPE Geocell.webp" alt="Smooth HDPE geocell" />
+        </div>
+        <div class="gs-prod-card-content">
+          <span class="gs-prod-tag" data-i18n="gs.f3.p1.tag">Standard Confinement</span>
+          <h3 class="gs-prod-name" data-i18n="gs.f3.p1.name">Smooth HDPE Geocell</h3>
+          <p class="gs-prod-desc" data-i18n="gs.f3.p1.desc">Three-dimensional honeycomb confinement system that stabilizes infill material for load support, slope protection, and channel lining applications.</p>
+          <div class="gs-prod-meta">
+            <span class="gs-meta-label" data-i18n="gs.meta.applications">Applications</span>
+            <div class="gs-apps">
+              <span class="gs-app-tag" data-i18n="gs.app.load_support">Load Support</span>
+              <span class="gs-app-tag" data-i18n="gs.app.slope_protection">Slope Protection</span>
+              <span class="gs-app-tag" data-i18n="gs.app.channel_lining">Channel Lining</span>
+            </div>
+          </div>
+          <a href="index.html#contact" class="gs-prod-cta"><span data-i18n="gs.meta.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+      <div class="gs-prod-card gs-fade gs-fade-d1">
+        <div class="gs-img-ph gs-img-ph--prod">
+          <img src="./images/Geosynthetics Page/Textured HDPE Geocell.webp" alt="Textured HDPE geocell" />
+        </div>
+        <div class="gs-prod-card-content">
+          <span class="gs-prod-tag" data-i18n="gs.f3.p2.tag">Enhanced Interlock</span>
+          <h3 class="gs-prod-name" data-i18n="gs.f3.p2.name">Textured HDPE Geocell</h3>
+          <p class="gs-prod-desc" data-i18n="gs.f3.p2.desc">Confinement system with a textured surface that increases interlock with infill material, improving performance in steep slopes and high-load applications.</p>
+          <div class="gs-prod-meta">
+            <span class="gs-meta-label" data-i18n="gs.meta.applications">Applications</span>
+            <div class="gs-apps">
+              <span class="gs-app-tag" data-i18n="gs.app.steep_slopes">Steep Slopes</span>
+              <span class="gs-app-tag" data-i18n="gs.app.high_load_areas">High-Load Areas</span>
+              <span class="gs-app-tag" data-i18n="gs.app.erosion_control">Erosion Control</span>
+            </div>
+          </div>
+          <a href="index.html#contact" class="gs-prod-cta"><span data-i18n="gs.meta.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 06 — MINING & INDUSTRIAL REINFORCEMENT
+══════════════════════════════════════════════════════════ -->
+<div id="gs-mining-reinforcement">
+  <div class="gs-cat-header gs-cat-header--tint">
+    <div class="gs-cat-header-inner gs-fade">
+      <span class="gs-cat-num" data-i18n="gs.f4.num">Section 04</span>
+      <h2 class="gs-cat-title" data-i18n="gs.f4.title">Mining &amp; Industrial Reinforcement</h2>
+      <p class="gs-cat-intro" data-i18n="gs.f4.intro">Specialized reinforcement solutions designed for mining and industrial environments where durability, safety, and performance are critical.</p>
+    </div>
+    <div class="gs-cat-banner-img">
+      <img src="./images/Geosynthetics Page/Mining grid banner.webp" alt="Mining and industrial reinforcement photography" class="gs-cat-banner-photo" />
+    </div>
+  </div>
+
+  <div class="gs-products-body gs-products-body--tint">
+    <div class="gs-products-inner gs-products-inner--1col">
+
+      <div class="gs-prod-card gs-fade">
+        <div class="gs-img-ph gs-img-ph--prod">
+          <img src="./images/Geosynthetics Page/Mining grid.webp" alt="Mining grid" />
+        </div>
+        <div class="gs-prod-card-content">
+          <span class="gs-prod-tag" data-i18n="gs.f4.p1.tag">Heavy-Duty Reinforcement</span>
+          <h3 class="gs-prod-name" data-i18n="gs.f4.p1.name">Mining Grid</h3>
+          <p class="gs-prod-desc" data-i18n="gs.f4.p1.desc">Robust reinforcement structure engineered for haul roads, waste rock stabilization, and high-stress industrial surfaces in mining operations.</p>
+          <div class="gs-prod-meta">
+            <span class="gs-meta-label" data-i18n="gs.meta.applications">Applications</span>
+            <div class="gs-apps">
+              <span class="gs-app-tag" data-i18n="gs.app.haul_roads">Haul Roads</span>
+              <span class="gs-app-tag" data-i18n="gs.app.waste_rock">Waste Rock Stabilization</span>
+              <span class="gs-app-tag" data-i18n="gs.app.industrial_surfaces">Industrial Surfaces</span>
+            </div>
+          </div>
+          <a href="index.html#contact" class="gs-prod-cta"><span data-i18n="gs.meta.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 07 — SYNTHETIC FIBER SOLUTIONS
+══════════════════════════════════════════════════════════ -->
+<div id="gs-synthetic-fiber">
+  <div class="gs-cat-header gs-cat-header--plain">
+    <div class="gs-cat-header-inner gs-fade">
+      <span class="gs-cat-num" data-i18n="gs.f5.num">Section 05</span>
+      <h2 class="gs-cat-title" data-i18n="gs.f5.title">Synthetic Fiber Solutions</h2>
+      <p class="gs-cat-intro" data-i18n="gs.f5.intro">Advanced fiber reinforcement products designed to improve crack control, durability, and material performance in concrete and construction applications.</p>
+    </div>
+    <div class="gs-cat-banner-img">
+      <img src="./images/Geosynthetics Page/Synthetic Fiber Solutions banner.webp" alt="Synthetic fiber solutions photography" class="gs-cat-banner-photo" />
+    </div>
+  </div>
+
+  <div class="gs-products-body gs-products-body--plain">
+    <div class="gs-products-inner gs-products-inner--1col">
+
+      <div class="gs-prod-card gs-fade">
+        <div class="gs-img-ph gs-img-ph--prod">
+          <img src="./images/Geosynthetics Page/Polypropylene Fiber.webp" alt="Polypropylene fiber" />
+        </div>
+        <div class="gs-prod-card-content">
+          <span class="gs-prod-tag" data-i18n="gs.f5.p1.tag">Crack Control Technology</span>
+          <h3 class="gs-prod-name" data-i18n="gs.f5.p1.name">Polypropylene Fiber</h3>
+          <p class="gs-prod-desc" data-i18n="gs.f5.p1.desc">Synthetic micro-reinforcement fiber that improves crack control, toughness, and durability in concrete, mortar, and construction materials.</p>
+          <div class="gs-prod-meta">
+            <span class="gs-meta-label" data-i18n="gs.meta.applications">Applications</span>
+            <div class="gs-apps">
+              <span class="gs-app-tag" data-i18n="gs.app.concrete_reinforcement">Concrete Reinforcement</span>
+              <span class="gs-app-tag" data-i18n="gs.app.mortar_applications">Mortar Applications</span>
+              <span class="gs-app-tag" data-i18n="gs.app.crack_control">Crack Control</span>
+            </div>
+          </div>
+          <a href="index.html#contact" class="gs-prod-cta"><span data-i18n="gs.meta.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 08 — CTA / CONTACT
+══════════════════════════════════════════════════════════ -->
+<section id="gs-cta">
+  <div class="gs-cta-bg">
+    <img src="./images/Geosynthetics Page/Geosynthetics hero.webp" alt="Geosynthetics project photography" class="gs-cta-photo" />
+    <div class="gs-cta-overlay"></div>
+  </div>
+  <div class="gs-cta-inner">
+    <div class="gs-fade">
+      <span class="gs-cta-label" data-i18n="gs.cta.label">Start a Project</span>
+      <h2 class="gs-cta-h2" data-i18n="gs.cta.h2">Need Geosynthetic Solutions for Your Next Project?</h2>
+      <p class="gs-cta-body" data-i18n="gs.cta.body">Our technical team can help you identify the right geosynthetic systems for your project's ground conditions, performance requirements, and timeline.</p>
+      <div class="gs-cta-btns">
+        <a href="index.html#contact" class="gs-btn gs-btn--glass-gold" data-i18n="gs.cta.btn1">Request a Quote</a>
+        <a href="index.html#contact" class="gs-btn gs-btn--glass-light" data-i18n="gs.cta.btn2">Speak with an Expert</a>
+      </div>
+    </div>
+    <div class="gs-cta-stats gs-fade gs-fade-d2">
+      <div class="gs-cta-stat">
+        <span class="gs-cta-stat-num">+50</span>
+        <span class="gs-cta-stat-label" data-i18n="gs.cta.stat1">Infrastructure projects supported across Latin America</span>
+      </div>
+      <div class="gs-cta-stat">
+        <span class="gs-cta-stat-num">40+</span>
+        <span class="gs-cta-stat-label" data-i18n="gs.cta.stat2">Countries within our global sourcing network</span>
+      </div>
+      <div class="gs-cta-stat">
+        <span class="gs-cta-stat-num">ISO</span>
+        <span class="gs-cta-stat-label" data-i18n="gs.cta.stat3">9001 certified quality management standards</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./images/INGEMAT ICON.png" alt="INGE&MAT icon" class="footer-brand-icon" />
+      <div>
+        <span class="footer-brand-name">INGE&amp;MAT S.A.S</span>
+        <span class="footer-brand-sub">Ingeniería y Materiales</span>
+      </div>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="docs/Politica_Privacidad_INGEMAT.pdf" target="_blank" rel="noopener" class="footer-link" data-i18n="footer.privacy">Privacy Policy</a>
+      <a href="#" class="footer-link" data-i18n="footer.terms">Terms of Service</a>
+      <a href="#" class="footer-link" data-i18n="footer.sustainability">Sustainability</a>
+    </nav>
+    <span class="footer-copy" data-i18n="footer.copy">© 2024 INGE&amp;MAT. All rights reserved.</span>
+  </div>
+</footer>
+
+<a href="https://wa.link/trjia4" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contact us on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="#fff">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.738 5.48 2.031 7.785L0 32l8.438-2.01A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.771-1.854l-.486-.29-5.01 1.195 1.234-4.87-.318-.5A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.908c-.398-.199-2.354-1.162-2.719-1.294-.365-.133-.63-.199-.896.199-.265.398-1.029 1.294-1.261 1.56-.232.265-.465.298-.863.1-.398-.2-1.681-.62-3.202-1.977-1.183-1.056-1.982-2.36-2.214-2.758-.232-.398-.025-.613.174-.811.179-.178.398-.465.597-.697.199-.232.265-.398.398-.664.133-.265.066-.497-.033-.697-.1-.199-.896-2.16-1.228-2.957-.323-.776-.651-.671-.896-.683l-.763-.013c-.265 0-.697.1-.1063.497-.365.398-1.394 1.362-1.394 3.322s1.427 3.854 1.626 4.12c.199.265 2.808 4.287 6.803 6.013.951.41 1.693.655 2.271.839.954.304 1.823.261 2.51.158.765-.114 2.354-.962 2.686-1.892.332-.93.332-1.727.232-1.892-.099-.166-.365-.265-.763-.464z"/>
+  </svg>
+</a>
+
+<script type="module" src="geosynthetics.js"></script>
+</body>
+</html>

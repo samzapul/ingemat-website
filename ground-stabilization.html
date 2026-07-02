@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ground Stabilization — INGE&amp;MAT</title>
+  <meta name="description" content="Engineered ground stabilization systems — HDPE geocells, geogrids and nonwoven geotextiles engineered to transform weak subgrades into reliable infrastructure foundations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Nunito:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="./images/INGEMAT ICON.png" type="image/png" />
+
+  <!-- Preload every frame — no flicker -->
+  <link rel="preload" as="image" href="images/Ground Stabilization/Frame 1 GS.webp" />
+  <link rel="preload" as="image" href="images/Ground Stabilization/Frame 2 GS.webp" />
+  <link rel="preload" as="image" href="images/Ground Stabilization/Frame 3 GS.webp" />
+  <link rel="preload" as="image" href="images/Ground Stabilization/Frame 4 GS.webp" />
+  <link rel="preload" as="image" href="images/Ground Stabilization/Frame 5 GS.webp" />
+  <link rel="preload" as="image" href="images/Ground Stabilization/Frame 6 GS.webp" />
+  <link rel="preload" as="image" href="images/Ground Stabilization/Frame 7 GS.webp" />
+  <link rel="preload" as="image" href="images/Ground Stabilization/Frame 8 GS.webp" />
+  <link rel="preload" as="image" href="images/Ground Stabilization/Frame 9 GS.webp" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="ground-stabilization.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
+</head>
+<body class="gst-page">
+
+<!-- ══════════════════════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════════════════════ -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="./images/INGEMAT ICON.png" alt="INGE&MAT icon" class="nav-logo-icon" />
+      INGE&amp;MAT S.A.S
+      <span class="nav-logo-sub">Ingeniería y Materiales</span>
+    </a>
+    <div class="nav-center">
+      <div class="nav-links">
+        <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+        <div class="nav-item nav-item--dropdown">
+          <a href="index.html#solutions" class="nav-link active" data-i18n="nav.solutions">Solutions</a>
+          <div class="mega-menu">
+            <a href="coastal-protection.html" class="mega-sub" data-i18n="nav.sub.coastal">Coastal Protection</a>
+            <a href="ground-stabilization.html" class="mega-sub" style="color:#ddcc0f;" data-i18n="nav.sub.ground">Ground Stabilization</a>
+            <a href="index.html#solutions" class="mega-sub" data-i18n="nav.sub.marine">Marine Infrastructure</a>
+            <a href="index.html#solutions" class="mega-sub" data-i18n="nav.sub.retaining">Retaining Structures</a>
+            <a href="index.html#solutions" class="mega-sub" data-i18n="nav.sub.mining">Mining &amp; Energy</a>
+          </div>
+        </div>
+        <div class="nav-item nav-item--dropdown">
+          <a href="#" class="nav-link" data-i18n="nav.products">Products</a>
+          <div class="mega-menu">
+            <a href="steel-solutions.html" class="mega-sub" data-i18n="nav.sub.steel">Steel</a>
+            <a href="geosynthetics.html" class="mega-sub" data-i18n="nav.sub.geosyn">Geosynthetics</a>
+            <a href="amorphous-gabions.html" class="mega-sub" data-i18n="nav.sub.rocks">Amorphous Gabions</a>
+          </div>
+        </div>
+        <a href="index.html#capabilities" class="nav-link" data-i18n="nav.capabilities">Capabilities</a>
+        <a href="index.html#about"        class="nav-link" data-i18n="nav.about">About</a>
+        <a href="index.html#contact"      class="nav-link" data-i18n="nav.contact">Contact</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
+        <span class="lang-opt lang-active" id="lang-en">EN</span>
+        <span class="lang-sep">/</span>
+        <span class="lang-opt" id="lang-es">ES</span>
+      </button>
+      <a href="index.html#contact" class="nav-cta" data-i18n="nav.enquire">Enquire</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+    <div class="nav-mobile-links">
+      <a href="index.html" class="nav-mobile-link" data-i18n="nav.home">Home</a>
+      <div class="nav-mobile-item">
+        <button class="nav-mobile-trigger is-open" aria-expanded="true">
+          <span data-i18n="nav.solutions">Solutions</span>
+          <svg class="nav-mobile-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="nav-mobile-sub is-open">
+          <a href="coastal-protection.html" class="nav-mobile-sub-link" data-i18n="nav.sub.coastal">Coastal Protection</a>
+          <a href="ground-stabilization.html" class="nav-mobile-sub-link" style="color:#ddcc0f;" data-i18n="nav.sub.ground">Ground Stabilization</a>
+          <a href="index.html#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.marine">Marine Infrastructure</a>
+          <a href="index.html#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.retaining">Retaining Structures</a>
+          <a href="index.html#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.mining">Mining &amp; Energy</a>
+        </div>
+      </div>
+      <div class="nav-mobile-item">
+        <button class="nav-mobile-trigger" aria-expanded="false">
+          <span data-i18n="nav.products">Products</span>
+          <svg class="nav-mobile-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="nav-mobile-sub">
+          <a href="steel-solutions.html" class="nav-mobile-sub-link" data-i18n="nav.sub.steel">Steel</a>
+          <a href="geosynthetics.html" class="nav-mobile-sub-link" data-i18n="nav.sub.geosyn">Geosynthetics</a>
+          <a href="amorphous-gabions.html" class="nav-mobile-sub-link" data-i18n="nav.sub.rocks">Amorphous Gabions</a>
+        </div>
+      </div>
+      <a href="index.html#capabilities" class="nav-mobile-link" data-i18n="nav.capabilities">Capabilities</a>
+      <a href="index.html#about"        class="nav-mobile-link" data-i18n="nav.about">About</a>
+      <a href="index.html#contact"      class="nav-mobile-link" data-i18n="nav.contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════════
+     CINEMA SECTION — 900vh pinned image sequence
+══════════════════════════════════════════════════════════ -->
+<section id="gst-cinema" aria-label="Ground stabilization engineering sequence">
+
+  <div id="gst-viewport">
+
+    <!-- ── Frame Stage ─────────────────────────────────────── -->
+    <div id="gst-frame-stage" aria-hidden="true">
+      <img src="images/Ground Stabilization/Frame 1 GS.webp" class="gst-frame is-active" data-frame="1" alt="" />
+      <img src="images/Ground Stabilization/Frame 2 GS.webp" class="gst-frame" data-frame="2" alt="" />
+      <img src="images/Ground Stabilization/Frame 3 GS.webp" class="gst-frame" data-frame="3" alt="" />
+      <img src="images/Ground Stabilization/Frame 4 GS.webp" class="gst-frame" data-frame="4" alt="" />
+      <img src="images/Ground Stabilization/Frame 5 GS.webp" class="gst-frame" data-frame="5" alt="" />
+      <img src="images/Ground Stabilization/Frame 6 GS.webp" class="gst-frame" data-frame="6" alt="" />
+      <img src="images/Ground Stabilization/Frame 7 GS.webp" class="gst-frame" data-frame="7" alt="" />
+      <img src="images/Ground Stabilization/Frame 8 GS.webp" class="gst-frame" data-frame="8" alt="" />
+      <img src="images/Ground Stabilization/Frame 9 GS.webp" class="gst-frame" data-frame="9" alt="" />
+    </div>
+
+    <!-- ── Cinematic overlays ──────────────────────────────── -->
+    <div class="gst-vignette" aria-hidden="true"></div>
+    <div class="gst-gradient-top" aria-hidden="true"></div>
+    <div class="gst-gradient-bottom" aria-hidden="true"></div>
+
+    <!-- ── Chapter Cards ───────────────────────────────────── -->
+    <div id="gst-cards-layer">
+
+      <!-- Chapter 1 — Opening -->
+      <div class="gst-card gst-card--center" id="card-gst1">
+        <div class="gst-card-eyebrow" data-i18n="gst.ch1.eyebrow">Ground Engineering</div>
+        <h1 class="gst-card-h1" data-i18n-html="gst.ch1.h1">Ground<br>Stabilization</h1>
+        <p class="gst-card-sub" data-i18n="gst.ch1.sub">Engineering weak ground into reliable infrastructure.</p>
+        <div class="gst-card-scroll-cue" id="gst-scroll-cue">
+          <span data-i18n="gst.ch1.scroll">Scroll to explore</span>
+          <svg width="16" height="24" viewBox="0 0 16 24" fill="none" aria-hidden="true">
+            <rect x="1" y="1" width="14" height="22" rx="7" stroke="currentColor" stroke-width="1.2"/>
+            <circle class="gst-scroll-dot" cx="8" cy="8" r="2.5" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Chapter 2 — Failure -->
+      <div class="gst-card gst-card--left-mid" id="card-gst2">
+        <h2 class="gst-card-h2-large" data-i18n="gst.ch2.h2">Failure</h2>
+        <p class="gst-card-body" data-i18n="gst.ch2.body">Soft saturated subgrades cannot support heavy construction equipment.</p>
+      </div>
+
+      <!-- Chapter 3 — Prepare -->
+      <div class="gst-card gst-card--right-lower" id="card-gst3">
+        <h2 class="gst-card-h2-large" data-i18n="gst.ch3.h2">Prepare</h2>
+        <p class="gst-card-body" data-i18n="gst.ch3.body">Every successful stabilization project begins with accurate surveying, grading and construction planning.</p>
+      </div>
+
+      <!-- Chapter 4 — Confine (HDPE Geocells) -->
+      <div class="gst-card gst-card--left-lower" id="card-gst4">
+        <div class="gst-card-number" data-i18n="gst.ch4.badge">01 — HDPE Geocells</div>
+        <h2 class="gst-card-h2-large" data-i18n="gst.ch4.h2">Confine</h2>
+        <p class="gst-card-body" data-i18n="gst.ch4.body">Cellular confinement transforms weak ground into a reinforced structural foundation.</p>
+        <a href="geosynthetics.html#gs-cellular-confinement" class="gst-card-btn" data-i18n="gst.ch4.btn">Explore HDPE Geocells</a>
+      </div>
+
+      <!-- Chapter 5 — Build -->
+      <div class="gst-card gst-card--right-mid" id="card-gst5">
+        <h2 class="gst-card-h2-large" data-i18n="gst.ch5.h2">Build</h2>
+        <p class="gst-card-body" data-i18n="gst.ch5.body">Aggregate progressively locks into the cellular confinement system creating a mechanically stabilized layer.</p>
+      </div>
+
+      <!-- Chapter 6 — Compact -->
+      <div class="gst-card gst-card--center gst-card--wide" id="card-gst6">
+        <h2 class="gst-card-h2-large" data-i18n="gst.ch6.h2">Compact</h2>
+        <p class="gst-card-body gst-card-body--centered" data-i18n="gst.ch6.body">The stabilized layer becomes a dense engineered working platform.</p>
+      </div>
+
+      <!-- Chapter 7 — Perform -->
+      <div class="gst-card gst-card--top-right gst-card--compact" id="card-gst7">
+        <h3 class="gst-card-h3" data-i18n="gst.ch7.h3">Perform</h3>
+        <p class="gst-card-body" data-i18n="gst.ch7.body1">The engineering disappears.</p>
+        <p class="gst-card-body" data-i18n="gst.ch7.body2">The performance remains.</p>
+      </div>
+
+      <!-- Chapter 8 — Proven -->
+      <div class="gst-card gst-card--left-mid" id="card-gst8">
+        <h2 class="gst-card-h2-large" data-i18n="gst.ch8.h2">Proven</h2>
+        <p class="gst-card-body" data-i18n="gst.ch8.body">The same ground that failed now supports heavy construction traffic.</p>
+      </div>
+
+      <!-- Chapter 9 — Enable -->
+      <div class="gst-card gst-card--final-hero" id="card-gst9">
+        <div class="gst-card-eyebrow">INGE&amp;MAT</div>
+        <h2 class="gst-card-h1-final" data-i18n="gst.ch9.h1">Ground Stabilization</h2>
+        <p class="gst-card-body gst-card-body--final" data-i18n="gst.ch9.body">From access roads and working platforms to large-scale industrial infrastructure, INGE&amp;MAT engineers complete ground stabilization systems combining geosynthetics and advanced solutions to improve bearing capacity, control settlement and ensure long-term performance.</p>
+        <a href="geosynthetics.html" class="gst-btn--final">
+          <span data-i18n="gst.ch9.btn">View Products</span>
+          <span class="gst-btn-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+
+    </div><!-- /#gst-cards-layer -->
+
+    <!-- ── Cinema progress bar ─────────────────────────────── -->
+    <div id="gst-progress" aria-hidden="true">
+      <div id="gst-progress-fill"></div>
+    </div>
+
+    <!-- ── Chapter timeline ───────────────────────────────── -->
+    <div id="gst-timeline" aria-hidden="true">
+      <div class="gst-tl-row">
+        <span class="gst-tl-dot" data-ch="1"></span>
+        <span class="gst-tl-dot" data-ch="2"></span>
+        <span class="gst-tl-dot" data-ch="3"></span>
+        <span class="gst-tl-dot" data-ch="4"></span>
+        <span class="gst-tl-dot" data-ch="5"></span>
+        <span class="gst-tl-dot" data-ch="6"></span>
+        <span class="gst-tl-dot" data-ch="7"></span>
+        <span class="gst-tl-dot" data-ch="8"></span>
+        <span class="gst-tl-dot" data-ch="9"></span>
+      </div>
+      <div id="gst-tl-label"></div>
+    </div>
+
+  </div><!-- /#gst-viewport -->
+</section><!-- /#gst-cinema -->
+
+<!-- ══════════════════════════════════════════════════════════
+     AFTER-FILM CONTENT
+══════════════════════════════════════════════════════════ -->
+<main id="after-film">
+
+  <!-- ── Featured Ground Stabilization Applications ───────── -->
+  <section id="gst-applications" class="af-section">
+    <img src="images/Ground Stabilization/sketch geoceldas.webp" alt="" class="gst-apps-bg" aria-hidden="true" />
+    <div class="af-inner">
+      <div class="af-head af-reveal">
+        <span class="af-eyebrow" data-i18n="gst.apps.eyebrow">Where We Build</span>
+        <h2 class="af-h2" data-i18n="gst.apps.h2">Featured Ground Stabilization Applications</h2>
+        <p class="af-lead" data-i18n="gst.apps.lead">Engineering solutions for roads, working platforms and heavy civil infrastructure.</p>
+      </div>
+      <div class="af-apps-grid">
+
+        <div class="af-app-card af-reveal">
+          <div class="af-app-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="4" y="12" width="24" height="14" rx="1"/><path d="M9 12V8h14v4"/><circle cx="10" cy="26" r="2"/><circle cx="22" cy="26" r="2"/></svg>
+          </div>
+          <h3 class="af-app-title" data-i18n="gst.app1.title">Working Platforms</h3>
+          <p class="af-app-desc" data-i18n="gst.app1.desc">Heavy-duty temporary platforms supporting cranes, piling rigs and heavy construction equipment over weak soils.</p>
+        </div>
+
+        <div class="af-app-card af-reveal">
+          <div class="af-app-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M4 26q6-16 12-16t12 16"/><path d="M4 26h24"/></svg>
+          </div>
+          <h3 class="af-app-title" data-i18n="gst.app2.title">Access Roads</h3>
+          <p class="af-app-desc" data-i18n="gst.app2.desc">Stabilized haul roads and construction access routes built over saturated or low-bearing-capacity ground.</p>
+        </div>
+
+        <div class="af-app-card af-reveal">
+          <div class="af-app-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="5" y="14" width="9" height="12"/><rect x="18" y="8" width="9" height="18"/><path d="M4 26h24"/></svg>
+          </div>
+          <h3 class="af-app-title" data-i18n="gst.app3.title">Industrial Yards</h3>
+          <p class="af-app-desc" data-i18n="gst.app3.desc">Mechanically stabilized logistics and storage areas designed for repeated heavy traffic.</p>
+        </div>
+
+        <div class="af-app-card af-reveal">
+          <div class="af-app-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M16 4v14"/><path d="M16 18l-8 6M16 18l8 6"/><circle cx="16" cy="18" r="3"/></svg>
+          </div>
+          <h3 class="af-app-title" data-i18n="gst.app4.title">Wind Farm Access</h3>
+          <p class="af-app-desc" data-i18n="gst.app4.desc">Permanent and temporary access roads supporting turbine transport and installation.</p>
+        </div>
+
+        <div class="af-app-card af-reveal">
+          <div class="af-app-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M6 26l6-14 6 14"/><path d="M18 26l4-10 4 10"/><path d="M4 26h24"/></svg>
+          </div>
+          <h3 class="af-app-title" data-i18n="gst.app5.title">Mining Haul Roads</h3>
+          <p class="af-app-desc" data-i18n="gst.app5.desc">Ground stabilization systems for repeated heavy mining truck traffic.</p>
+        </div>
+
+        <div class="af-app-card af-reveal">
+          <div class="af-app-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M4 16h24"/><path d="M4 16q4-8 8-8m4 8q4 8 8 8m-8-8q4-8 8-8m-12 8q-4 8-8 8"/></svg>
+          </div>
+          <h3 class="af-app-title" data-i18n="gst.app6.title">Pipeline Corridors</h3>
+          <p class="af-app-desc" data-i18n="gst.app6.desc">Stable construction corridors crossing wetlands and soft ground.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Integrated Ground System ──────────────────────────── -->
+  <section id="integrated-ground-system" class="af-section af-section--light">
+    <div class="af-inner">
+      <div class="af-head af-reveal">
+        <span class="af-eyebrow af-eyebrow--gold" data-i18n="gst.sys.eyebrow">The Material System</span>
+        <h2 class="af-h2" data-i18n="gst.sys.h2">Integrated Ground Systems</h2>
+        <p class="af-lead" data-i18n="gst.sys.lead">Every stabilization system combines multiple engineering layers working together.</p>
+      </div>
+
+      <div class="af-inner--split">
+        <div class="gst-diagram af-reveal">
+          <div class="gst-layer">
+            <span class="gst-layer-num">—</span>
+            <span class="gst-layer-label" data-i18n="gst.diag.truck">Heavy Truck</span>
+          </div>
+          <div class="gst-layer-arrow">↓</div>
+          <div class="gst-layer">
+            <span class="gst-layer-num">—</span>
+            <span class="gst-layer-label" data-i18n="gst.diag.aggregate">Aggregate Layer</span>
+          </div>
+          <div class="gst-layer-arrow">↓</div>
+          <div class="gst-layer gst-layer--hero">
+            <span class="gst-layer-num">01</span>
+            <span class="gst-layer-label" data-i18n="gst.diag.geocell">HDPE Geocell</span>
+            <span class="gst-layer-tag" data-i18n="gst.diag.geocell.tag">Confinement</span>
+          </div>
+          <div class="gst-layer-arrow">↓</div>
+          <div class="gst-layer">
+            <span class="gst-layer-num">02</span>
+            <span class="gst-layer-label" data-i18n="gst.diag.geogrid">Geogrid</span>
+          </div>
+          <div class="gst-layer-arrow">↓</div>
+          <div class="gst-layer">
+            <span class="gst-layer-num">03</span>
+            <span class="gst-layer-label" data-i18n="gst.diag.geotextile">Nonwoven Geotextile</span>
+          </div>
+          <div class="gst-layer-arrow">↓</div>
+          <div class="gst-layer">
+            <span class="gst-layer-num">—</span>
+            <span class="gst-layer-label" data-i18n="gst.diag.subgrade">Weak Saturated Subgrade</span>
+          </div>
+        </div>
+
+        <div class="af-systems-grid af-systems-grid--stacked">
+
+          <a href="geosynthetics.html#gs-cellular-confinement" class="af-system-card af-reveal">
+            <div class="af-system-num">01</div>
+            <h3 class="af-system-title" data-i18n="gst.prod1.title">HDPE Geocells</h3>
+            <p class="af-system-role" data-i18n="gst.prod1.role">Confinement</p>
+            <p class="af-system-desc" data-i18n="gst.prod1.desc">Contain aggregate. Increase bearing capacity. Reduce rutting.</p>
+            <span class="af-system-link">
+              <span data-i18n="gst.prod1.link">Explore HDPE Geocells</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            </span>
+          </a>
+
+          <a href="geosynthetics.html#gs-soil-reinforcement" class="af-system-card af-reveal">
+            <div class="af-system-num">02</div>
+            <h3 class="af-system-title" data-i18n="gst.prod2.title">Geogrids</h3>
+            <p class="af-system-role" data-i18n="gst.prod2.role">Reinforcement</p>
+            <p class="af-system-desc" data-i18n="gst.prod2.desc">Distribute loads. Increase stiffness. Reduce deformation.</p>
+            <span class="af-system-link">
+              <span data-i18n="gst.prod2.link">Explore Geogrids</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            </span>
+          </a>
+
+          <a href="geosynthetics.html#gs-geotextiles" class="af-system-card af-reveal">
+            <div class="af-system-num">03</div>
+            <h3 class="af-system-title" data-i18n="gst.prod3.title">Nonwoven Geotextiles</h3>
+            <p class="af-system-role" data-i18n="gst.prod3.role">Separation &amp; Filtration</p>
+            <p class="af-system-desc" data-i18n="gst.prod3.desc">Separate aggregate from weak soil. Prevent contamination. Improve drainage.</p>
+            <span class="af-system-link">
+              <span data-i18n="gst.prod3.link">Explore Geotextiles</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            </span>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Engineering Capabilities ─────────────────────────── -->
+  <section id="gst-capabilities" class="af-section">
+    <div class="af-inner af-inner--split">
+      <div class="af-cap-left af-reveal">
+        <span class="af-eyebrow" data-i18n="gst.cap.eyebrow">What We Deliver</span>
+        <h2 class="af-h2" data-i18n="gst.cap.h2">Engineering Capabilities</h2>
+        <p class="af-lead" data-i18n="gst.cap.lead">From bearing capacity assessment to long-term performance evaluation — one integrated engineering service.</p>
+      </div>
+      <div class="af-cap-right">
+        <div class="af-cap-item af-reveal">
+          <div class="af-cap-num">01</div>
+          <div class="af-cap-body">
+            <h4 data-i18n="gst.cap1.title">Bearing Capacity Assessment</h4>
+            <p data-i18n="gst.cap1.body">Site-specific subgrade evaluation to determine load-bearing performance and stabilization requirements.</p>
+          </div>
+        </div>
+        <div class="af-cap-item af-reveal">
+          <div class="af-cap-num">02</div>
+          <div class="af-cap-body">
+            <h4 data-i18n="gst.cap2.title">Working Platform Design</h4>
+            <p data-i18n="gst.cap2.body">Engineered platform thickness and material specification for cranes, piling rigs and heavy equipment.</p>
+          </div>
+        </div>
+        <div class="af-cap-item af-reveal">
+          <div class="af-cap-num">03</div>
+          <div class="af-cap-body">
+            <h4 data-i18n="gst.cap3.title">Construction Access Design</h4>
+            <p data-i18n="gst.cap3.body">Haul road and access corridor engineering for repeated heavy-vehicle traffic over soft ground.</p>
+          </div>
+        </div>
+        <div class="af-cap-item af-reveal">
+          <div class="af-cap-num">04</div>
+          <div class="af-cap-body">
+            <h4 data-i18n="gst.cap4.title">Aggregate Optimization</h4>
+            <p data-i18n="gst.cap4.body">Fill material selection and layer thickness calculated to minimize aggregate consumption without compromising performance.</p>
+          </div>
+        </div>
+        <div class="af-cap-item af-reveal">
+          <div class="af-cap-num">05</div>
+          <div class="af-cap-body">
+            <h4 data-i18n="gst.cap5.title">Ground Improvement Strategy</h4>
+            <p data-i18n="gst.cap5.body">Integrated confinement, reinforcement and separation strategy tailored to soil and hydrological conditions.</p>
+          </div>
+        </div>
+        <div class="af-cap-item af-reveal">
+          <div class="af-cap-num">06</div>
+          <div class="af-cap-body">
+            <h4 data-i18n="gst.cap6.title">Installation Support</h4>
+            <p data-i18n="gst.cap6.body">Technical oversight and quality assurance during geocell, geogrid and geotextile placement.</p>
+          </div>
+        </div>
+        <div class="af-cap-item af-reveal">
+          <div class="af-cap-num">07</div>
+          <div class="af-cap-body">
+            <h4 data-i18n="gst.cap7.title">Long-Term Performance Evaluation</h4>
+            <p data-i18n="gst.cap7.body">Ongoing monitoring of rutting, settlement and platform performance under operational loading.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Technical Advantages ─────────────────────────────── -->
+  <section id="gst-advantages" class="af-section af-section--light">
+    <div class="af-inner">
+      <div class="af-head af-reveal">
+        <span class="af-eyebrow af-eyebrow--gold" data-i18n="gst.adv.eyebrow">Engineering Outcomes</span>
+        <h2 class="af-h2" data-i18n="gst.adv.h2">Technical Advantages</h2>
+      </div>
+      <div class="af-stats-grid">
+        <div class="af-stat af-reveal">
+          <span class="af-stat-label" data-i18n="gst.adv1">Reduced Rutting</span>
+        </div>
+        <div class="af-stat af-reveal">
+          <span class="af-stat-label" data-i18n="gst.adv2">Improved Bearing Capacity</span>
+        </div>
+        <div class="af-stat af-reveal">
+          <span class="af-stat-label" data-i18n="gst.adv3">Lower Aggregate Requirements*</span>
+        </div>
+        <div class="af-stat af-reveal">
+          <span class="af-stat-label" data-i18n="gst.adv4">Faster Construction</span>
+        </div>
+        <div class="af-stat af-reveal">
+          <span class="af-stat-label" data-i18n="gst.adv5">Extended Service Life</span>
+        </div>
+        <div class="af-stat af-reveal">
+          <span class="af-stat-label" data-i18n="gst.adv6">More Reliable Construction Logistics</span>
+        </div>
+      </div>
+      <p class="af-stats-note" data-i18n="gst.adv.note">*Project dependent.</p>
+    </div>
+  </section>
+
+  <!-- ── Final CTA ─────────────────────────────────────────── -->
+  <section id="gst-cta" class="af-section gst-cta">
+    <img src="images/Ground Stabilization/Frame 9 GS.webp" alt="" class="gst-cta-photo" aria-hidden="true" />
+    <div class="gst-cta-overlay" aria-hidden="true"></div>
+    <div class="af-cta-inner af-reveal">
+      <span class="af-eyebrow af-eyebrow--gold" data-i18n="gst.cta.eyebrow">Start a Project</span>
+      <h2 class="af-cta-h2" data-i18n="gst.cta.h2">Build on Confidence.</h2>
+      <p class="af-cta-body" data-i18n="gst.cta.body">Every major infrastructure project begins with stable ground. INGE&amp;MAT engineers complete stabilization systems that transform weak subgrades into reliable foundations for roads, working platforms and critical infrastructure.</p>
+      <div class="af-cta-btns">
+        <a href="index.html#contact" class="gst-btn gst-btn--primary" data-i18n="gst.cta.btn1">Request Engineering Support</a>
+        <a href="geosynthetics.html" class="gst-btn gst-btn--ghost" data-i18n="gst.cta.btn2">View Geosynthetics</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./images/INGEMAT ICON.png" alt="INGE&MAT icon" class="footer-brand-icon" />
+      <div>
+        <span class="footer-brand-name">INGE&amp;MAT S.A.S</span>
+        <span class="footer-brand-sub">Ingeniería y Materiales</span>
+      </div>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="docs/Politica_Privacidad_INGEMAT.pdf" target="_blank" rel="noopener" class="footer-link" data-i18n="footer.privacy">Privacy Policy</a>
+      <a href="#" class="footer-link" data-i18n="footer.terms">Terms of Service</a>
+      <a href="#" class="footer-link" data-i18n="footer.sustainability">Sustainability</a>
+    </nav>
+    <span class="footer-copy" data-i18n="footer.copy">© 2024 INGE&amp;MAT. All rights reserved.</span>
+  </div>
+</footer>
+
+<a href="https://wa.link/trjia4" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contact us on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 32 32" fill="white"><path d="M16.001 3C9.096 3 3.5 8.596 3.5 15.5c0 2.42.674 4.686 1.845 6.615L3 29l7.062-2.293A12.437 12.437 0 0016 28c6.905 0 12.5-5.596 12.5-12.5S22.906 3 16.001 3zm0 22.688a10.13 10.13 0 01-5.166-1.417l-.37-.22-3.79 1.23 1.246-3.694-.24-.38a10.146 10.146 0 01-1.556-5.407c0-5.615 4.567-10.183 10.182-10.183 5.615 0 10.183 4.568 10.183 10.183 0 5.616-4.568 10.183-10.183 10.183 0 0-.001 0 0 0zm5.577-7.633c-.306-.153-1.81-.893-2.09-.994-.28-.102-.485-.153-.69.153-.204.306-.79.994-.968 1.198-.178.204-.357.23-.663.077-.306-.153-1.29-.475-2.457-1.516-.908-.81-1.522-1.812-1.7-2.118-.178-.306-.019-.472.134-.624.138-.137.306-.357.459-.535.153-.178.204-.306.306-.51.102-.204.051-.383-.026-.536-.077-.153-.69-1.664-.945-2.28-.249-.598-.502-.517-.69-.526l-.588-.01c-.204 0-.535.076-.816.382-.28.306-1.07 1.046-1.07 2.55 0 1.505 1.095 2.96 1.248 3.164.153.204 2.155 3.291 5.222 4.615.73.315 1.298.503 1.742.643.732.233 1.398.2 1.924.121.587-.088 1.81-.74 2.065-1.454.255-.714.255-1.326.178-1.454-.076-.128-.28-.204-.586-.357z"/></svg>
+</a>
+
+<script type="module" src="ground-stabilization.js"></script>
+</body>
+</html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coastal Protection — INGE&amp;MAT</title>
+  <meta name="description" content="Integrated coastal engineering systems — geosynthetics, amorphous gabions and steel sheet piles engineered for complete shoreline and marine protection." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Nunito:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="./images/INGEMAT ICON.png" type="image/png" />
+
+  <!-- Preload every frame — no flicker -->
+  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 1.webp" />
+  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 2.webp" />
+  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 3.webp" />
+  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 4.webp" />
+  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 5.webp" />
+  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 6.webp" />
+  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 7.webp" />
+  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 8.webp" />
+  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 9.webp" />
+  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 10.webp" />
+  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 11.webp" />
+  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 12.webp" />
+  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 13.webp" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="coastal-protection.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
+</head>
+<body class="cp-page">
+
+<!-- ══════════════════════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════════════════════ -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="./images/INGEMAT ICON.png" alt="INGE&MAT icon" class="nav-logo-icon" />
+      INGE&amp;MAT S.A.S
+      <span class="nav-logo-sub">Ingeniería y Materiales</span>
+    </a>
+    <div class="nav-center">
+      <div class="nav-links">
+        <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+        <div class="nav-item nav-item--dropdown">
+          <a href="index.html#solutions" class="nav-link active" data-i18n="nav.solutions">Solutions</a>
+          <div class="mega-menu">
+            <a href="coastal-protection.html" class="mega-sub" style="color:#ddcc0f;" data-i18n="nav.sub.coastal">Coastal Protection</a>
+            <a href="ground-stabilization.html" class="mega-sub" data-i18n="nav.sub.ground">Ground Stabilization</a>
+            <a href="index.html#solutions" class="mega-sub" data-i18n="nav.sub.marine">Marine Infrastructure</a>
+            <a href="index.html#solutions" class="mega-sub" data-i18n="nav.sub.retaining">Retaining Structures</a>
+            <a href="index.html#solutions" class="mega-sub" data-i18n="nav.sub.mining">Mining &amp; Energy</a>
+          </div>
+        </div>
+        <div class="nav-item nav-item--dropdown">
+          <a href="#" class="nav-link" data-i18n="nav.products">Products</a>
+          <div class="mega-menu">
+            <a href="steel-solutions.html" class="mega-sub" data-i18n="nav.sub.steel">Steel</a>
+            <a href="geosynthetics.html" class="mega-sub" data-i18n="nav.sub.geosyn">Geosynthetics</a>
+            <a href="amorphous-gabions.html" class="mega-sub" data-i18n="nav.sub.rocks">Amorphous Gabions</a>
+          </div>
+        </div>
+        <a href="index.html#capabilities" class="nav-link" data-i18n="nav.capabilities">Capabilities</a>
+        <a href="index.html#about"        class="nav-link" data-i18n="nav.about">About</a>
+        <a href="index.html#contact"      class="nav-link" data-i18n="nav.contact">Contact</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
+        <span class="lang-opt lang-active" id="lang-en">EN</span>
+        <span class="lang-sep">/</span>
+        <span class="lang-opt" id="lang-es">ES</span>
+      </button>
+      <a href="index.html#contact" class="nav-cta" data-i18n="nav.enquire">Enquire</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+    <div class="nav-mobile-links">
+      <a href="index.html" class="nav-mobile-link" data-i18n="nav.home">Home</a>
+      <div class="nav-mobile-item">
+        <button class="nav-mobile-trigger is-open" aria-expanded="true">
+          <span data-i18n="nav.solutions">Solutions</span>
+          <svg class="nav-mobile-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="nav-mobile-sub is-open">
+          <a href="coastal-protection.html" class="nav-mobile-sub-link" style="color:#ddcc0f;" data-i18n="nav.sub.coastal">Coastal Protection</a>
+          <a href="ground-stabilization.html" class="nav-mobile-sub-link" data-i18n="nav.sub.ground">Ground Stabilization</a>
+          <a href="index.html#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.marine">Marine Infrastructure</a>
+          <a href="index.html#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.retaining">Retaining Structures</a>
+          <a href="index.html#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.mining">Mining &amp; Energy</a>
+        </div>
+      </div>
+      <div class="nav-mobile-item">
+        <button class="nav-mobile-trigger" aria-expanded="false">
+          <span data-i18n="nav.products">Products</span>
+          <svg class="nav-mobile-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="nav-mobile-sub">
+          <a href="steel-solutions.html" class="nav-mobile-sub-link" data-i18n="nav.sub.steel">Steel</a>
+          <a href="geosynthetics.html" class="nav-mobile-sub-link" data-i18n="nav.sub.geosyn">Geosynthetics</a>
+          <a href="amorphous-gabions.html" class="nav-mobile-sub-link" data-i18n="nav.sub.rocks">Amorphous Gabions</a>
+        </div>
+      </div>
+      <a href="index.html#capabilities" class="nav-mobile-link" data-i18n="nav.capabilities">Capabilities</a>
+      <a href="index.html#about"        class="nav-mobile-link" data-i18n="nav.about">About</a>
+      <a href="index.html#contact"      class="nav-mobile-link" data-i18n="nav.contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════════
+     CINEMA SECTION — 900vh pinned image sequence
+══════════════════════════════════════════════════════════ -->
+<section id="cinema-section" aria-label="Coastal protection engineering sequence">
+
+  <div id="cinema-viewport">
+
+    <!-- ── Frame Stage ─────────────────────────────────────── -->
+    <div id="frame-stage" aria-hidden="true">
+      <img src="images/Coastal protection frames/Frame 1.webp"  class="cp-frame is-active" data-frame="1"  alt="" />
+      <img src="images/Coastal protection frames/Frame 2.webp"  class="cp-frame" data-frame="2"  alt="" />
+      <img src="images/Coastal protection frames/Frame 3.webp"  class="cp-frame" data-frame="3"  alt="" />
+      <img src="images/Coastal protection frames/Frame 4.webp"  class="cp-frame" data-frame="4"  alt="" />
+      <img src="images/Coastal protection frames/Frame 5.webp"  class="cp-frame" data-frame="5"  alt="" />
+      <img src="images/Coastal protection frames/Frame 6.webp"  class="cp-frame" data-frame="6"  alt="" />
+      <img src="images/Coastal protection frames/Frame 7.webp"  class="cp-frame" data-frame="7"  alt="" />
+      <img src="images/Coastal protection frames/Frame 8.webp"  class="cp-frame" data-frame="8"  alt="" />
+      <img src="images/Coastal protection frames/Frame 9.webp"  class="cp-frame" data-frame="9"  alt="" />
+      <img src="images/Coastal protection frames/Frame 10.webp" class="cp-frame" data-frame="10" alt="" />
+      <img src="images/Coastal protection frames/Frame 11.webp" class="cp-frame" data-frame="11" alt="" />
+      <img src="images/Coastal protection frames/Frame 12.webp" class="cp-frame" data-frame="12" alt="" />
+      <img src="images/Coastal protection frames/Frame 13.webp" class="cp-frame" data-frame="13" alt="" />
+    </div>
+
+    <!-- ── Cinematic overlays ──────────────────────────────── -->
+    <div class="cinema-vignette" aria-hidden="true"></div>
+    <div class="cinema-gradient-top" aria-hidden="true"></div>
+    <div class="cinema-gradient-bottom" aria-hidden="true"></div>
+
+    <!-- ── Chapter Cards ───────────────────────────────────── -->
+    <div id="cards-layer">
+
+      <!-- Chapter 1 — Opening -->
+      <div class="cp-card cp-card--center" id="card-ch1">
+        <div class="cp-card-eyebrow" data-i18n="cp.ch1.eyebrow">Coastal Engineering</div>
+        <h1 class="cp-card-h1" data-i18n-html="cp.ch1.h1">Coastal<br>Protection</h1>
+        <p class="cp-card-sub" data-i18n="cp.ch1.sub">Integrated engineering systems designed to protect coastlines, infrastructure and marine assets.</p>
+        <div class="cp-card-scroll-cue" id="scroll-cue">
+          <span data-i18n="cp.ch1.scroll">Scroll to explore</span>
+          <svg width="16" height="24" viewBox="0 0 16 24" fill="none" aria-hidden="true">
+            <rect x="1" y="1" width="14" height="22" rx="7" stroke="currentColor" stroke-width="1.2"/>
+            <circle class="scroll-dot" cx="8" cy="8" r="2.5" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Chapter 2 — The Challenge -->
+      <div class="cp-card cp-card--left-mid" id="card-ch2">
+        <h2 class="cp-card-h2" data-i18n="cp.ch2.h2">The Challenge</h2>
+        <p class="cp-card-body" data-i18n="cp.ch2.body1">Every coastline is constantly reshaped by waves, tides, currents and sediment transport.</p>
+        <p class="cp-card-body" data-i18n="cp.ch2.body2">Without engineered protection, erosion gradually threatens critical infrastructure.</p>
+      </div>
+
+      <!-- Chapter 3 — Preparation -->
+      <div class="cp-card cp-card--right-lower" id="card-ch3">
+        <h2 class="cp-card-h2" data-i18n="cp.ch3.h2">Preparation</h2>
+        <p class="cp-card-body" data-i18n="cp.ch3.body">Every successful coastal engineering project begins with accurate surveying, grading and site preparation.</p>
+      </div>
+
+      <!-- Chapter 4 — Geotextiles -->
+      <div class="cp-card cp-card--left-lower cp-card--product" id="card-ch4">
+        <div class="cp-card-number">01</div>
+        <h2 class="cp-card-h2" data-i18n="cp.ch4.h2">Geotextiles</h2>
+        <p class="cp-card-body" data-i18n="cp.ch4.body">High-performance nonwoven geotextiles separate, filter and protect the underlying soil while allowing controlled water flow.</p>
+        <a href="geosynthetics.html" class="cp-card-btn" data-i18n="cp.ch4.btn">Explore Geotextiles</a>
+      </div>
+
+      <!-- Chapter 5 — Amorphous Gabions -->
+      <div class="cp-card cp-card--right-mid cp-card--product" id="card-ch5">
+        <div class="cp-card-number">02</div>
+        <h2 class="cp-card-h2" data-i18n="cp.ch5.h2">Amorphous Gabions</h2>
+        <p class="cp-card-body" data-i18n="cp.ch5.body">Flexible HDPE gabion systems conform naturally to the terrain while dissipating hydraulic energy and preventing scour.</p>
+        <a href="amorphous-gabions.html" class="cp-card-btn" data-i18n="cp.ch5.btn">Explore Amorphous Gabions</a>
+      </div>
+
+      <!-- Chapter 6 — One Integrated System -->
+      <div class="cp-card cp-card--center cp-card--wide" id="card-ch6">
+        <h2 class="cp-card-h2-large" data-i18n="cp.ch6.h2">One Integrated System</h2>
+        <p class="cp-card-body cp-card-body--centered" data-i18n="cp.ch6.body">Engineering performance comes from combining materials into one resilient system.</p>
+      </div>
+
+      <!-- Chapter 7 — Performance -->
+      <div class="cp-card cp-card--top-right cp-card--compact" id="card-ch7">
+        <h3 class="cp-card-h3" data-i18n="cp.ch7.h3">Performance</h3>
+        <p class="cp-card-body" data-i18n="cp.ch7.body">Wave energy is absorbed, dissipated and redirected — while the shoreline remains protected.</p>
+      </div>
+
+      <!-- Chapter 8 — Beyond Shoreline -->
+      <div class="cp-card cp-card--left-mid" id="card-ch8">
+        <h2 class="cp-card-h2" data-i18n-html="cp.ch8.h2">Beyond Shoreline<br>Protection</h2>
+        <p class="cp-card-body" data-i18n="cp.ch8.body">Coastal engineering naturally evolves into larger marine infrastructure projects.</p>
+      </div>
+
+      <!-- Chapter 9 — Steel Sheet Piles -->
+      <div class="cp-card cp-card--right-lower cp-card--product" id="card-ch9">
+        <div class="cp-card-number">03</div>
+        <h2 class="cp-card-h2" data-i18n="cp.ch9.h2">Steel Sheet Piles</h2>
+        <p class="cp-card-body" data-i18n="cp.ch9.body">Steel sheet piles provide vertical retention where coastal protection transitions into ports, flood barriers and marine retaining structures.</p>
+        <a href="steel-solutions.html" class="cp-card-btn" data-i18n="cp.ch9.btn">Explore Steel</a>
+      </div>
+
+      <!-- Chapter 10 — Integrated Marine -->
+      <div class="cp-card cp-card--center-lower" id="card-ch10">
+        <h2 class="cp-card-h2" data-i18n="cp.ch10.h2">Integrated Marine Engineering</h2>
+        <ul class="cp-card-list">
+          <li data-i18n="cp.ch10.li1">Gabions protect the toe.</li>
+          <li data-i18n="cp.ch10.li2">Geotextiles stabilize the foundation.</li>
+          <li data-i18n="cp.ch10.li3">Steel retains the structure.</li>
+        </ul>
+        <p class="cp-card-body" data-i18n="cp.ch10.body">Together they create resilient marine infrastructure.</p>
+      </div>
+
+      <!-- Chapter 11 — Built for Generations -->
+      <div class="cp-card cp-card--center" id="card-ch11">
+        <h2 class="cp-card-h2-large" data-i18n="cp.ch11.h2">Built For Generations</h2>
+        <ul class="cp-card-list cp-card-list--centered">
+          <li data-i18n="cp.ch11.li1">Designed for durability.</li>
+          <li data-i18n="cp.ch11.li2">Engineered for resilience.</li>
+          <li data-i18n="cp.ch11.li3">Integrated into the landscape.</li>
+        </ul>
+      </div>
+
+      <!-- Chapter 12 — Engineering Complete -->
+      <div class="cp-card cp-card--bottom-center cp-card--minimal" id="card-ch12">
+        <span class="cp-card-complete" data-i18n="cp.ch12.complete">Engineering Complete.</span>
+      </div>
+
+      <!-- Chapter 13 — Final Hero -->
+      <div class="cp-card cp-card--final-hero" id="card-ch13">
+        <div class="cp-card-eyebrow">INGE&amp;MAT</div>
+        <h2 class="cp-card-h1-final" data-i18n="cp.ch13.h1">Coastal Protection</h2>
+        <p class="cp-card-sub-final" data-i18n="cp.ch13.sub">Integrated Engineering Systems</p>
+        <p class="cp-card-body cp-card-body--final" data-i18n="cp.ch13.body">From shoreline stabilization to marine infrastructure, INGE&amp;MAT engineers complete coastal protection systems by combining geosynthetics, steel and advanced scour protection technologies.</p>
+        <div class="cp-card-btns">
+          <a href="geosynthetics.html" class="cp-btn--final">
+            <span data-i18n="cp.ch13.btn2">View Products</span>
+            <span class="cp-btn-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /#cards-layer -->
+
+    <!-- ── Cinema progress bar ─────────────────────────────── -->
+    <div id="cinema-progress" aria-hidden="true">
+      <div id="cinema-progress-fill"></div>
+    </div>
+
+    <!-- ── Chapter timeline ───────────────────────────────── -->
+    <div id="cinema-timeline" aria-hidden="true">
+      <div class="tl-row">
+        <span class="tl-dot" data-ch="1"></span>
+        <span class="tl-dot" data-ch="2"></span>
+        <span class="tl-dot" data-ch="3"></span>
+        <span class="tl-dot" data-ch="4"></span>
+        <span class="tl-dot" data-ch="5"></span>
+        <span class="tl-dot" data-ch="6"></span>
+        <span class="tl-dot" data-ch="7"></span>
+        <span class="tl-dot" data-ch="8"></span>
+        <span class="tl-dot" data-ch="9"></span>
+        <span class="tl-dot" data-ch="10"></span>
+        <span class="tl-dot" data-ch="11"></span>
+        <span class="tl-dot" data-ch="12"></span>
+        <span class="tl-dot" data-ch="13"></span>
+      </div>
+      <div id="tl-label"></div>
+    </div>
+
+  </div><!-- /#cinema-viewport -->
+</section><!-- /#cinema-section -->
+
+<!-- ══════════════════════════════════════════════════════════
+     AFTER-FILM CONTENT
+══════════════════════════════════════════════════════════ -->
+<main id="after-film">
+
+  <!-- ── Featured Coastal Applications ────────────────────── -->
+  <section id="coastal-applications" class="af-section">
+    <div class="af-inner">
+      <div class="af-head af-reveal">
+        <span class="af-eyebrow" data-i18n="cp.af.apps.eyebrow">Where We Work</span>
+        <h2 class="af-h2" data-i18n="cp.af.apps.h2">Featured Coastal Applications</h2>
+        <p class="af-lead" data-i18n="cp.af.apps.lead">From sandy beaches to industrial ports — integrated engineering for every coastal environment.</p>
+      </div>
+      <div class="af-apps-grid">
+
+        <div class="af-app-card af-reveal">
+          <div class="af-app-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M4 24c4-6 8-2 12-6s8-6 12 0"/><path d="M4 20c4-4 8-2 12-4s8-4 12 2"/><rect x="6" y="24" width="20" height="4" rx="1"/></svg>
+          </div>
+          <h3 class="af-app-title" data-i18n="cp.af.app1.title">Shoreline Revetment</h3>
+          <p class="af-app-desc" data-i18n="cp.af.app1.desc">Gabion armor over geotextile separation layers stabilizes exposed sandy and rocky coastlines under sustained wave attack.</p>
+          <div class="af-app-tags">
+            <a href="amorphous-gabions.html#ag-variants" data-i18n="cp.af.app1.tag1">Amorphous Gabions</a>
+            <a href="geosynthetics.html#gs-geotextiles" data-i18n="cp.af.app1.tag2">Nonwoven Geotextile</a>
+          </div>
+        </div>
+
+        <div class="af-app-card af-reveal">
+          <div class="af-app-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="16" cy="16" r="8"/><path d="M16 4v4M16 24v4M4 16h4M24 16h4"/><path d="M8.93 8.93l2.83 2.83M20.24 20.24l2.83 2.83"/></svg>
+          </div>
+          <h3 class="af-app-title" data-i18n="cp.af.app2.title">Scour Protection</h3>
+          <p class="af-app-desc" data-i18n="cp.af.app2.desc">Flexible gabion mattresses deployed around bridge piers, offshore foundations and quay walls prevent progressive seabed erosion.</p>
+          <div class="af-app-tags">
+            <a href="amorphous-gabions.html#ag-variants" data-i18n="cp.af.app2.tag1">Amorphous Gabions Type S</a>
+            <a href="geosynthetics.html#gs-geotextiles" data-i18n="cp.af.app2.tag2">Filter Geotextile</a>
+          </div>
+        </div>
+
+        <div class="af-app-card af-reveal">
+          <div class="af-app-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="4" y="18" width="24" height="10" rx="1"/><path d="M8 18v-8h16v8"/><path d="M12 10V6h8v4"/><path d="M4 28h24"/></svg>
+          </div>
+          <h3 class="af-app-title" data-i18n="cp.af.app3.title">Port &amp; Harbor Defense</h3>
+          <p class="af-app-desc" data-i18n="cp.af.app3.desc">Sheet pile quay walls combined with gabion toe aprons and geotextile filters provide complete port protection under tidal loading.</p>
+          <div class="af-app-tags">
+            <a href="steel-solutions.html#ss-structural-steel" data-i18n="cp.af.app3.tag1">Steel Sheet Piles</a>
+            <a href="amorphous-gabions.html#ag-variants" data-i18n="cp.af.app3.tag2">Amorphous Gabions</a>
+          </div>
+        </div>
+
+        <div class="af-app-card af-reveal">
+          <div class="af-app-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M4 26l6-14 6 8 4-6 8 12"/><path d="M4 26h24"/></svg>
+          </div>
+          <h3 class="af-app-title" data-i18n="cp.af.app4.title">Coastal Road Embankments</h3>
+          <p class="af-app-desc" data-i18n="cp.af.app4.desc">Geocell-reinforced slopes clad with gabion armor protect road embankments from wave runup and hydraulic scour.</p>
+          <div class="af-app-tags">
+            <a href="geosynthetics.html#gs-cellular-confinement" data-i18n="cp.af.app4.tag1">Geocell Systems</a>
+            <a href="amorphous-gabions.html#ag-variants" data-i18n="cp.af.app4.tag2">Amorphous Gabions</a>
+          </div>
+        </div>
+
+        <div class="af-app-card af-reveal">
+          <div class="af-app-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M4 20q6-8 12 0t12 0"/><path d="M4 26q6-6 12 0t12 0"/><path d="M16 10v4M16 6v2"/></svg>
+          </div>
+          <h3 class="af-app-title" data-i18n="cp.af.app5.title">River Training Works</h3>
+          <p class="af-app-desc" data-i18n="cp.af.app5.desc">Delta bank protection and training wall stabilization using geotextile-backed gabion revetment to manage sediment and flow.</p>
+          <div class="af-app-tags">
+            <a href="amorphous-gabions.html#ag-variants" data-i18n="cp.af.app5.tag1">Amorphous Gabions</a>
+            <a href="geosynthetics.html#gs-soil-reinforcement" data-i18n="cp.af.app5.tag2">Woven Geogrid</a>
+          </div>
+        </div>
+
+        <div class="af-app-card af-reveal">
+          <div class="af-app-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M16 4l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z"/><path d="M8 22l-4 6M24 22l4 6"/></svg>
+          </div>
+          <h3 class="af-app-title" data-i18n="cp.af.app6.title">Offshore Wind Foundations</h3>
+          <p class="af-app-desc" data-i18n="cp.af.app6.desc">Rock-filled gabion mattresses form permanent scour aprons around monopiles that flex with seabed settlement over the turbine's operational life.</p>
+          <div class="af-app-tags">
+            <a href="amorphous-gabions.html#ag-variants" data-i18n="cp.af.app6.tag1">Amorphous Gabions Type S</a>
+            <a href="geosynthetics.html#gs-geotextiles" data-i18n="cp.af.app6.tag2">Filter Geotextile</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Integrated Coastal Systems ───────────────────────── -->
+  <section id="integrated-systems" class="af-section af-section--light">
+    <div class="af-inner">
+      <div class="af-head af-reveal">
+        <span class="af-eyebrow af-eyebrow--gold" data-i18n="cp.af.sys.eyebrow">The Material System</span>
+        <h2 class="af-h2" data-i18n="cp.af.sys.h2">Integrated Coastal Systems</h2>
+        <p class="af-lead" data-i18n="cp.af.sys.lead">Three product families. One complete engineering system. Each material fulfills a specific hydraulic role.</p>
+      </div>
+      <div class="af-systems-grid">
+
+        <a href="geosynthetics.html" class="af-system-card af-reveal">
+          <div class="af-system-num">01</div>
+          <h3 class="af-system-title" data-i18n="cp.af.sys1.title">Geosynthetics</h3>
+          <p class="af-system-role" data-i18n="cp.af.sys1.role">Foundation · Separation · Filtration</p>
+          <p class="af-system-desc" data-i18n="cp.af.sys1.desc">Nonwoven and woven geotextiles, geogrids and geocells form the invisible foundation of every coastal system — separating materials, controlling drainage and reinforcing weak subgrades.</p>
+          <span class="af-system-link">
+            <span data-i18n="cp.af.sys1.link">Explore Geosynthetics</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          </span>
+        </a>
+
+        <a href="amorphous-gabions.html" class="af-system-card af-reveal">
+          <div class="af-system-num">02</div>
+          <h3 class="af-system-title" data-i18n="cp.af.sys2.title">Amorphous Gabions</h3>
+          <p class="af-system-role" data-i18n="cp.af.sys2.role">Armor · Energy Dissipation · Scour Control</p>
+          <p class="af-system-desc" data-i18n="cp.af.sys2.desc">Flexible HDPE mesh systems filled with rock or concrete conform to irregular coastal geometry, absorb wave energy and prevent seabed scour without rigid concrete structures.</p>
+          <span class="af-system-link">
+            <span data-i18n="cp.af.sys2.link">Explore Amorphous Gabions</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          </span>
+        </a>
+
+        <a href="steel-solutions.html" class="af-system-card af-reveal">
+          <div class="af-system-num">03</div>
+          <h3 class="af-system-title" data-i18n="cp.af.sys3.title">Steel Sheet Piles</h3>
+          <p class="af-system-role" data-i18n="cp.af.sys3.role">Vertical Retention · Flood Barriers · Marine Walls</p>
+          <p class="af-system-desc" data-i18n="cp.af.sys3.desc">Hot-rolled and cold-formed steel sheet piles deliver structural vertical retention where the coastal protection system transitions into ports, harbors, flood barriers and marine retaining walls.</p>
+          <span class="af-system-link">
+            <span data-i18n="cp.af.sys3.link">Explore Steel</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          </span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Engineering Capabilities ─────────────────────────── -->
+  <section id="engineering-capabilities" class="af-section">
+    <div class="af-inner af-inner--split">
+      <div class="af-cap-left af-reveal">
+        <span class="af-eyebrow" data-i18n="cp.af.cap.eyebrow">What We Deliver</span>
+        <h2 class="af-h2" data-i18n="cp.af.cap.h2">Engineering Capabilities</h2>
+        <p class="af-lead" data-i18n="cp.af.cap.lead">From hydraulic analysis to long-term performance monitoring — one integrated engineering service.</p>
+      </div>
+      <div class="af-cap-right">
+        <div class="af-cap-item af-reveal">
+          <div class="af-cap-num">01</div>
+          <div class="af-cap-body">
+            <h4 data-i18n="cp.af.cap1.title">Hydraulic &amp; Wave Analysis</h4>
+            <p data-i18n="cp.af.cap1.body">Site-specific wave climate characterization, current velocity profiling and extreme event design to applicable standards.</p>
+          </div>
+        </div>
+        <div class="af-cap-item af-reveal">
+          <div class="af-cap-num">02</div>
+          <div class="af-cap-body">
+            <h4 data-i18n="cp.af.cap2.title">Scour Apron Design</h4>
+            <p data-i18n="cp.af.cap2.body">Rock fill size, gabion thickness and apron geometry calculated for hydraulic stability under design-event conditions.</p>
+          </div>
+        </div>
+        <div class="af-cap-item af-reveal">
+          <div class="af-cap-num">03</div>
+          <div class="af-cap-body">
+            <h4 data-i18n="cp.af.cap3.title">Material Specification</h4>
+            <p data-i18n="cp.af.cap3.body">Product selection, fill material specification and interlayer compatibility verification for the complete coastal stack.</p>
+          </div>
+        </div>
+        <div class="af-cap-item af-reveal">
+          <div class="af-cap-num">04</div>
+          <div class="af-cap-body">
+            <h4 data-i18n="cp.af.cap4.title">Supply &amp; Logistics</h4>
+            <p data-i18n="cp.af.cap4.body">Manufacturing, QA and delivery to site — pre-filled mattresses or flat-packed units depending on installation method.</p>
+          </div>
+        </div>
+        <div class="af-cap-item af-reveal">
+          <div class="af-cap-num">05</div>
+          <div class="af-cap-body">
+            <h4 data-i18n="cp.af.cap5.title">Installation Supervision</h4>
+            <p data-i18n="cp.af.cap5.body">Technical oversight and real-time quality assurance for above and below waterline placement accuracy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Technical Advantages ─────────────────────────────── -->
+  <section id="technical-advantages" class="af-section af-section--light">
+    <div class="af-inner">
+      <div class="af-head af-reveal">
+        <span class="af-eyebrow af-eyebrow--gold" data-i18n="cp.af.stats.eyebrow">The Numbers</span>
+        <h2 class="af-h2" data-i18n="cp.af.stats.h2">Technical Advantages</h2>
+      </div>
+      <div class="af-stats-grid">
+        <div class="af-stat af-reveal">
+          <span class="af-stat-num">70–90%</span>
+          <span class="af-stat-label" data-i18n="cp.af.stat1">Wave energy reduction through porous gabion armor</span>
+        </div>
+        <div class="af-stat af-reveal">
+          <span class="af-stat-num">50+</span>
+          <span class="af-stat-label" data-i18n="cp.af.stat2">Year design life for correctly specified systems</span>
+        </div>
+        <div class="af-stat af-reveal">
+          <span class="af-stat-num">0</span>
+          <span class="af-stat-label" data-i18n="cp.af.stat3">Crane vessels required in most installations</span>
+        </div>
+        <div class="af-stat af-reveal">
+          <span class="af-stat-num">360°</span>
+          <span class="af-stat-label" data-i18n="cp.af.stat4">Full apron coverage — no exposed edges to initiate failure</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact CTA ───────────────────────────────────────── -->
+  <section id="coastal-cta" class="af-section af-cta">
+    <div class="af-cta-inner af-reveal">
+      <span class="af-eyebrow af-eyebrow--gold" data-i18n="cp.af.cta.eyebrow">Start a Project</span>
+      <h2 class="af-cta-h2" data-i18n="cp.af.cta.h2">Let's protect your coastline.</h2>
+      <p class="af-cta-body" data-i18n="cp.af.cta.body">Our engineers work from sea to structure — hydraulic assessment, materials specification and installation support in one integrated service.</p>
+      <div class="af-cta-btns">
+        <a href="index.html#contact" class="cp-btn cp-btn--primary" data-i18n="cp.af.cta.btn1">Request Technical Assistance</a>
+        <a href="index.html#contact" class="cp-btn cp-btn--ghost" data-i18n="cp.af.cta.btn2">Talk to an Engineer</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./images/INGEMAT ICON.png" alt="INGE&MAT icon" class="footer-brand-icon" />
+      <div>
+        <span class="footer-brand-name">INGE&amp;MAT S.A.S</span>
+        <span class="footer-brand-sub">Ingeniería y Materiales</span>
+      </div>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="docs/Politica_Privacidad_INGEMAT.pdf" target="_blank" rel="noopener" class="footer-link" data-i18n="footer.privacy">Privacy Policy</a>
+      <a href="#" class="footer-link" data-i18n="footer.terms">Terms of Service</a>
+      <a href="#" class="footer-link" data-i18n="footer.sustainability">Sustainability</a>
+    </nav>
+    <span class="footer-copy" data-i18n="footer.copy">© 2024 INGE&amp;MAT. All rights reserved.</span>
+  </div>
+</footer>
+
+<a href="https://wa.link/trjia4" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contact us on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="#fff">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.738 5.48 2.031 7.785L0 32l8.438-2.01A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.771-1.854l-.486-.29-5.01 1.195 1.234-4.87-.318-.5A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.908c-.398-.199-2.354-1.162-2.719-1.294-.365-.133-.63-.199-.896.199-.265.398-1.029 1.294-1.261 1.56-.232.265-.465.298-.863.1-.398-.2-1.681-.62-3.202-1.977-1.183-1.056-1.982-2.36-2.214-2.758-.232-.398-.025-.613.174-.811.179-.178.398-.465.597-.697.199-.232.265-.398.398-.664.133-.265.066-.497-.033-.697-.1-.199-.896-2.16-1.228-2.957-.323-.776-.651-.671-.896-.683l-.763-.013c-.265 0-.697.1-.1063.497-.365.398-1.394 1.362-1.394 3.322s1.427 3.854 1.626 4.12c.199.265 2.808 4.287 6.803 6.013.951.41 1.693.655 2.271.839.954.304 1.823.261 2.51.158.765-.114 2.354-.962 2.686-1.892.332-.93.332-1.727.232-1.892-.099-.166-.365-.265-.763-.464z"/>
+  </svg>
+</a>
+
+<script type="module" src="coastal-protection.js"></script>
+</body>
+</html>

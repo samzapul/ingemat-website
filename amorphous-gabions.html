@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amorphous Gabions — INGE&amp;MAT</title>
+  <meta name="description" content="Amorphous Gabions — flexible scour protection and hydraulic stabilization systems engineered by INGE&amp;MAT for marine, coastal, river, and infrastructure applications." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Nunito:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="./images/INGEMAT ICON.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="amorphous-gabions.css" />
+</head>
+<body class="ag-page">
+
+<!-- ══════════════════════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════════════════════ -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="./images/INGEMAT ICON.png" alt="INGE&MAT icon" class="nav-logo-icon" />
+      INGE&amp;MAT S.A.S
+      <span class="nav-logo-sub">Ingeniería y Materiales</span>
+    </a>
+    <div class="nav-center">
+      <div class="nav-links">
+        <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+        <div class="nav-item nav-item--dropdown">
+          <a href="index.html#solutions" class="nav-link" data-i18n="nav.solutions">Solutions</a>
+          <div class="mega-menu">
+            <a href="coastal-protection.html" class="mega-sub" data-i18n="nav.sub.coastal">Coastal Protection</a>
+            <a href="ground-stabilization.html" class="mega-sub" data-i18n="nav.sub.ground">Ground Stabilization</a>
+            <a href="index.html#solutions" class="mega-sub" data-i18n="nav.sub.marine">Marine Infrastructure</a>
+            <a href="index.html#solutions" class="mega-sub" data-i18n="nav.sub.retaining">Retaining Structures</a>
+            <a href="index.html#solutions" class="mega-sub" data-i18n="nav.sub.mining">Mining &amp; Energy</a>
+          </div>
+        </div>
+        <div class="nav-item nav-item--dropdown">
+          <a href="#" class="nav-link active" data-i18n="nav.products">Products</a>
+          <div class="mega-menu">
+            <a href="steel-solutions.html" class="mega-sub" data-i18n="nav.sub.steel">Steel</a>
+            <a href="geosynthetics.html" class="mega-sub" data-i18n="nav.sub.geosyn">Geosynthetics</a>
+            <a href="amorphous-gabions.html" class="mega-sub" style="color:#ddcc0f;" data-i18n="nav.sub.rocks">Amorphous Gabions</a>
+          </div>
+        </div>
+        <a href="index.html#capabilities" class="nav-link" data-i18n="nav.capabilities">Capabilities</a>
+        <a href="index.html#about"        class="nav-link" data-i18n="nav.about">About</a>
+        <a href="index.html#contact"      class="nav-link" data-i18n="nav.contact">Contact</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
+        <span class="lang-opt lang-active" id="lang-en">EN</span>
+        <span class="lang-sep">/</span>
+        <span class="lang-opt" id="lang-es">ES</span>
+      </button>
+      <a href="index.html#contact" class="nav-cta" data-i18n="nav.enquire">Enquire</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+    <div class="nav-mobile-links">
+      <a href="index.html" class="nav-mobile-link" data-i18n="nav.home">Home</a>
+      <div class="nav-mobile-item">
+        <button class="nav-mobile-trigger" aria-expanded="false">
+          <span data-i18n="nav.solutions">Solutions</span>
+          <svg class="nav-mobile-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="nav-mobile-sub">
+          <a href="coastal-protection.html" class="nav-mobile-sub-link" data-i18n="nav.sub.coastal">Coastal Protection</a>
+          <a href="ground-stabilization.html" class="nav-mobile-sub-link" data-i18n="nav.sub.ground">Ground Stabilization</a>
+          <a href="index.html#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.marine">Marine Infrastructure</a>
+          <a href="index.html#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.retaining">Retaining Structures</a>
+          <a href="index.html#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.mining">Mining &amp; Energy</a>
+        </div>
+      </div>
+      <div class="nav-mobile-item">
+        <button class="nav-mobile-trigger is-open" aria-expanded="true">
+          <span data-i18n="nav.products">Products</span>
+          <svg class="nav-mobile-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="nav-mobile-sub is-open">
+          <a href="steel-solutions.html" class="nav-mobile-sub-link" data-i18n="nav.sub.steel">Steel</a>
+          <a href="geosynthetics.html" class="nav-mobile-sub-link" data-i18n="nav.sub.geosyn">Geosynthetics</a>
+          <a href="amorphous-gabions.html" class="nav-mobile-sub-link" style="color:#ddcc0f;" data-i18n="nav.sub.rocks">Amorphous Gabions</a>
+        </div>
+      </div>
+      <a href="index.html#capabilities" class="nav-mobile-link" data-i18n="nav.capabilities">Capabilities</a>
+      <a href="index.html#about"        class="nav-mobile-link" data-i18n="nav.about">About</a>
+      <a href="index.html#contact"      class="nav-mobile-link" data-i18n="nav.contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 01 — HERO
+══════════════════════════════════════════════════════════ -->
+<section id="ag-hero">
+  <div class="ag-hero-bg"></div>
+  <div class="ag-hero-overlay"></div>
+  <div class="ag-hero-content">
+    <nav class="ag-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <span aria-hidden="true">›</span>
+      <span data-i18n="ag.crumb.products">Products</span>
+      <span aria-hidden="true">›</span>
+      <span data-i18n="ag.crumb.page">Amorphous Gabions</span>
+    </nav>
+    <h1 class="ag-hero-h1 ag-fade" data-i18n="ag.hero.h1">Amorphous Gabions</h1>
+    <p class="ag-hero-sub ag-fade ag-fade-d1" data-i18n="ag.hero.sub">
+      Flexible scour protection and hydraulic stabilization systems designed for marine, coastal, river, and infrastructure applications.
+    </p>
+    <p class="ag-hero-body ag-fade ag-fade-d2" data-i18n="ag.hero.body">
+      Engineered to adapt to complex terrain and dynamic hydraulic environments while providing durable, efficient, and environmentally integrated protection.
+    </p>
+    <div class="ag-hero-btns ag-fade ag-fade-d3">
+      <a href="index.html#contact" class="ag-btn ag-btn--glass-gold" data-i18n="ag.hero.btn1">Request Technical Information</a>
+      <a href="index.html#contact" class="ag-btn ag-btn--glass-light" data-i18n="ag.hero.btn2">Talk to an Engineer</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 02 — WHAT ARE AMORPHOUS GABIONS?
+══════════════════════════════════════════════════════════ -->
+<section id="ag-intro">
+  <div class="ag-intro-inner">
+    <div class="ag-fade">
+      <img src="./images/Amorphous Gabions Page/Orilla.webp" alt="Amorphous gabion installation on riverbank" class="ag-intro-photo" />
+    </div>
+    <div class="ag-fade ag-fade-d2">
+      <span class="ag-eyebrow" data-i18n="ag.intro.eyebrow">Hydraulic Engineering Solutions</span>
+      <h2 data-i18n="ag.intro.h2">What Are Amorphous Gabions?</h2>
+      <p style="font-size:15px;line-height:1.75;color:#5b5e64;margin-bottom:28px;" data-i18n-html="ag.intro.p1">Amorphous gabions are flexible containment units filled with stone or crushed concrete, engineered by INGE&amp;MAT to adapt naturally to the terrain they protect rather than forcing the terrain to conform to a rigid structure.</p>
+      <ul class="ag-intro-list">
+        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.5 9.5L7 13l8-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.intro.li1">Flexible containment units that conform to irregular surfaces</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.5 9.5L7 13l8-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.intro.li2">Filled with stone or crushed concrete for mass and permeability</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.5 9.5L7 13l8-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.intro.li3">Designed to adapt naturally to uneven and dynamic terrain</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.5 9.5L7 13l8-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.intro.li4">Suitable for both dry installation and underwater placement</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.5 9.5L7 13l8-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.intro.li5">Purpose-built for hydraulic and marine protection works</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 03 — KEY ADVANTAGES
+══════════════════════════════════════════════════════════ -->
+<section id="ag-advantages">
+  <div class="ag-section-inner">
+    <div class="ag-section-head ag-fade">
+      <span class="ag-eyebrow" data-i18n="ag.adv.eyebrow">Why Engineers Choose This System</span>
+      <h2 data-i18n="ag.adv.h2">Key Advantages</h2>
+      <p data-i18n="ag.adv.sub">A flexible alternative to rigid armoring systems, engineered for performance across the most demanding hydraulic environments.</p>
+    </div>
+    <div class="ag-feature-grid">
+
+      <div class="ag-feature-card ag-fade">
+        <div class="ag-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 9q3-4 6 0t6 0 6 0"/><path d="M2 15q3-4 6 0t6 0 6 0"/></svg></div>
+        <h3 data-i18n="ag.adv.1.title">Hydraulic Performance</h3>
+        <p data-i18n="ag.adv.1.desc">High scour protection performance and energy dissipation characteristics.</p>
+      </div>
+
+      <div class="ag-feature-card ag-fade ag-fade-d1">
+        <div class="ag-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 17l5-9 4 5 4-8 5 6 2 6z"/></svg></div>
+        <h3 data-i18n="ag.adv.2.title">Terrain Adaptability</h3>
+        <p data-i18n="ag.adv.2.desc">Conforms naturally to uneven riverbeds, coastlines, and underwater surfaces.</p>
+      </div>
+
+      <div class="ag-feature-card ag-fade ag-fade-d2">
+        <div class="ag-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2v9"/><path d="M7 7l5 4 5-4"/><rect x="4" y="15" width="16" height="6" rx="1.5"/></svg></div>
+        <h3 data-i18n="ag.adv.3.title">Rapid Installation</h3>
+        <p data-i18n="ag.adv.3.desc">Mechanized installation with reduced labor requirements.</p>
+      </div>
+
+      <div class="ag-feature-card ag-fade">
+        <div class="ag-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21c-4-2-7-6-7-10a7 7 0 0114 0c0 4-3 8-7 10z"/><path d="M12 17V9M9 11l3-3 3 3"/></svg></div>
+        <h3 data-i18n="ag.adv.4.title">Environmental Integration</h3>
+        <p data-i18n="ag.adv.4.desc">Supports vegetation growth, aquatic habitats, and ecosystem development.</p>
+      </div>
+
+      <div class="ag-feature-card ag-fade ag-fade-d1">
+        <div class="ag-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l7 3v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V5z"/></svg></div>
+        <h3 data-i18n="ag.adv.5.title">Marine Durability</h3>
+        <p data-i18n="ag.adv.5.desc">Designed for long-term performance in aggressive marine environments.</p>
+      </div>
+
+      <div class="ag-feature-card ag-fade ag-fade-d2">
+        <div class="ag-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 8l-3 4 3 4M19 8l3 4-3 4M9 4l-2 16M15 4l2 16" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3 data-i18n="ag.adv.6.title">Flexible Deployment</h3>
+        <p data-i18n="ag.adv.6.desc">Suitable for dry installations and underwater placement.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 04 — APPLICATIONS
+══════════════════════════════════════════════════════════ -->
+<section id="ag-applications">
+  <div class="ag-app2-inner">
+
+    <div class="ag-app2-head">
+      <div class="ag-app2-head-left ag-fade">
+        <span class="ag-app2-eyebrow" data-i18n="ag.app.eyebrow">Applications</span>
+        <h2 class="ag-app2-h2" data-i18n="ag.app.h2">Engineered for the World's Most Demanding Environments</h2>
+      </div>
+      <div class="ag-app2-head-right ag-fade ag-fade-d1">
+        <p data-i18n="ag.app.sub">Amorphous gabions deliver flexible, high-performance protection for infrastructure and natural landscapes, above or below the waterline.</p>
+      </div>
+    </div>
+
+    <div class="ag-app2-featured">
+      <span class="ag-app2-label ag-fade" data-i18n="ag.app.featuredLabel">Featured Applications</span>
+
+      <div class="ag-app2-row1">
+
+        <div class="ag-app2-card ag-app2-card--hero ag-fade">
+          <img src="./images/Amorphous Gabions Page/Amorphous Gabions Hero.webp" alt="Offshore wind foundation protected by amorphous gabions" class="ag-app2-photo ag-app2-zoom" />
+          <div class="ag-app2-gradient"></div>
+          <div class="ag-app2-content">
+            <svg class="ag-app2-icon" width="20" height="20" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M13 2v8"/><circle cx="13" cy="13" r="3"/><path d="M5 24l3-9h10l3 9"/></svg>
+            <h3 class="ag-app2-title" data-i18n="ag.app.1.title">Offshore Wind Foundations</h3>
+            <p class="ag-app2-desc" data-i18n="ag.app.1.desc">Scour protection for monopile and jacket foundations in offshore wind farms.</p>
+            <span class="ag-app2-accent"></span>
+          </div>
+        </div>
+
+        <div class="ag-app2-card ag-fade ag-fade-d1">
+          <img src="./images/Amorphous Gabions Page/Riverbank Protection.webp" alt="Riverbank stabilization with amorphous gabions" class="ag-app2-photo ag-app2-zoom" />
+          <div class="ag-app2-gradient"></div>
+          <div class="ag-app2-content">
+            <svg class="ag-app2-icon" width="20" height="20" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 9q5-5 10 0t10 0"/><path d="M2 17q5-5 10 0t10 0"/></svg>
+            <h3 class="ag-app2-title" data-i18n="ag.app.4.title">Riverbank Protection</h3>
+            <p class="ag-app2-desc" data-i18n="ag.app.4.desc">Flexible reinforcement that conforms to riverbank geometry and resists erosive flow.</p>
+            <span class="ag-app2-accent"></span>
+          </div>
+        </div>
+
+        <div class="ag-app2-card ag-fade ag-fade-d2">
+          <img src="./images/Amorphous Gabions Page/Port & Marine Infrastructure.webp" alt="Port and marine infrastructure protected by amorphous gabions" class="ag-app2-photo ag-app2-zoom" />
+          <div class="ag-app2-gradient"></div>
+          <div class="ag-app2-content">
+            <svg class="ag-app2-icon" width="20" height="20" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="9" width="20" height="11"/><path d="M3 9l10-6 10 6"/></svg>
+            <h3 class="ag-app2-title" data-i18n="ag.app.3.title">Port &amp; Marine Infrastructure</h3>
+            <p class="ag-app2-desc" data-i18n="ag.app.3.desc">Stabilization and protection systems for docks, breakwaters, and marine terminals.</p>
+            <span class="ag-app2-accent"></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="ag-app2-additional">
+      <span class="ag-app2-label ag-fade" data-i18n="ag.app.additionalLabel">Additional Applications</span>
+
+      <div class="ag-app2-row2">
+
+        <div class="ag-app2-card2 ag-fade">
+          <img src="./images/Amorphous Gabions Page/Scour Protection.webp" alt="Scour protection application" class="ag-app2-photo ag-app2-zoom" />
+          <div class="ag-app2-card2-gradient"></div>
+          <div class="ag-app2-card2-content">
+            <svg class="ag-app2-icon" width="18" height="18" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 18q4-5 8 0t8 0 4-3"/><path d="M9 12l4-9 4 9"/></svg>
+            <h4 data-i18n="ag.app.2.title">Scour Protection</h4>
+            <p data-i18n="ag.app.2.desc">Hydraulic protection against erosion around structures exposed to currents and waves.</p>
+            <span class="ag-app2-accent"></span>
+          </div>
+        </div>
+
+        <div class="ag-app2-card2 ag-fade ag-fade-d1">
+          <img src="./images/Amorphous Gabions Page/Coastal Protection.webp" alt="Coastal protection application" class="ag-app2-photo ag-app2-zoom" />
+          <div class="ag-app2-card2-gradient"></div>
+          <div class="ag-app2-card2-content">
+            <svg class="ag-app2-icon" width="18" height="18" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 20q4-14 11-14 7 0 11 14z"/><path d="M2 20h22"/></svg>
+            <h4 data-i18n="ag.app.5.title">Coastal Protection</h4>
+            <p data-i18n="ag.app.5.desc">Wave energy dissipation and shoreline stabilization for exposed coastlines.</p>
+            <span class="ag-app2-accent"></span>
+          </div>
+        </div>
+
+        <div class="ag-app2-card2 ag-fade ag-fade-d2">
+          <img src="./images/Amorphous Gabions Page/Pipeline Ballast.webp" alt="Pipeline ballast application" class="ag-app2-photo ag-app2-zoom" />
+          <div class="ag-app2-card2-gradient"></div>
+          <div class="ag-app2-card2-content">
+            <svg class="ag-app2-icon" width="18" height="18" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="13" cy="13" r="5"/><path d="M2 13h6M18 13h6"/></svg>
+            <h4 data-i18n="ag.app.6.title">Pipeline Ballast</h4>
+            <p data-i18n="ag.app.6.desc">Submerged ballast and protection systems for subsea and onshore pipeline crossings.</p>
+            <span class="ag-app2-accent"></span>
+          </div>
+        </div>
+
+        <div class="ag-app2-card2 ag-fade ag-fade-d3">
+          <img src="./images/Amorphous Gabions Page/Emergency Stabilization Works.webp" alt="Emergency stabilization works application" class="ag-app2-photo ag-app2-zoom" />
+          <div class="ag-app2-card2-gradient"></div>
+          <div class="ag-app2-card2-content">
+            <svg class="ag-app2-icon" width="18" height="18" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M13 2v6M13 18v6M2 13h6M18 13h6"/><circle cx="13" cy="13" r="4"/></svg>
+            <h4 data-i18n="ag.app.7.title">Emergency Stabilization Works</h4>
+            <p data-i18n="ag.app.7.desc">Rapid-deployment protection for urgent erosion and failure response.</p>
+            <span class="ag-app2-accent"></span>
+          </div>
+        </div>
+
+        <div class="ag-app2-card2 ag-fade ag-fade-d4">
+          <img src="./images/Amorphous Gabions Page/Beach Stabilization.webp" alt="Beach stabilization application" class="ag-app2-photo ag-app2-zoom" />
+          <div class="ag-app2-card2-gradient"></div>
+          <div class="ag-app2-card2-content">
+            <svg class="ag-app2-icon" width="18" height="18" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 21q5-12 11-12t11 12z" stroke-dasharray="1.6 2.4"/><path d="M2 21h22"/></svg>
+            <h4 data-i18n="ag.app.8.title">Beach Stabilization</h4>
+            <p data-i18n="ag.app.8.desc">Sediment retention and shoreline reinforcement for recreational and protected beaches.</p>
+            <span class="ag-app2-accent"></span>
+          </div>
+        </div>
+
+        <div class="ag-app2-card2 ag-fade">
+          <img src="./images/Amorphous Gabions Page/Bridge Pier Protection.webp" alt="Bridge pier protection application" class="ag-app2-photo ag-app2-zoom" />
+          <div class="ag-app2-card2-gradient"></div>
+          <div class="ag-app2-card2-content">
+            <svg class="ag-app2-icon" width="18" height="18" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 9h22M6 9v12M20 9v12"/><path d="M2 21h22"/></svg>
+            <h4 data-i18n="ag.app.9.title">Bridge Pier Protection</h4>
+            <p data-i18n="ag.app.9.desc">Scour control around piers and abutments exposed to channel flow.</p>
+            <span class="ag-app2-accent"></span>
+          </div>
+        </div>
+
+        <div class="ag-app2-card2 ag-fade ag-fade-d1">
+          <img src="./images/Amorphous Gabions Page/Hydraulic Infrastructure.webp" alt="Hydraulic infrastructure application" class="ag-app2-photo ag-app2-zoom" />
+          <div class="ag-app2-card2-gradient"></div>
+          <div class="ag-app2-card2-content">
+            <svg class="ag-app2-icon" width="18" height="18" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="5" width="20" height="6"/><rect x="3" y="15" width="20" height="6" stroke-dasharray="1.6 2"/></svg>
+            <h4 data-i18n="ag.app.10.title">Hydraulic Infrastructure</h4>
+            <p data-i18n="ag.app.10.desc">Protection systems for spillways, channels, and water control structures.</p>
+            <span class="ag-app2-accent"></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 05 — PRODUCT VARIANTS
+══════════════════════════════════════════════════════════ -->
+<section id="ag-variants">
+  <div class="ag-section-inner">
+    <div class="ag-section-head ag-fade">
+      <span class="ag-eyebrow" data-i18n="ag.var.eyebrow">Product Range</span>
+      <h2 data-i18n="ag.var.h2">Product Variants</h2>
+      <p data-i18n="ag.var.sub">Two engineered formulations selected by application, environmental exposure, and hydraulic demand.</p>
+    </div>
+    <div class="ag-variant-grid">
+
+      <div class="ag-variant-card ag-fade">
+        <img src="./images/Amorphous Gabions Page/Ecogreen.webp" alt="EcoGreen amorphous gabion" class="ag-variant-photo" />
+        <div class="ag-variant-body">
+          <span class="ag-variant-num" data-i18n="ag.var.1.num">Variant 01</span>
+          <h3 class="ag-variant-name" data-i18n="ag.var.1.name">EcoGreen</h3>
+          <p class="ag-variant-desc" data-i18n="ag.var.1.desc">Environmentally integrated solution manufactured using recycled polyester fibers.</p>
+          <ul class="ag-variant-points">
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6 11.5l7-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.var.1.li1">Ecological integration</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6 11.5l7-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.var.1.li2">Vegetation support</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6 11.5l7-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.var.1.li3">Habitat creation</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6 11.5l7-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.var.1.li4">Long-term environmental compatibility</span></li>
+          </ul>
+          <a href="index.html#contact" class="ag-variant-cta"><span data-i18n="ag.var.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+      <div class="ag-variant-card ag-fade ag-fade-d1">
+        <img src="./images/Amorphous Gabions Page/Type S.webp" alt="Type S amorphous gabion" class="ag-variant-photo" />
+        <div class="ag-variant-body">
+          <span class="ag-variant-num" data-i18n="ag.var.2.num">Variant 02</span>
+          <h3 class="ag-variant-name" data-i18n="ag.var.2.name">Type S</h3>
+          <p class="ag-variant-desc" data-i18n="ag.var.2.desc">Heavy-duty version designed for marine and high-energy hydraulic environments.</p>
+          <ul class="ag-variant-points">
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6 11.5l7-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.var.2.li1">Offshore applications</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6 11.5l7-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.var.2.li2">Severe hydraulic conditions</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6 11.5l7-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.var.2.li3">Enhanced durability</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6 11.5l7-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.var.2.li4">Reduced abrasion</span></li>
+          </ul>
+          <a href="index.html#contact" class="ag-variant-cta"><span data-i18n="ag.var.cta">Request Technical Datasheet</span> <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5h12M8 1l5 4-5 4"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 06 — TECHNICAL PERFORMANCE
+══════════════════════════════════════════════════════════ -->
+<section id="ag-performance">
+  <div class="ag-section-inner">
+    <div class="ag-section-head ag-fade">
+      <span class="ag-eyebrow" data-i18n="ag.perf.eyebrow">Engineered Performance</span>
+      <h2 data-i18n="ag.perf.h2">Technical Performance</h2>
+      <p data-i18n="ag.perf.sub">Performance characteristics presented visually — built for demanding hydraulic and marine service conditions.</p>
+    </div>
+    <div class="ag-metric-grid">
+
+      <div class="ag-metric-card ag-fade">
+        <div class="ag-metric-head">
+          <div class="ag-metric-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M10 2l6 2.5v5C16 14 13.5 17 10 18 6.5 17 4 14 4 9.5v-5z"/></svg></div>
+          <h3 data-i18n="ag.perf.1.title">Durability</h3>
+        </div>
+        <div class="ag-metric-bar"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div>
+        <p data-i18n="ag.perf.1.desc">Engineered to withstand long-term mechanical stress, abrasion, and continuous wet/dry exposure.</p>
+      </div>
+
+      <div class="ag-metric-card ag-fade ag-fade-d1">
+        <div class="ag-metric-head">
+          <div class="ag-metric-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="3.5"/><path d="M10 1.5v2.5M10 16v2.5M2.6 10H5M15 10h2.4M4.6 4.6l1.7 1.7M13.7 13.7l1.7 1.7M4.6 15.4l1.7-1.7M13.7 6.3l1.7-1.7"/></svg></div>
+          <h3 data-i18n="ag.perf.2.title">UV Resistance</h3>
+        </div>
+        <div class="ag-metric-bar"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div>
+        <p data-i18n="ag.perf.2.desc">Stabilized materials formulated to resist degradation from prolonged sunlight exposure.</p>
+      </div>
+
+      <div class="ag-metric-card ag-fade ag-fade-d2">
+        <div class="ag-metric-head">
+          <div class="ag-metric-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8q3-3 6 0t6 0"/><path d="M2 13q3-3 6 0t6 0"/></svg></div>
+          <h3 data-i18n="ag.perf.3.title">Marine Performance</h3>
+        </div>
+        <div class="ag-metric-bar"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div>
+        <p data-i18n="ag.perf.3.desc">Designed for sustained performance in saltwater and aggressive marine environments.</p>
+      </div>
+
+      <div class="ag-metric-card ag-fade">
+        <div class="ag-metric-head">
+          <div class="ag-metric-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="7.5"/><circle cx="10" cy="10" r="4"/><circle cx="10" cy="10" r="0.8" fill="currentColor"/></svg></div>
+          <h3 data-i18n="ag.perf.4.title">Impact Resistance</h3>
+        </div>
+        <div class="ag-metric-bar"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span></span></div>
+        <p data-i18n="ag.perf.4.desc">Resilient construction absorbs impact from waves, debris, and dynamic loading.</p>
+      </div>
+
+      <div class="ag-metric-card ag-fade ag-fade-d1">
+        <div class="ag-metric-head">
+          <div class="ag-metric-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 14q4-9 8-9t8 9"/><path d="M2 14h16"/></svg></div>
+          <h3 data-i18n="ag.perf.5.title">Hydraulic Performance</h3>
+        </div>
+        <div class="ag-metric-bar"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div>
+        <p data-i18n="ag.perf.5.desc">High energy dissipation characteristics reduce scour and turbulence around structures.</p>
+      </div>
+
+      <div class="ag-metric-card ag-fade ag-fade-d2">
+        <div class="ag-metric-head">
+          <div class="ag-metric-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="7.5"/><path d="M10 5.5V10l3.2 2"/></svg></div>
+          <h3 data-i18n="ag.perf.6.title">Service Life</h3>
+        </div>
+        <div class="ag-metric-bar"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span></span></div>
+        <p data-i18n="ag.perf.6.desc">Built for long-term field performance with minimal degradation over decades of service.</p>
+      </div>
+
+      <div class="ag-metric-card ag-fade ag-fade-d3">
+        <div class="ag-metric-head">
+          <div class="ag-metric-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 6h11M14 6l-3-3M14 6l-3 3"/><path d="M17 14H6M6 14l3-3M6 14l3 3"/></svg></div>
+          <h3 data-i18n="ag.perf.7.title">Current Resistance Performance</h3>
+        </div>
+        <div class="ag-metric-bar"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span></span></div>
+        <p data-i18n="ag.perf.7.desc">Maintains structural integrity under sustained current and high-velocity flow conditions.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 07 — AMORPHOUS VS CONVENTIONAL GABIONS
+══════════════════════════════════════════════════════════ -->
+<section id="ag-compare">
+  <div class="ag-section-inner">
+    <div class="ag-section-head ag-section-head--light ag-fade">
+      <span class="ag-eyebrow" style="color:#ddcc0f;" data-i18n="ag.cmp.eyebrow">The Technical Case</span>
+      <h2 data-i18n="ag.cmp.h2">Amorphous Gabions vs. Conventional Gabions</h2>
+      <p data-i18n="ag.cmp.sub">A direct, side-by-side look at how flexible containment systems compare to traditional wire-mesh gabions.</p>
+    </div>
+
+    <div class="ag-compare-table ag-fade ag-fade-d1">
+      <div class="ag-compare-head">
+        <div class="ag-compare-head-crit"></div>
+        <div class="ag-compare-head-ag" data-i18n="ag.cmp.col.ag">Amorphous Gabions</div>
+        <div class="ag-compare-head-conv" data-i18n="ag.cmp.col.conv">Conventional Gabions</div>
+      </div>
+
+      <div class="ag-compare-row">
+        <div class="ag-compare-crit" data-i18n="ag.cmp.1.crit">Flexibility</div>
+        <div class="ag-compare-ag"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6 11.5l7-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.cmp.1.ag">Conforms naturally to irregular terrain and underwater contours.</span></div>
+        <div class="ag-compare-conv"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span data-i18n="ag.cmp.1.conv">Rigid rectangular geometry with limited adaptability.</span></div>
+      </div>
+      <div class="ag-compare-row">
+        <div class="ag-compare-crit" data-i18n="ag.cmp.2.crit">Durability</div>
+        <div class="ag-compare-ag"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6 11.5l7-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.cmp.2.ag">High resistance to abrasion, UV, and marine exposure.</span></div>
+        <div class="ag-compare-conv"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span data-i18n="ag.cmp.2.conv">Prone to wire corrosion and mesh degradation over time.</span></div>
+      </div>
+      <div class="ag-compare-row">
+        <div class="ag-compare-crit" data-i18n="ag.cmp.3.crit">Hydraulic Behavior</div>
+        <div class="ag-compare-ag"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6 11.5l7-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.cmp.3.ag">Engineered for high energy dissipation and scour resistance.</span></div>
+        <div class="ag-compare-conv"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span data-i18n="ag.cmp.3.conv">Lower energy dissipation; rigid edges prone to undermining.</span></div>
+      </div>
+      <div class="ag-compare-row">
+        <div class="ag-compare-crit" data-i18n="ag.cmp.4.crit">Installation Speed</div>
+        <div class="ag-compare-ag"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6 11.5l7-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.cmp.4.ag">Mechanized placement with reduced labor and equipment needs.</span></div>
+        <div class="ag-compare-conv"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span data-i18n="ag.cmp.4.conv">Labor-intensive assembly and wire mesh filling.</span></div>
+      </div>
+      <div class="ag-compare-row">
+        <div class="ag-compare-crit" data-i18n="ag.cmp.5.crit">Maintenance</div>
+        <div class="ag-compare-ag"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6 11.5l7-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.cmp.5.ag">Minimal long-term maintenance requirements.</span></div>
+        <div class="ag-compare-conv"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span data-i18n="ag.cmp.5.conv">Periodic wire inspection and mesh repair required.</span></div>
+      </div>
+      <div class="ag-compare-row">
+        <div class="ag-compare-crit" data-i18n="ag.cmp.6.crit">Environmental Integration</div>
+        <div class="ag-compare-ag"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6 11.5l7-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.cmp.6.ag">Supports vegetation growth and aquatic habitat development.</span></div>
+        <div class="ag-compare-conv"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span data-i18n="ag.cmp.6.conv">Limited ecological integration.</span></div>
+      </div>
+      <div class="ag-compare-row">
+        <div class="ag-compare-crit" data-i18n="ag.cmp.7.crit">Safety</div>
+        <div class="ag-compare-ag"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6 11.5l7-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.cmp.7.ag">No exposed wire or sharp mesh edges.</span></div>
+        <div class="ag-compare-conv"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span data-i18n="ag.cmp.7.conv">Wire mesh exposure presents handling and long-term safety risks.</span></div>
+      </div>
+      <div class="ag-compare-row">
+        <div class="ag-compare-crit" data-i18n="ag.cmp.8.crit">Terrain Adaptation</div>
+        <div class="ag-compare-ag"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6 11.5l7-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.cmp.8.ag">Adapts to uneven, sloped, and underwater surfaces.</span></div>
+        <div class="ag-compare-conv"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span data-i18n="ag.cmp.8.conv">Requires graded, prepared surfaces for proper placement.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 08 — ENVIRONMENTAL BENEFITS
+══════════════════════════════════════════════════════════ -->
+<section id="ag-environment">
+  <div class="ag-eco-inner">
+    <div class="ag-fade">
+      <span class="ag-eco-eyebrow" data-i18n="ag.eco.eyebrow">A Different Kind of Protection</span>
+      <h2 data-i18n="ag.eco.h2">Environmental Benefits</h2>
+      <ul class="ag-eco-list">
+        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.5 9.5L7 13l8-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.eco.li1">Creates the conditions for natural ecosystem development</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.5 9.5L7 13l8-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.eco.li2">Supports aquatic habitat development within the structure itself</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.5 9.5L7 13l8-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.eco.li3">Enables vegetation establishment across exposed surfaces</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.5 9.5L7 13l8-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.eco.li4">Reduces environmental impact compared to rigid armoring systems</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.5 9.5L7 13l8-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ag.eco.li5">Delivers long-term ecological integration with the surrounding landscape</span></li>
+      </ul>
+    </div>
+    <div class="ag-fade ag-fade-d2">
+      <img src="./images/Amorphous Gabions Page/Environmental Benefits.webp" alt="Ecosystem integration with amorphous gabions" class="ag-eco-photo" />
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 10 — PROVEN TRACK RECORD
+══════════════════════════════════════════════════════════ -->
+<section id="ag-track">
+  <div class="ag-section-inner">
+    <div class="ag-section-head ag-fade">
+      <span class="ag-eyebrow" data-i18n="ag.track.eyebrow">Proven At Scale</span>
+      <h2 data-i18n="ag.track.h2">Proven Track Record</h2>
+    </div>
+    <div class="ag-track-grid">
+      <div class="ag-track-stat ag-fade">
+        <span class="ag-track-num" data-i18n="ag.track.1.num">17,000+</span>
+        <span class="ag-track-label" data-i18n="ag.track.1.label">Reference Installations</span>
+      </div>
+      <div class="ag-track-stat ag-fade ag-fade-d1">
+        <span class="ag-track-num" data-i18n="ag.track.2.num">700,000+</span>
+        <span class="ag-track-label" data-i18n="ag.track.2.label">Units Installed</span>
+      </div>
+      <div class="ag-track-stat ag-fade ag-fade-d2">
+        <span class="ag-track-num" data-i18n="ag.track.3.num">30 Years</span>
+        <span class="ag-track-label" data-i18n="ag.track.3.label">UV Durability Potential</span>
+      </div>
+      <div class="ag-track-stat ag-fade ag-fade-d3">
+        <span class="ag-track-num" data-i18n="ag.track.4.num">Decades</span>
+        <span class="ag-track-label" data-i18n="ag.track.4.label">Of Proven Hydraulic Performance</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 11 — FINAL CTA / CONTACT
+══════════════════════════════════════════════════════════ -->
+<section id="ag-cta">
+  <div class="ag-cta-bg">
+    <div class="ag-img-ph ag-img-ph--dark ag-img-ph--cta" role="img" aria-label="Amorphous gabions project photography">
+      <div class="ag-img-ph-inner">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="13" cy="13" r="4"/><circle cx="24" cy="11" r="3"/><circle cx="30" cy="18" r="3.5"/><circle cx="17" cy="24" r="3.5"/><circle cx="27" cy="28" r="3"/><circle cx="9" cy="29" r="2.5"/></svg>
+        <span>Project Photography</span>
+      </div>
+    </div>
+    <div class="ag-cta-overlay"></div>
+  </div>
+  <div class="ag-cta-inner">
+    <div class="ag-fade">
+      <span class="ag-cta-label" data-i18n="ag.cta.label">Start a Project</span>
+      <h2 class="ag-cta-h2" data-i18n="ag.cta.h2">Let's Discuss Your Project</h2>
+      <p class="ag-cta-body" data-i18n="ag.cta.body">Our technical team can help you evaluate whether amorphous gabion systems are the right fit for your hydraulic, marine, or infrastructure protection challenge.</p>
+      <div class="ag-cta-btns">
+        <a href="index.html#contact" class="ag-btn ag-btn--gold" data-i18n="ag.cta.btn1">Request Technical Information</a>
+        <a href="index.html#contact" class="ag-btn ag-btn--outline-light" data-i18n="ag.cta.btn2">Request a Quote</a>
+        <a href="index.html#contact" class="ag-btn ag-btn--outline-light" data-i18n="ag.cta.btn3">Talk to an Engineer</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./images/INGEMAT ICON.png" alt="INGE&MAT icon" class="footer-brand-icon" />
+      <div>
+        <span class="footer-brand-name">INGE&amp;MAT S.A.S</span>
+        <span class="footer-brand-sub">Ingeniería y Materiales</span>
+      </div>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="docs/Politica_Privacidad_INGEMAT.pdf" target="_blank" rel="noopener" class="footer-link" data-i18n="footer.privacy">Privacy Policy</a>
+      <a href="#" class="footer-link" data-i18n="footer.terms">Terms of Service</a>
+      <a href="#" class="footer-link" data-i18n="footer.sustainability">Sustainability</a>
+    </nav>
+    <span class="footer-copy" data-i18n="footer.copy">© 2024 INGE&amp;MAT. All rights reserved.</span>
+  </div>
+</footer>
+
+<a href="https://wa.link/trjia4" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contact us on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="#fff">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.738 5.48 2.031 7.785L0 32l8.438-2.01A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.771-1.854l-.486-.29-5.01 1.195 1.234-4.87-.318-.5A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.908c-.398-.199-2.354-1.162-2.719-1.294-.365-.133-.63-.199-.896.199-.265.398-1.029 1.294-1.261 1.56-.232.265-.465.298-.863.1-.398-.2-1.681-.62-3.202-1.977-1.183-1.056-1.982-2.36-2.214-2.758-.232-.398-.025-.613.174-.811.179-.178.398-.465.597-.697.199-.232.265-.398.398-.664.133-.265.066-.497-.033-.697-.1-.199-.896-2.16-1.228-2.957-.323-.776-.651-.671-.896-.683l-.763-.013c-.265 0-.697.1-.1063.497-.365.398-1.394 1.362-1.394 3.322s1.427 3.854 1.626 4.12c.199.265 2.808 4.287 6.803 6.013.951.41 1.693.655 2.271.839.954.304 1.823.261 2.51.158.765-.114 2.354-.962 2.686-1.892.332-.93.332-1.727.232-1.892-.099-.166-.365-.265-.763-.464z"/>
+  </svg>
+</a>
+
+<script type="module" src="amorphous-gabions.js"></script>
+</body>
+</html>

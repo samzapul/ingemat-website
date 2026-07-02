@@ -3,6 +3,7 @@
    ============================================================ */
 
 import { initNavScroll, initSmoothScroll, initMobileMenu } from './js/nav-utils.js';
+import { initLanguageFromUrlOrStorage, setLanguage, applyLanguageToLinks } from './js/lang-utils.js';
 
 /* ── TRANSLATIONS ──────────────────────────────────────────── */
 const translations = {
@@ -490,13 +491,15 @@ function applyLang(lang) {
   document.getElementById('lang-es').classList.toggle('lang-active', lang === 'es');
 
   currentLang = lang;
+  setLanguage(lang);
+  applyLanguageToLinks(lang);
 }
 
 document.getElementById('lang-toggle').addEventListener('click', () => {
   applyLang(currentLang === 'en' ? 'es' : 'en');
 });
 
-applyLang('en');
+applyLang(initLanguageFromUrlOrStorage());
 
 /* ── NAV + SCROLL ──────────────────────────────────────────── */
 initNavScroll();

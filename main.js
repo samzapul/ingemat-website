@@ -3,6 +3,8 @@
    Smooth scroll + active nav tracking + i18n
    ============================================================ */
 
+import { initLanguageFromUrlOrStorage, setLanguage, applyLanguageToLinks } from './js/lang-utils.js';
+
 const NAV_H = 68;
 
 /* ── TRANSLATIONS ──────────────────────────────────────────── */
@@ -27,8 +29,8 @@ const translations = {
 
     'hero.line1': 'Engineering Precision',
     'hero.line2': 'Global Sourcing',
-    'hero.btn1':  'View Projects',
-    'hero.btn2':  'Global Logistics',
+    'hero.btn1':  'View Solutions',
+    'hero.btn2':  'View Products',
 
     'solutions.eyebrow':  'Solutions',
     'solutions.heading':  'Solutions designed for<br />real infrastructure',
@@ -107,8 +109,8 @@ const translations = {
 
     'hero.line1': 'Precisión en Ingeniería',
     'hero.line2': 'Abastecimiento Global',
-    'hero.btn1':  'Ver Proyectos',
-    'hero.btn2':  'Logística Global',
+    'hero.btn1':  'Ver Soluciones',
+    'hero.btn2':  'Ver Productos',
 
     'solutions.eyebrow':  'Soluciones',
     'solutions.heading':  'Soluciones diseñadas para<br />infraestructura real',
@@ -197,6 +199,8 @@ function applyLang(lang) {
   document.getElementById('lang-es').classList.toggle('lang-active', lang === 'es');
 
   currentLang = lang;
+  setLanguage(lang);
+  applyLanguageToLinks(lang);
 }
 
 document.getElementById('lang-toggle').addEventListener('click', (e) => {
@@ -204,7 +208,7 @@ document.getElementById('lang-toggle').addEventListener('click', (e) => {
   applyLang(next);
 });
 
-applyLang('en');
+applyLang(initLanguageFromUrlOrStorage());
 
 /* ── CAROUSEL (infinite loop) ──────────────────────────────── */
 (function () {
@@ -314,6 +318,14 @@ document.getElementById('form-submit').addEventListener('click', () => {
     return;
   }
 
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    feedback.textContent = currentLang === 'es'
+      ? 'Por favor ingresa un correo electrónico válido.'
+      : 'Please enter a valid email address.';
+    feedback.className = 'form-feedback form-feedback--error';
+    return;
+  }
+
   btn.disabled = true;
   btn.textContent = currentLang === 'es' ? 'Enviando…' : 'Sending…';
 
@@ -335,8 +347,8 @@ document.getElementById('form-submit').addEventListener('click', () => {
   }).catch((err) => {
     console.error('EmailJS error:', err);
     feedback.textContent = currentLang === 'es'
-      ? `Error al enviar: ${err?.text || err?.message || JSON.stringify(err)}`
-      : `Failed to send: ${err?.text || err?.message || JSON.stringify(err)}`;
+      ? 'No se pudo enviar el mensaje. Por favor inténtalo de nuevo o escríbenos por WhatsApp.'
+      : 'The message could not be sent. Please try again or reach us on WhatsApp.';
     feedback.className = 'form-feedback form-feedback--error';
     btn.disabled = false;
     btn.textContent = currentLang === 'es' ? 'Enviar Consulta' : 'Send Enquiry';

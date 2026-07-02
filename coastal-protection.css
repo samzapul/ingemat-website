@@ -1,0 +1,1237 @@
+/* ============================================================
+   COASTAL PROTECTION — Cinematic Experience
+   Complete rewrite: image-sequence scrubber + chapter cards
+   ============================================================ */
+
+/* ── Page base ─────────────────────────────────────────────── */
+body.cp-page {
+  background: #06101e;
+  color: #d6dde8;
+  overflow-x: hidden;
+}
+
+/* ── Shared buttons ─────────────────────────────────────────── */
+.cp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 14px 28px;
+  border: 1px solid transparent;
+  transition: background 0.22s, border-color 0.22s, color 0.22s, transform 0.15s;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.cp-btn:hover { transform: translateY(-1px); }
+
+.cp-btn--primary {
+  background: #ddcc0f;
+  color: #0e1005;
+  border-color: #ddcc0f;
+}
+.cp-btn--primary:hover { background: #c7b80d; border-color: #c7b80d; }
+
+.cp-btn--ghost {
+  background: rgba(221,204,15,0.08);
+  color: #ddcc0f;
+  border-color: rgba(221,204,15,0.4);
+}
+.cp-btn--ghost:hover { background: rgba(221,204,15,0.16); border-color: rgba(221,204,15,0.7); }
+
+/* ── Final hero CTA — single premium pill button ─────────────── */
+.cp-btn--final {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 48px;
+  padding: 0 28px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(221, 204, 15, 0.45);
+  color: #ddcc0f;
+  transition: background 300ms cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 300ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cp-btn--final:hover {
+  background: rgba(221, 204, 15, 0.12);
+  border-color: #ddcc0f;
+  transform: translateY(-2px);
+}
+.cp-btn--final .cp-btn-arrow {
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cp-btn--final:hover .cp-btn-arrow {
+  transform: translateX(5px);
+}
+
+/* ══════════════════════════════════════════════════════════
+   CINEMA SECTION
+══════════════════════════════════════════════════════════ */
+#cinema-section {
+  position: relative;
+  height: 900vh;  /* 800vh story + 100vh resting pause on Frame 13 */
+  background: #000;
+}
+
+#cinema-viewport {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Frame stage ─────────────────────────────────────────── */
+#frame-stage {
+  position: absolute;
+  inset: 0;
+}
+
+.cp-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  opacity: 0;
+  pointer-events: none;
+  /* No CSS transition — JS controls frame switches instantly */
+}
+.cp-frame.is-active { opacity: 1; }
+
+/* ── Cinematic overlays ──────────────────────────────────── */
+.cinema-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center,
+    transparent 40%,
+    rgba(0,0,0,0.35) 80%,
+    rgba(0,0,0,0.6) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cinema-gradient-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 28%;
+  background: linear-gradient(to top, rgba(6,16,30,0.7) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cinema-gradient-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.38) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Cards layer ─────────────────────────────────────────── */
+#cards-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* ── Card base ───────────────────────────────────────────── */
+.cp-card {
+  position: absolute;
+  background: rgba(255,255,255,0.80);
+  backdrop-filter: blur(28px) saturate(160%) brightness(1.04);
+  -webkit-backdrop-filter: blur(28px) saturate(160%) brightness(1.04);
+  border: 1px solid rgba(255,255,255,0.65);
+  border-radius: 28px;
+  padding: 28px 32px;
+  box-shadow:
+    0 28px 64px rgba(0,0,0,0.24),
+    0 8px 20px rgba(0,0,0,0.12),
+    0 2px 6px rgba(0,0,0,0.07),
+    inset 0 1px 0 rgba(255,255,255,0.92),
+    inset 0 -1px 0 rgba(0,0,0,0.04);
+  color: #0a1628;
+  pointer-events: auto;
+
+  /* Hidden by default — JS animates in/out */
+  opacity: 0;
+  visibility: hidden;
+  will-change: opacity, transform, filter;
+}
+
+/* ── Card positioning ────────────────────────────────────── */
+/* IMPORTANT: No CSS transforms — GSAP manages xPercent/yPercent for centering */
+
+.cp-card--center {
+  left: 50%;
+  top: 50%;
+  max-width: 420px;
+  width: calc(100% - 48px);
+  text-align: center;
+}
+
+/* ch1 has a 64px heading — needs more breathing room */
+#card-ch1 {
+  padding: 40px 44px;
+}
+
+/* ch4, ch5 & ch9 have long body paragraphs — need more width */
+#card-ch4,
+#card-ch5,
+#card-ch9 {
+  max-width: 360px;
+}
+
+.cp-card--left-mid {
+  left: 5%;
+  top: 50%;
+  max-width: 300px;
+  width: fit-content;
+}
+
+.cp-card--right-mid {
+  right: 5%;
+  top: 48%;
+  max-width: 300px;
+  width: fit-content;
+}
+
+.cp-card--left-lower {
+  left: 5%;
+  bottom: 16%;
+  max-width: 280px;
+  width: fit-content;
+}
+
+.cp-card--right-lower {
+  right: 5%;
+  bottom: 16%;
+  max-width: 280px;
+  width: fit-content;
+}
+
+.cp-card--center-lower {
+  left: 50%;
+  bottom: 10%;
+  max-width: 380px;
+  width: fit-content;
+  text-align: center;
+}
+
+.cp-card--top-right {
+  right: 5%;
+  top: 15%;
+  max-width: 240px;
+  width: fit-content;
+}
+
+.cp-card--bottom-center {
+  left: 50%;
+  bottom: 7%;
+  width: auto;
+  white-space: nowrap;
+}
+
+.cp-card--wide {
+  max-width: 420px;
+  width: calc(100% - 48px);
+  padding: 26px 30px;
+}
+
+.cp-card--compact {
+  padding: 16px 20px;
+}
+
+.cp-card--minimal {
+  padding: 12px 22px;
+  border-radius: 50px;
+  background: rgba(255,255,255,0.72);
+}
+
+/* Final hero — upper-left, not centered. No GSAP xPercent/yPercent needed. */
+.cp-card--final-hero {
+  left: 7%;
+  top: 13%;
+  max-width: 460px;
+  width: calc(100% - 48px);
+  text-align: left;
+  padding: 34px 38px;
+}
+#card-ch13 .cp-card-btns { justify-content: center; margin-top: 8px; }
+
+/* ── Card typography ─────────────────────────────────────── */
+.cp-card-eyebrow {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(10,22,40,0.45);
+  margin-bottom: 18px;
+}
+
+.cp-card-h1 {
+  font-size: clamp(42px, 5vw, 64px);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: #06101e;
+  margin-bottom: 20px;
+}
+
+.cp-card-h1-final {
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #06101e;
+  margin-bottom: 6px;
+}
+
+.cp-card-sub-final {
+  display: block;
+  font-size: clamp(14px, 1.8vw, 18px);
+  font-weight: 500;
+  color: rgba(10,22,40,0.5);
+  letter-spacing: 0.01em;
+  margin-bottom: 20px;
+}
+
+.cp-card-h2 {
+  font-size: clamp(22px, 2.5vw, 30px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #06101e;
+  margin-bottom: 16px;
+}
+
+.cp-card-h2-large {
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: #06101e;
+  margin-bottom: 16px;
+}
+
+.cp-card-h3 {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #06101e;
+  margin-bottom: 10px;
+}
+
+.cp-card-sub {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(10,22,40,0.60);
+  margin-bottom: 20px;
+}
+
+/* ── Cinematic chapter word — the dominant visual element ─── */
+.cp-card-chapter {
+  font-size: clamp(34px, 4.5vw, 52px);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.04em;
+  color: #06101e;
+  margin-bottom: 12px;
+}
+
+/* ── Single supporting line ──────────────────────────────── */
+.cp-card-line {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: rgba(10,22,40,0.52);
+}
+.cp-card-line--centered { text-align: center; }
+
+.cp-card-body {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: rgba(10,22,40,0.65);
+  margin-bottom: 12px;
+}
+.cp-card-body:last-child { margin-bottom: 0; }
+.cp-card-body--centered { text-align: center; }
+.cp-card-body--final { font-size: 14px; margin-top: 12px; margin-bottom: 28px; }
+
+.cp-card-number {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #ddcc0f;
+  background: rgba(221,204,15,0.1);
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 50px;
+  margin-bottom: 18px;
+}
+
+.cp-card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #06101e;
+  border-bottom: 1px solid rgba(10,22,40,0.25);
+  padding-bottom: 2px;
+  margin-top: 18px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.cp-card-btn:hover { color: #ddcc0f; border-color: #ddcc0f; }
+.cp-card-btn::after {
+  content: '→';
+  font-size: 13px;
+}
+
+.cp-card-list {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0;
+}
+.cp-card-list li {
+  font-size: 14px;
+  color: rgba(10,22,40,0.65);
+  line-height: 1.6;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(10,22,40,0.07);
+}
+.cp-card-list li:last-child { border-bottom: none; }
+.cp-card-list--centered { text-align: center; }
+.cp-card-list--centered li { border-bottom: none; }
+
+.cp-card-complete {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: rgba(10,22,40,0.55);
+}
+
+.cp-card-btns {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+/* ── Scroll cue (ch1 only) ────────────────────────────────── */
+.cp-card-scroll-cue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 32px;
+  color: rgba(10,22,40,0.4);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.scroll-dot {
+  animation: scrollBounce 1.8s ease-in-out infinite;
+}
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(8px); }
+}
+
+/* ── Progress bar ────────────────────────────────────────── */
+#cinema-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255,255,255,0.1);
+  z-index: 20;
+}
+
+#cinema-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: #ddcc0f;
+  transition: width 0.1s linear;
+}
+
+/* ── Cinematic chapter timeline ──────────────────────────── */
+#cinema-timeline {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.tl-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.tl-row::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255,255,255,0.16);
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.tl-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.28);
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  transition: background 0.45s ease, transform 0.45s ease;
+}
+
+.tl-dot.is-active {
+  background: #ddcc0f;
+  transform: scale(1.7);
+}
+
+#tl-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.42);
+  text-align: center;
+  min-height: 13px;
+  transition: opacity 0.3s;
+}
+
+/* ══════════════════════════════════════════════════════════
+   AFTER-FILM SECTIONS
+══════════════════════════════════════════════════════════ */
+#after-film {
+  background: #06101e;
+}
+
+.af-section {
+  padding: 120px 0;
+}
+
+.af-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.af-inner--split {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* ── Reveal animation base ───────────────────────────────── */
+.af-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.af-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Section headings ────────────────────────────────────── */
+.af-head {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 72px;
+}
+
+.af-eyebrow {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(214,221,232,0.45);
+  margin-bottom: 16px;
+}
+.af-eyebrow--gold { color: rgba(221,204,15,0.7); }
+
+.af-h2 {
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #e8edf5;
+  margin-bottom: 20px;
+}
+
+.af-lead {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(214,221,232,0.55);
+}
+
+/* ── Applications grid ───────────────────────────────────── */
+.af-apps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.af-app-card {
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 20px;
+  padding: 36px 32px;
+  transition: background 0.25s, border-color 0.25s;
+}
+.af-app-card:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.13);
+}
+
+.af-app-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(221,204,15,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: #ddcc0f;
+}
+
+.af-app-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #e8edf5;
+  margin-bottom: 12px;
+}
+
+.af-app-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(214,221,232,0.5);
+  margin-bottom: 20px;
+}
+
+.af-app-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.af-app-tags a {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgba(214,221,232,0.45);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 50px;
+  padding: 4px 12px;
+  transition: color 0.2s;
+}
+.af-app-tags a:hover {
+  color: #ddcc0f;
+}
+
+/* ── Systems grid ────────────────────────────────────────── */
+.af-systems-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.af-system-card {
+  background: rgba(255,255,255,0.03);
+  padding: 48px 40px;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  transition: background 0.25s, border-color 0.25s;
+}
+.af-system-card:last-child { border-right: none; }
+
+.af-system-num {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #ddcc0f;
+  margin-bottom: 20px;
+}
+
+.af-system-title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: #e8edf5;
+  margin-bottom: 8px;
+  transition: color 0.25s;
+}
+
+.af-system-role {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(221,204,15,0.5);
+  margin-bottom: 20px;
+}
+
+.af-system-desc {
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(214,221,232,0.5);
+  margin-bottom: 28px;
+  transition: color 0.25s;
+}
+
+.af-system-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgba(214,221,232,0.6);
+  transition: color 0.2s;
+}
+
+/* ── Engineering capabilities ────────────────────────────── */
+.af-cap-left {
+  position: sticky;
+  top: 100px;
+}
+
+.af-cap-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.af-cap-item {
+  display: flex;
+  gap: 28px;
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.af-cap-item:first-child { padding-top: 0; }
+.af-cap-item:last-child { border-bottom: none; }
+
+.af-cap-num {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(221,204,15,0.6);
+  min-width: 28px;
+  padding-top: 3px;
+}
+
+.af-cap-body h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e8edf5;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.af-cap-body p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(214,221,232,0.5);
+}
+
+/* ── Stats grid ──────────────────────────────────────────── */
+.af-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.af-stat {
+  padding: 48px 36px;
+  background: rgba(255,255,255,0.025);
+  border-right: 1px solid rgba(255,255,255,0.05);
+  text-align: center;
+}
+.af-stat:last-child { border-right: none; }
+
+.af-stat-num {
+  display: block;
+  font-size: clamp(32px, 3vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #ddcc0f;
+  margin-bottom: 14px;
+  line-height: 1;
+}
+
+.af-stat-label {
+  display: block;
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(214,221,232,0.45);
+}
+
+/* ── CTA section ─────────────────────────────────────────── */
+.af-cta {
+  background: linear-gradient(135deg, #060f1c 0%, #0a1728 50%, #06101e 100%);
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.af-cta-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 48px;
+  text-align: center;
+}
+
+.af-cta-h2 {
+  font-size: clamp(32px, 4vw, 54px);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  color: #e8edf5;
+  margin-bottom: 20px;
+  line-height: 1.08;
+}
+
+.af-cta-body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(214,221,232,0.5);
+  margin-bottom: 40px;
+}
+
+.af-cta-btns {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ══════════════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .af-apps-grid   { grid-template-columns: repeat(2, 1fr); }
+  .af-systems-grid { grid-template-columns: 1fr; }
+  .af-system-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .af-system-card:last-child { border-bottom: none; }
+  .af-stats-grid  { grid-template-columns: repeat(2, 1fr); }
+  .af-inner--split { grid-template-columns: 1fr; gap: 48px; }
+  .af-cap-left { position: static; }
+}
+
+@media (max-width: 768px) {
+  .cp-card {
+    padding: 28px 28px;
+    border-radius: 22px;
+  }
+
+  /* Mobile: stack all cards at bottom, full width — JS still handles show/hide */
+  .cp-card {
+    left: 12px !important;
+    right: 12px !important;
+    top: auto !important;
+    bottom: 80px !important;
+    width: auto !important;
+    max-width: none !important;
+    white-space: normal !important;
+  }
+  /* Override GSAP inline left/right for centered cards on mobile */
+  .cp-card--center,
+  .cp-card--final-hero,
+  .cp-card--center-lower,
+  .cp-card--bottom-center {
+    bottom: 48px !important;
+  }
+  .cp-card--bottom-center {
+    bottom: 24px !important;
+  }
+
+  .cp-card--wide        { padding: 22px 20px; }
+  .cp-card--final-hero  { padding: 24px 20px; top: auto !important; bottom: 60px !important; left: 12px !important; right: 12px !important; text-align: left; }
+  .cp-card-btns         { flex-direction: column; align-items: stretch; }
+  .cp-btn               { justify-content: center; }
+  #card-ch13 .cp-card-btns { flex-direction: row; align-items: center; justify-content: center; }
+
+  .af-apps-grid  { grid-template-columns: 1fr; }
+  .af-stats-grid { grid-template-columns: 1fr 1fr; }
+
+  .af-inner     { padding: 0 20px; }
+  .af-cta-inner { padding: 0 20px; }
+  .af-section   { padding: 80px 0; }
+
+  /* Timeline — show dots only, hide label to save space */
+  #cinema-timeline { bottom: 14px; }
+  .tl-dot          { width: 4px; height: 4px; }
+  #tl-label        { display: none; }
+
+  #technical-advantages { margin: 0; border-radius: 20px; }
+}
+
+/* ============================================================
+   COASTAL PROTECTION — WHITE CONTENT REDESIGN
+   Keep the hero cinematic. Make everything after it bright.
+   ============================================================ */
+
+body.cp-page {
+  background: #ffffff;
+  color: #08111d;
+}
+
+/* Make the post-hero area white and airy */
+#after-film {
+  background: #ffffff !important;
+  color: #08111d;
+  position: relative;
+}
+
+/* Gentle transition from dark hero to white content */
+#after-film::before {
+  content: "";
+  display: block;
+  height: 150px;
+  margin-top: -150px;
+  background: linear-gradient(
+    to bottom,
+    rgba(6, 16, 30, 0.95) 0%,
+    rgba(6, 16, 30, 0.45) 35%,
+    rgba(247, 248, 250, 0.92) 70%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  pointer-events: none;
+}
+
+/* Light section rhythm */
+.af-section,
+.af-section--dark {
+  background: #ffffff !important;
+  color: #08111d;
+}
+
+.af-section:nth-child(even) {
+  background: #f7f8fa !important;
+}
+
+.af-section {
+  padding: 120px 0;
+}
+
+.af-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.af-head {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 72px;
+}
+
+.af-eyebrow {
+  color: rgba(8, 17, 29, 0.48);
+}
+
+.af-eyebrow--gold {
+  color: #c7a91a;
+}
+
+.af-h2,
+.af-cta-h2 {
+  color: #08111d;
+}
+
+.af-lead,
+.af-app-desc,
+.af-system-desc,
+.af-cap-body p,
+.af-stat-label,
+.af-cta-body {
+  color: rgba(8, 17, 29, 0.66);
+}
+
+/* White cards everywhere */
+.af-app-card,
+.af-system-card,
+.af-stat {
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(8, 17, 29, 0.08);
+  box-shadow: 0 14px 44px rgba(8, 17, 29, 0.06);
+}
+
+.af-app-card:hover {
+  background: #ffffff;
+  border-color: rgba(8, 17, 29, 0.14);
+  transform: translateY(-3px);
+}
+
+/* Integrated Coastal Systems cards — whole card is a link to the
+   respective product page; hover inverts to INGEMAT black with
+   white text, leaving the gold accents (num, role) unchanged */
+.af-system-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.af-system-card:hover {
+  background: #08111d;
+  border-color: #08111d;
+}
+
+.af-system-card:hover .af-system-title,
+.af-system-card:hover .af-system-link {
+  color: #ffffff;
+}
+
+.af-system-card:hover .af-system-desc {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.af-app-title,
+.af-system-title,
+.af-cap-body h4 {
+  color: #08111d;
+}
+
+.af-app-icon {
+  background: rgba(199, 169, 26, 0.08);
+  color: #c7a91a;
+}
+
+.af-app-tags a {
+  color: rgba(8, 17, 29, 0.52);
+  border-color: rgba(8, 17, 29, 0.10);
+  background: rgba(8, 17, 29, 0.02);
+}
+
+.af-systems-grid,
+.af-stats-grid {
+  border-color: rgba(8, 17, 29, 0.08);
+}
+
+.af-system-num {
+  color: #c7a91a;
+}
+
+.af-system-role {
+  color: rgba(199, 169, 26, 0.78);
+}
+
+.af-system-link {
+  color: rgba(8, 17, 29, 0.55);
+}
+
+.af-cap-num {
+  color: rgba(199, 169, 26, 0.85);
+}
+
+.af-stat-num {
+  color: #c7a91a;
+}
+
+/* White CTA section */
+.af-cta {
+  background: linear-gradient(180deg, #ffffff 0%, #f7f8fa 100%) !important;
+  border-top: 1px solid rgba(8, 17, 29, 0.06);
+}
+
+.af-cta .cp-btn--primary {
+  background: #08111d;
+  color: #ffffff;
+  border-color: #08111d;
+}
+
+.af-cta .cp-btn--ghost {
+  background: rgba(8, 17, 29, 0.03);
+  color: #08111d;
+  border-color: rgba(8, 17, 29, 0.12);
+}
+
+.af-cta .cp-btn--primary:hover {
+  background: #111b2b;
+  border-color: #111b2b;
+}
+
+.af-cta .cp-btn--ghost:hover {
+  background: rgba(8, 17, 29, 0.06);
+  border-color: rgba(8, 17, 29, 0.18);
+}
+
+/* Footer should also feel light */
+footer {
+  background: #f7f8fa;
+  color: #08111d;
+  border-top: 1px solid rgba(8, 17, 29, 0.06);
+}
+
+.footer-brand-name {
+  color: #08111d;
+}
+
+.footer-brand-sub {
+  color: rgba(8, 17, 29, 0.5);
+}
+
+.footer-link,
+.footer-copy {
+  color: rgba(8, 17, 29, 0.58);
+}
+
+/* Better contrast for the final hero card */
+#card-ch13 {
+  background: rgba(255, 255, 255, 0.86);
+}
+
+#card-ch13 .cp-btn--final {
+  background: #08111d;
+  color: #ffffff;
+  border-color: #08111d;
+}
+
+#card-ch13 .cp-btn--final:hover {
+  background: #111b2b;
+  border-color: #111b2b;
+}
+
+#card-ch13 .cp-btn-arrow {
+  color: #ffffff;
+}
+
+/* Coastal Applications — blueprint sketch watermark behind cards/text,
+   doesn't affect their layout or position */
+#coastal-applications {
+  position: relative;
+  z-index: 0;
+}
+
+#coastal-applications::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("./images/Coastal protection frames/Sketch gaviones.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.14;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Technical Advantages — inverted INGEMAT black panel with rounded
+   corners; dark/gray text goes white, gold accents stay gold */
+#technical-advantages {
+  background: #08111d !important;
+  margin: 0;
+  border-radius: 32px;
+  overflow: hidden;
+  width: auto;
+}
+
+#technical-advantages .af-h2 {
+  color: #ffffff;
+}
+
+#technical-advantages .af-stats-grid {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+#technical-advantages .af-stat {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+#technical-advantages .af-stat-label {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Optional: make the white content feel even cleaner on large screens */
+@media (min-width: 1200px) {
+  .af-section {
+    padding: 132px 0;
+  }
+
+  .af-head {
+    margin-bottom: 80px;
+  }
+}
+
+/* ── SHORT VIEWPORTS — landscape phones / small laptops ──── */
+@media (max-height: 520px) {
+  .cp-card { padding: 16px 22px; }
+  .cp-card--final-hero { top: 72px; max-width: 440px; padding: 18px 24px; } /* clears the 68px nav */
+  .cp-card-h1 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 10px; }
+  .cp-card-h1-final { font-size: clamp(24px, 3.5vw, 34px); }
+  .cp-card-h2-large { font-size: clamp(22px, 3vw, 30px); margin-bottom: 8px; }
+  .cp-card-body { font-size: 13px; line-height: 1.5; }
+  .cp-card-eyebrow { margin-bottom: 8px; }
+  .cp-card-sub-final { margin-bottom: 10px; }
+  #cp-timeline { display: none; } /* frees the bottom edge; progress bar remains */
+}
+
+/* Comfortable tap targets on coarse pointers */
+@media (max-width: 900px) {
+  .af-app-tags a { padding: 8px 12px; }
+}

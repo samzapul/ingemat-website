@@ -8,8 +8,12 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main:  './index.html',
-        steel: './steel-solutions.html',
+        main:     './index.html',
+        steel:    './steel-solutions.html',
+        geo:      './geosynthetics.html',
+        gabions:  './amorphous-gabions.html',
+        coastal:  './coastal-protection.html',
+        ground:   './ground-stabilization.html',
       },
     },
   },

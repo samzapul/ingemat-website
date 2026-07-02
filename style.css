@@ -322,7 +322,7 @@ body {
       rgba(0,0,0,0.55) 80%,
       rgba(0,0,0,0.88) 100%
     ),
-    url("./images/Hero.png");
+    url("./images/Hero.webp");
   background-size: cover;
   background-position: center;
 }
@@ -895,7 +895,7 @@ body {
 .contact-body { font-size: 15px; line-height: 1.7; color: #9ca3af; margin-bottom: 28px; }
 .contact-info { display: flex; flex-direction: column; gap: 12px; }
 .contact-info-row { display: flex; gap: 12px; align-items: center; }
-.contact-info-link { font-size: 19px; color: #ddcc0f; text-decoration: none; }
+.contact-info-link { font-size: 19px; color: #ddcc0f; text-decoration: none; display: inline-block; padding: 8px 0; }
 .contact-info-link:hover { text-decoration: underline; }
 .contact-info-plain { font-size: 19px; color: #6b7280; }
 .contact-form-card {
@@ -974,6 +974,16 @@ body {
   transform: scale(1.1);
   box-shadow: 0 6px 28px rgba(37, 211, 102, 0.6);
 }
+@media (max-width: 700px) {
+  /* keep clear of full-width cinema cards (bottom: 80px) and timeline */
+  .whatsapp-btn {
+    width: 48px;
+    height: 48px;
+    bottom: 16px;
+    right: 16px;
+  }
+  .whatsapp-btn svg { width: 24px; height: 24px; }
+}
 
 /* ── FOOTER ────────────────────────────────────────────────── */
 footer {
@@ -1036,8 +1046,15 @@ footer {
 /* ── RESPONSIVE ────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .nav-links { display: none; }
-  .nav-hamburger { display: flex; }
+  .nav-hamburger { display: flex; width: 44px; height: 40px; }
   .nav-mobile { display: block; }
+  /* menu can exceed a fixed cap when both accordions open (ES labels wrap) */
+  .nav-mobile.is-open { max-height: calc(100vh - 68px); overflow-y: auto; }
+  /* comfortable tap targets (≥44px) */
+  .nav-mobile-link, .nav-mobile-trigger { padding: 15px 0; }
+  .nav-mobile-sub-link { padding: 12px 0 12px 14px; }
+  .lang-toggle { padding: 10px 12px; }
+  .footer-link { padding: 10px 0; display: inline-block; }
   .solutions-grid,
   .cap-inner,
   .about-inner,
@@ -1055,8 +1072,25 @@ footer {
   .nav-inner { padding: 0 20px; }
   .hero-btn { padding: 13px 28px; }
 }
+@media (max-width: 700px) {
+  /* the full row (logo + subtitle + lang + CTA + hamburger) cannot fit:
+     drop the subtitle and the CTA pill — contact stays in the menu */
+  .nav-logo-sub { display: none; }
+  .nav-cta { display: none; }
+  .nav-logo { white-space: nowrap; }
+}
 @media (max-width: 560px) {
   .pdf-grid { grid-template-columns: 1fr; }
   .hero-headline { font-size: 40px; }
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
+}
+
+/* ── REDUCED MOTION ───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
