@@ -142,8 +142,6 @@ const translations = {
     'pdf2.desc':   'Detailed specifications, tolerances, load ratings, and installation guides for all anchoring systems.',
     'pdf3.title':  'Capabilities Sheet',
     'pdf3.desc':   'Summary of manufacturing capabilities, certifications, quality benchmarks, and delivery timelines.',
-    'pdf4.title':  'Infrastructure Case Study',
-    'pdf4.desc':   'Documented case study of a large-scale slope stabilization project using INGE&MAT anchor systems.',
     'pdf.download': 'Download',
 
     'contact.eyebrow': 'Contact',
@@ -295,8 +293,6 @@ const translations = {
     'pdf2.desc':   'Especificaciones detalladas, tolerancias, clasificaciones de carga y guías de instalación para todos los sistemas de anclaje.',
     'pdf3.title':  'Ficha de Capacidades',
     'pdf3.desc':   'Resumen de capacidades de fabricación, certificaciones, estándares de calidad y plazos de entrega.',
-    'pdf4.title':  'Estudio de Caso de Infraestructura',
-    'pdf4.desc':   'Caso documentado de un proyecto de estabilización de taludes a gran escala utilizando sistemas de anclaje INGE&MAT.',
     'pdf.download': 'Descargar',
 
     'contact.eyebrow': 'Contacto',
