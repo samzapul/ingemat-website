@@ -19,9 +19,7 @@ const translations = {
     'nav.enquire':      'Enquire',
     'nav.sub.coastal':   'Coastal Protection',
     'nav.sub.ground':    'Ground Stabilization',
-    'nav.sub.marine':    'Marine Infrastructure',
-    'nav.sub.retaining': 'Retaining Structures',
-    'nav.sub.mining':    'Mining & Energy',
+    'nav.sub.mining':    'Oil, Gas and Mining',
     'nav.sub.steel':     'Steel',
     'nav.sub.geosyn':    'Geosynthetics',
     'nav.sub.rocks':     'Amorphous Gabions',
@@ -32,33 +30,108 @@ const translations = {
     'hero.btn1':  'View Solutions',
     'hero.btn2':  'View Products',
 
-    'solutions.eyebrow':  'Solutions',
-    'solutions.heading':  'Solutions designed for<br />real infrastructure',
-    'solutions.body':     'In Inge&Mat SAS we offer specialized solutions for infrastructure projects, including sheet piles, woven and non-woven geotextiles, anchoring systems, slope stabilization, and materials for oil & gas applications, port works, and critical structures. Each solution is selected and optimized based on project conditions, ensuring technical performance, cost efficiency, and reliability in execution.',
+    'eng.lead': '<span class="hm-line">Infrastructure doesn\'t begin with concrete.</span><span class="hm-line">It begins with the right materials.</span>',
+    'eng.sub':  'From coastal defenses and stabilized foundations to industrial pipelines and marine infrastructure, INGE&MAT supplies the engineering systems that make modern infrastructure possible.',
 
-    'card.badge':  'Premium Spec',
-    'card1.title': 'Anclajes de Alta Resistencia',
-    'card1.desc':  'Engineering strength that defies environmental degradation. Our proprietary anchoring systems are forged for extreme conditions and tested to international load-bearing standards.',
-    'card2.title': 'Gavión Amorfo',
-    'card2.desc':  'Fluid structural solutions meeting rigid requirements. A breakthrough in erosion control and international landscaping — adaptive, durable, architecturally precise.',
+    'proj.eyebrow': 'Featured Work',
+    'proj.heading': "The World's Toughest Projects",
+    'proj.cta':     'Explore Solution',
+    'proj.soon':    'Coming Soon',
+    'proj.c1.title': 'Coastal Protection',
+    'proj.c1.desc':  'Protecting shorelines through integrated geosynthetics, amorphous gabions and steel systems.',
+    'proj.c2.title': 'Ground Stabilization',
+    'proj.c2.desc':  'Transforming weak ground into reliable foundations for heavy infrastructure.',
+    'proj.c3.title': 'Oil, Gas & Mining',
+    'proj.c3.desc':  'Engineering industrial infrastructure while respecting the Colombian landscape.',
+    'proj.c4.title': 'Marine Infrastructure',
+    'proj.c4.desc':  'Ports, terminals and waterfront structures engineered for long-term performance.',
+    'proj.c5.title': 'Mining & Heavy Industry',
+    'proj.c5.desc':  "Infrastructure supporting the world's most demanding industrial operations.",
 
-    'cap.eyebrow':    'Core Capabilities',
-    'cap.heading':    'Engineering &amp; Supply<br>Capabilities',
-    'cap.body':       "We operate as an integration channel between international manufacturers and projects across Latin America, facilitating access to specialized solutions and ensuring their availability during critical execution phases. We have the capacity to articulate technical supply for sectors such as road infrastructure, geotechnics, maritime works, and energy, adapting each solution to the specific conditions of the project. Our structure allows us to respond quickly to complex technical requirements and serve projects at both regional and broader market levels, with a direct focus on performance and execution.",
-    'cap.feat1':      'Fully compliant with all applicable technical and regulatory requirements established by the Agencia Nacional de Infraestructura (ANI), Colombia.',
-    'cap.feat2':      'Established operational presence across Latin America, with the ability to support projects in multiple markets and technical contexts.',
-    'cap.feat3':      'End-to-end support, from sourcing and logistics to on-site delivery and integration.',
-    'cap.stat.label': 'PROJECTS SUPPORTED',
-    'cap.stat.desc':  'Across infrastructure, geotechnical and energy sectors',
+    'sys.heading': 'One Project.<br>Many Materials.',
+    'sys.sub':     'Every engineering solution combines multiple material technologies working together.',
+    'sys.coastal': 'Coastal Protection',
+    'sys.ground':  'Ground Stabilization',
+    'sys.ogm':     'Oil, Gas & Mining',
+    'sys.mat.geotextiles': 'Geotextiles',
+    'sys.mat.gabions':     'Gabions',
+    'sys.mat.steel':       'Steel',
+    'sys.mat.geocells':    'Geocells',
+    'sys.mat.geogrids':    'Geogrids',
+    'sys.mat.steelpipe':   'Steel Pipe',
+    'sys.mat.drainage':    'Drainage',
+    'sys.hint': 'Hover a solution or a material to see how they connect.',
 
-    'about.eyebrow': 'About INGE&MAT',
-    'about.heading': "Engineering the Foundation of Tomorrow's Infrastructure",
-    'about.body1':   'Founded on the principles of structural precision and global sourcing, INGE&MAT delivers advanced anchoring systems, gabion solutions, and engineered structural components to major infrastructure projects worldwide.',
-    'about.body2':   'With over two decades of field experience, our team of structural engineers and logistics specialists ensures every component meets the highest international standards before it reaches your site.',
-    'about.stat1':   'Years of engineering excellence',
-    'about.stat2':   'Countries in our supply network',
-    'about.stat3':   'Projects completed globally',
-    'about.stat4':   '9001 certified quality management',
+    'mat.eyebrow': 'What We Supply',
+    'mat.heading': 'Engineering Materials',
+    'mat.p1.title': 'Steel',
+    'mat.p1.line':  'API 5L Steel Pipes',
+    'mat.p1.sub':   'Engineered for critical infrastructure.',
+    'mat.p1.btn':   'Explore Steel',
+    'mat.p2.title': 'Geosynthetics',
+    'mat.p2.sub':   'Engineered ground improvement.',
+    'mat.p2.btn':   'Explore Geosynthetics',
+    'mat.p3.title': 'Amorphous Gabions',
+    'mat.p3.sub':   'Flexible coastal protection systems.',
+    'mat.p3.btn':   'Explore Gabions',
+
+    'ind.eyebrow':  'Where We Work',
+    'ind.heading':  'Industries We Serve',
+    'ind.energy':   'Energy',
+    'ind.mining':   'Mining',
+    'ind.marine':   'Marine',
+    'ind.transport':'Transportation',
+    'ind.water':    'Water',
+    'ind.industrial':'Industrial',
+
+    'why.eyebrow': 'Why Partner With Us',
+    'why.heading': 'Why Engineers Choose INGE&MAT',
+    'why.c1.title': 'Engineering Support',
+    'why.c1.desc':  'Direct technical collaboration from specification to installation.',
+    'why.c2.title': 'Certified Materials',
+    'why.c2.desc':  'Every product manufactured and tested to international standards.',
+    'why.c3.title': 'Reliable Supply Chains',
+    'why.c3.desc':  'A global manufacturing network built for on-time delivery.',
+    'why.c4.title': 'Technical Documentation',
+    'why.c4.desc':  'Complete datasheets, certifications and installation guides for every project.',
+    'why.c5.title': 'Global Manufacturing Network',
+    'why.c5.desc':  'Access to specialized producers across multiple continents.',
+    'why.c6.title': 'Long-Term Performance',
+    'why.c6.desc':  'Materials selected and engineered to perform for decades, not years.',
+
+    'insight.eyebrow': 'Project Stories',
+    'insight.heading': 'Engineering Insights',
+    'insight.tag.coastal': 'Coastal Protection',
+    'insight.tag.ground':  'Ground Stabilization',
+    'insight.tag.ogm':     'Oil, Gas & Mining',
+    'insight.c1.title': 'Wave Energy Dissipation',
+    'insight.c1.desc':  'How porous gabion armor absorbs and redirects hydraulic energy along the shoreline.',
+    'insight.c2.title': 'Working Platform Construction',
+    'insight.c2.desc':  'Turning weak, saturated ground into a stable foundation for heavy equipment.',
+    'insight.c3.title': 'Pipeline Installation',
+    'insight.c3.desc':  'Precision welding and burial practices that place critical infrastructure beneath the landscape.',
+    'insight.c4.title': 'Industrial Corridors',
+    'insight.c4.desc':  'Surveying and route planning across some of the most demanding terrain in the Andes.',
+
+    'how.eyebrow': 'Process',
+    'how.heading': 'From Specification to Site',
+    'how.s1.title': 'Engineering',
+    'how.s1.desc':  'Understanding the technical demands of your project.',
+    'how.s2.title': 'Material Selection',
+    'how.s2.desc':  'Matching proven material technologies to site conditions.',
+    'how.s3.title': 'Manufacturing',
+    'how.s3.desc':  'Sourced from certified manufacturers across our global network.',
+    'how.s4.title': 'Global Supply',
+    'how.s4.desc':  'Logistics coordinated from factory to site, anywhere in Latin America.',
+    'how.s5.title': 'Technical Support',
+    'how.s5.desc':  'Engineering guidance through specification, installation and beyond.',
+    'how.s6.title': 'Project Success',
+    'how.s6.desc':  'Infrastructure that performs reliably for decades.',
+
+    'fcta.heading': 'The materials<br>behind<br>great engineering.',
+    'fcta.body':    'Every successful infrastructure project begins long before construction starts. It begins with selecting the right materials. INGE&MAT supplies engineered solutions trusted across coastal, industrial, transportation, marine, mining and energy infrastructure throughout Latin America.',
+    'fcta.btn1':    'Explore Solutions',
+    'fcta.btn2':    'Explore Products',
 
     'res.eyebrow': 'Technical Documentation',
     'res.heading': 'Downloadable Resources',
@@ -99,9 +172,7 @@ const translations = {
     'nav.enquire':      'Cotizar',
     'nav.sub.coastal':   'Protección Costera',
     'nav.sub.ground':    'Estabilización de Suelos',
-    'nav.sub.marine':    'Infraestructura Marina',
-    'nav.sub.retaining': 'Estructuras de Contención',
-    'nav.sub.mining':    'Minería y Energía',
+    'nav.sub.mining':    'Petróleo, Gas y Minería',
     'nav.sub.steel':     'Aceros',
     'nav.sub.geosyn':    'Geosintéticos',
     'nav.sub.rocks':     'Gaviones Amorfos',
@@ -112,33 +183,108 @@ const translations = {
     'hero.btn1':  'Ver Soluciones',
     'hero.btn2':  'Ver Productos',
 
-    'solutions.eyebrow':  'Soluciones',
-    'solutions.heading':  'Soluciones diseñadas para<br />infraestructura real',
-    'solutions.body':     'En Inge&Mat SAS nos especializamos en soluciones para proyectos de infraestructura, incluyendo tablestacas, geotextiles tejidos y no tejidos, sistemas de anclaje, estabilización de taludes y materiales para aplicaciones en oil & gas, obras portuarias y estructuras críticas. Cada solución se selecciona y optimiza en función de las condiciones del proyecto, asegurando desempeño técnico, eficiencia en costos y confiabilidad en la ejecución.',
+    'eng.lead': '<span class="hm-line">La infraestructura no comienza con concreto.</span><span class="hm-line">Comienza con los materiales correctos.</span>',
+    'eng.sub':  'Desde defensas costeras y cimentaciones estabilizadas hasta ductos industriales e infraestructura marina, INGE&MAT suministra los sistemas de ingeniería que hacen posible la infraestructura moderna.',
 
-    'card.badge':  'Especificación Premium',
-    'card1.title': 'Anclajes de Alta Resistencia',
-    'card1.desc':  'Fortaleza de ingeniería que desafía la degradación ambiental. Nuestros sistemas de anclaje propietarios están forjados para condiciones extremas y probados según estándares internacionales de carga.',
-    'card2.title': 'Gavión Amorfo',
-    'card2.desc':  'Soluciones estructurales fluidas que cumplen requisitos rígidos. Un avance en el control de erosión y paisajismo internacional — adaptable, duradero, arquitectónicamente preciso.',
+    'proj.eyebrow': 'Trabajo Destacado',
+    'proj.heading': 'Los Proyectos Más Exigentes del Mundo',
+    'proj.cta':     'Explorar Solución',
+    'proj.soon':    'Próximamente',
+    'proj.c1.title': 'Protección Costera',
+    'proj.c1.desc':  'Protegiendo litorales mediante geosintéticos, gaviones amorfos y sistemas de acero integrados.',
+    'proj.c2.title': 'Estabilización de Suelos',
+    'proj.c2.desc':  'Transformando suelos débiles en cimentaciones confiables para infraestructura pesada.',
+    'proj.c3.title': 'Petróleo, Gas y Minería',
+    'proj.c3.desc':  'Ingeniería de infraestructura industrial respetando el paisaje colombiano.',
+    'proj.c4.title': 'Infraestructura Marina',
+    'proj.c4.desc':  'Puertos, terminales y estructuras costeras diseñadas para un desempeño duradero.',
+    'proj.c5.title': 'Minería e Industria Pesada',
+    'proj.c5.desc':  'Infraestructura que respalda las operaciones industriales más exigentes del mundo.',
 
-    'cap.eyebrow':    'Capacidades Principales',
-    'cap.heading':    'Capacidades de<br>Ingeniería y Suministro',
-    'cap.body':       'Operamos como canal de integración entre fabricantes internacionales y proyectos en América Latina, facilitando el acceso a soluciones especializadas y asegurando su disponibilidad en fases críticas de ejecución. Contamos con la capacidad de articular suministro técnico para sectores como infraestructura vial, geotecnia, obras marítimas y energía, adaptando cada solución a las condiciones específicas del proyecto. Nuestra estructura permite responder con rapidez a requerimientos técnicos complejos y atender proyectos tanto a nivel regional como en otros mercados, con un enfoque directo en desempeño y ejecución.',
-    'cap.feat1':      'Cumplimiento total con los requisitos técnicos y normativos establecidos por la Agencia Nacional de Infraestructura (ANI), Colombia.',
-    'cap.feat2':      'Presencia operativa consolidada en América Latina, con capacidad de apoyar proyectos en múltiples mercados y contextos técnicos.',
-    'cap.feat3':      'Acompañamiento integral, desde el abastecimiento y la logística hasta la entrega en sitio y la integración.',
-    'cap.stat.label': 'PROYECTOS APOYADOS',
-    'cap.stat.desc':  'En sectores de infraestructura, geotecnia y energía',
+    'sys.heading': 'Un Proyecto.<br>Muchos Materiales.',
+    'sys.sub':     'Cada solución de ingeniería combina múltiples tecnologías de materiales trabajando en conjunto.',
+    'sys.coastal': 'Protección Costera',
+    'sys.ground':  'Estabilización de Suelos',
+    'sys.ogm':     'Petróleo, Gas y Minería',
+    'sys.mat.geotextiles': 'Geotextiles',
+    'sys.mat.gabions':     'Gaviones',
+    'sys.mat.steel':       'Acero',
+    'sys.mat.geocells':    'Geoceldas',
+    'sys.mat.geogrids':    'Geomallas',
+    'sys.mat.steelpipe':   'Tubería de Acero',
+    'sys.mat.drainage':    'Drenaje',
+    'sys.hint': 'Pase el cursor sobre una solución o un material para ver cómo se conectan.',
 
-    'about.eyebrow': 'Sobre INGE&MAT',
-    'about.heading': 'Ingeniando la Base de la Infraestructura del Mañana',
-    'about.body1':   'Fundada en los principios de precisión estructural y abastecimiento global, INGE&MAT suministra sistemas avanzados de anclaje, soluciones de gavión y componentes estructurales de ingeniería a los principales proyectos de infraestructura del mundo.',
-    'about.body2':   'Con más de dos décadas de experiencia en campo, nuestro equipo de ingenieros estructurales y especialistas en logística garantiza que cada componente cumpla los más altos estándares internacionales antes de llegar a su obra.',
-    'about.stat1':   'Años de excelencia en ingeniería',
-    'about.stat2':   'Países en nuestra red de suministro',
-    'about.stat3':   'Proyectos completados globalmente',
-    'about.stat4':   'Gestión de calidad certificada ISO 9001',
+    'mat.eyebrow': 'Lo Que Suministramos',
+    'mat.heading': 'Materiales de Ingeniería',
+    'mat.p1.title': 'Acero',
+    'mat.p1.line':  'Tuberías de Acero API 5L',
+    'mat.p1.sub':   'Diseñado para infraestructura crítica.',
+    'mat.p1.btn':   'Explorar Acero',
+    'mat.p2.title': 'Geosintéticos',
+    'mat.p2.sub':   'Mejoramiento de suelos diseñado con ingeniería.',
+    'mat.p2.btn':   'Explorar Geosintéticos',
+    'mat.p3.title': 'Gaviones Amorfos',
+    'mat.p3.sub':   'Sistemas flexibles de protección costera.',
+    'mat.p3.btn':   'Explorar Gaviones',
+
+    'ind.eyebrow':  'Dónde Trabajamos',
+    'ind.heading':  'Industrias que Atendemos',
+    'ind.energy':   'Energía',
+    'ind.mining':   'Minería',
+    'ind.marine':   'Marina',
+    'ind.transport':'Transporte',
+    'ind.water':    'Agua',
+    'ind.industrial':'Industrial',
+
+    'why.eyebrow': 'Por Qué Trabajar con Nosotros',
+    'why.heading': 'Por Qué los Ingenieros Eligen INGE&MAT',
+    'why.c1.title': 'Soporte de Ingeniería',
+    'why.c1.desc':  'Colaboración técnica directa desde la especificación hasta la instalación.',
+    'why.c2.title': 'Materiales Certificados',
+    'why.c2.desc':  'Cada producto fabricado y probado bajo estándares internacionales.',
+    'why.c3.title': 'Cadenas de Suministro Confiables',
+    'why.c3.desc':  'Una red de fabricación global diseñada para entregas puntuales.',
+    'why.c4.title': 'Documentación Técnica',
+    'why.c4.desc':  'Fichas técnicas, certificaciones y guías de instalación completas para cada proyecto.',
+    'why.c5.title': 'Red de Fabricación Global',
+    'why.c5.desc':  'Acceso a productores especializados en múltiples continentes.',
+    'why.c6.title': 'Desempeño a Largo Plazo',
+    'why.c6.desc':  'Materiales seleccionados y diseñados para funcionar durante décadas, no años.',
+
+    'insight.eyebrow': 'Historias de Proyectos',
+    'insight.heading': 'Perspectivas de Ingeniería',
+    'insight.tag.coastal': 'Protección Costera',
+    'insight.tag.ground':  'Estabilización de Suelos',
+    'insight.tag.ogm':     'Petróleo, Gas y Minería',
+    'insight.c1.title': 'Disipación de Energía de Oleaje',
+    'insight.c1.desc':  'Cómo la armadura porosa de gaviones absorbe y redirige la energía hidráulica a lo largo del litoral.',
+    'insight.c2.title': 'Construcción de Plataformas de Trabajo',
+    'insight.c2.desc':  'Convirtiendo suelo débil y saturado en una base estable para equipo pesado.',
+    'insight.c3.title': 'Instalación de Ductos',
+    'insight.c3.desc':  'Prácticas de soldadura de precisión y enterrado que ubican infraestructura crítica bajo el terreno.',
+    'insight.c4.title': 'Corredores Industriales',
+    'insight.c4.desc':  'Topografía y planificación de ruta en algunos de los terrenos más exigentes de los Andes.',
+
+    'how.eyebrow': 'Proceso',
+    'how.heading': 'De la Especificación a la Obra',
+    'how.s1.title': 'Ingeniería',
+    'how.s1.desc':  'Comprendiendo las exigencias técnicas de su proyecto.',
+    'how.s2.title': 'Selección de Materiales',
+    'how.s2.desc':  'Emparejando tecnologías de materiales probadas con las condiciones del sitio.',
+    'how.s3.title': 'Fabricación',
+    'how.s3.desc':  'Abastecido por fabricantes certificados en nuestra red global.',
+    'how.s4.title': 'Suministro Global',
+    'how.s4.desc':  'Logística coordinada desde fábrica hasta obra, en cualquier lugar de América Latina.',
+    'how.s5.title': 'Soporte Técnico',
+    'how.s5.desc':  'Acompañamiento de ingeniería durante la especificación, instalación y más allá.',
+    'how.s6.title': 'Éxito del Proyecto',
+    'how.s6.desc':  'Infraestructura que funciona de forma confiable durante décadas.',
+
+    'fcta.heading': 'Los materiales<br>detrás de<br>la gran ingeniería.',
+    'fcta.body':    'Todo proyecto de infraestructura exitoso comienza mucho antes de iniciar la construcción. Comienza con la selección de los materiales correctos. INGE&MAT suministra soluciones de ingeniería confiables para infraestructura costera, industrial, de transporte, marina, minera y energética en toda América Latina.',
+    'fcta.btn1':    'Explorar Soluciones',
+    'fcta.btn2':    'Explorar Productos',
 
     'res.eyebrow': 'Documentación Técnica',
     'res.heading': 'Recursos Descargables',
@@ -209,94 +355,6 @@ document.getElementById('lang-toggle').addEventListener('click', (e) => {
 });
 
 applyLang(initLanguageFromUrlOrStorage());
-
-/* ── CAROUSEL (infinite loop) ──────────────────────────────── */
-(function () {
-  const track   = document.getElementById('carousel-track');
-  const outer   = document.getElementById('carousel-outer');
-  const btnPrev = document.getElementById('carousel-prev');
-  const btnNext = document.getElementById('carousel-next');
-  const GAP     = 24;
-  const TRANS   = 'transform 0.55s cubic-bezier(0.4, 0, 0.2, 1)';
-
-  /* Clone all cards: [clones_back | originals | clones_front] */
-  const originals = Array.from(track.children);
-  const N = originals.length; // 7
-
-  originals.forEach(c => track.appendChild(c.cloneNode(true)));
-  originals.slice().reverse().forEach(c => track.prepend(c.cloneNode(true)));
-  /* track now has 3*N = 21 cards; originals at indices N..2N-1 */
-
-  let index = N + 2; /* start showing originals 2 & 3 */
-  let loopLock = false;
-
-  function cardW() { return track.children[0].offsetWidth; }
-
-  function tx(i) {
-    const w = cardW();
-    return -(i * (w + GAP)) + w / 2 + GAP;
-  }
-
-  function setInstant(i) {
-    track.style.transition = 'none';
-    track.style.transform  = `translateX(${tx(i)}px)`;
-  }
-
-  function go(i) {
-    if (loopLock) return;
-    index = i;
-    track.style.transition = TRANS;
-    track.style.transform  = `translateX(${tx(index)}px)`;
-
-    loopLock = true;
-    setTimeout(() => {
-      /* silent loop jump after transition ends */
-      if (index >= 2 * N) {
-        index -= N;
-        setInstant(index);
-      } else if (index < N) {
-        index += N;
-        setInstant(index);
-      }
-      requestAnimationFrame(() => requestAnimationFrame(() => {
-        track.style.transition = TRANS;
-        loopLock = false;
-      }));
-    }, 570);
-  }
-
-  btnPrev.addEventListener('click', () => go(index - 1));
-  btnNext.addEventListener('click', () => go(index + 1));
-  window.addEventListener('resize', () => { setInstant(index); });
-
-  /* scroll wheel */
-  outer.addEventListener('wheel', (e) => {
-    e.preventDefault();
-    if      (e.deltaX > 40 || e.deltaY > 40)  go(index + 1);
-    else if (e.deltaX < -40 || e.deltaY < -40) go(index - 1);
-  }, { passive: false });
-
-  /* drag / touch */
-  let startX = 0, startIdx = 0;
-
-  function dragStart(x) { startX = x; startIdx = index; track.classList.add('dragging'); }
-  function dragEnd(x) {
-    if (!track.classList.contains('dragging')) return;
-    track.classList.remove('dragging');
-    const diff = startX - x;
-    if      (diff >  60) go(startIdx + 1);
-    else if (diff < -60) go(startIdx - 1);
-    else go(startIdx);
-  }
-
-  outer.addEventListener('mousedown',  (e) => dragStart(e.clientX));
-  window.addEventListener('mouseup',   (e) => dragEnd(e.clientX));
-  outer.addEventListener('touchstart', (e) => dragStart(e.touches[0].clientX), { passive: true });
-  outer.addEventListener('touchend',   (e) => dragEnd(e.changedTouches[0].clientX));
-
-  /* init */
-  requestAnimationFrame(() => setInstant(index));
-})();
 
 /* ── EMAILJS CONTACT FORM ──────────────────────────────────── */
 const ejs = window.emailjs;
@@ -376,7 +434,9 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
 });
 
 /* ── ACTIVE NAV TRACKING ───────────────────────────────────── */
-const sectionIds = ['hero', 'solutions', 'capabilities', 'about', 'resources', 'contact'];
+/* DOM order matters: about (S1) precedes solutions (S2) precedes
+   capabilities (S6) on the redesigned homepage. */
+const sectionIds = ['hero', 'about', 'solutions', 'capabilities', 'resources', 'contact'];
 const linkMap = {
   hero:         document.getElementById('nl-home'),
   solutions:    document.getElementById('nl-solutions'),

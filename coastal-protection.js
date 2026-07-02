@@ -17,8 +17,7 @@ const translations = {
     'nav.home': 'Home', 'nav.solutions': 'Solutions', 'nav.products': 'Products',
     'nav.capabilities': 'Capabilities', 'nav.about': 'About', 'nav.contact': 'Contact',
     'nav.enquire': 'Enquire', 'nav.sub.coastal': 'Coastal Protection',
-    'nav.sub.ground': 'Ground Stabilization', 'nav.sub.marine': 'Marine Infrastructure',
-    'nav.sub.retaining': 'Retaining Structures', 'nav.sub.mining': 'Mining & Energy',
+    'nav.sub.ground': 'Ground Stabilization', 'nav.sub.mining': 'Oil, Gas and Mining',
     'nav.sub.steel': 'Steel', 'nav.sub.geosyn': 'Geosynthetics',
     'nav.sub.rocks': 'Amorphous Gabions',
 
@@ -146,8 +145,7 @@ const translations = {
     'nav.home': 'Inicio', 'nav.solutions': 'Soluciones', 'nav.products': 'Productos',
     'nav.capabilities': 'Capacidades', 'nav.about': 'Nosotros', 'nav.contact': 'Contacto',
     'nav.enquire': 'Cotizar', 'nav.sub.coastal': 'Protección Costera',
-    'nav.sub.ground': 'Estabilización de Suelos', 'nav.sub.marine': 'Infraestructura Marina',
-    'nav.sub.retaining': 'Estructuras de Contención', 'nav.sub.mining': 'Minería y Energía',
+    'nav.sub.ground': 'Estabilización de Suelos', 'nav.sub.mining': 'Petróleo, Gas y Minería',
     'nav.sub.steel': 'Acero', 'nav.sub.geosyn': 'Geosintéticos',
     'nav.sub.rocks': 'Gaviones Amorfos',
 

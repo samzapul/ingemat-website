@@ -9,7 +9,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Nunito:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="icon" href="./images/INGEMAT ICON.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="home.css" />
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.4.1/dist/email.min.js" integrity="sha384-SALc35EccAf6RzGw4iNsyj7kTPr33K7RoGzYu+7heZhT8s0GZouafRiCg1qy44AS" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -33,9 +36,7 @@
           <div class="mega-menu">
             <a href="coastal-protection.html" class="mega-sub" data-i18n="nav.sub.coastal">Coastal Protection</a>
             <a href="ground-stabilization.html" class="mega-sub" data-i18n="nav.sub.ground">Ground Stabilization</a>
-            <a href="#solutions" class="mega-sub" data-i18n="nav.sub.marine">Marine Infrastructure</a>
-            <a href="#solutions" class="mega-sub" data-i18n="nav.sub.retaining">Retaining Structures</a>
-            <a href="#solutions" class="mega-sub" data-i18n="nav.sub.mining">Mining &amp; Energy</a>
+            <a href="oil-gas-mining.html" class="mega-sub" data-i18n="nav.sub.mining">Oil, Gas and Mining</a>
           </div>
         </div>
 
@@ -80,9 +81,7 @@
         <div class="nav-mobile-sub">
           <a href="coastal-protection.html" class="nav-mobile-sub-link" data-i18n="nav.sub.coastal">Coastal Protection</a>
           <a href="ground-stabilization.html" class="nav-mobile-sub-link" data-i18n="nav.sub.ground">Ground Stabilization</a>
-          <a href="#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.marine">Marine Infrastructure</a>
-          <a href="#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.retaining">Retaining Structures</a>
-          <a href="#solutions" class="nav-mobile-sub-link" data-i18n="nav.sub.mining">Mining &amp; Energy</a>
+          <a href="oil-gas-mining.html" class="nav-mobile-sub-link" data-i18n="nav.sub.mining">Oil, Gas and Mining</a>
         </div>
       </div>
       <div class="nav-mobile-item">
@@ -106,7 +105,7 @@
 </nav>
 
 <!-- ══════════════════════════════════════════════════════════
-     HERO
+     HERO — FINAL, DO NOT MODIFY
 ══════════════════════════════════════════════════════════ -->
 <section id="hero" aria-label="Hero">
   <div class="hero-content">
@@ -122,162 +121,85 @@
 </section>
 
 <!-- ══════════════════════════════════════════════════════════
-     OVERLAPPING WHITE PANEL + SOLUTIONS (light section)
+     BLUEPRINT OVERLAY — decorative, bridges hero → Section 1.
+     Absolutely positioned, zero-height wrapper: displaces no
+     text or layout.
 ══════════════════════════════════════════════════════════ -->
-<div id="solutions-wrap">
-  <div class="white-panel" id="solutions">
-
-    <!-- Intro text + bridge image -->
-    <div class="solutions-grid">
-      <div>
-        <span class="solutions-eyebrow" data-i18n="solutions.eyebrow">Solutions</span>
-        <h2 class="solutions-heading" data-i18n-html="solutions.heading">Solutions designed for<br />real infrastructure</h2>
-        <p class="solutions-body" data-i18n="solutions.body">In Inge&amp;Mat SAS we offer specialized solutions for infrastructure projects, including sheet piles, woven and non-woven geotextiles, anchoring systems, slope stabilization, and materials for oil & gas applications, port works, and critical structures. Each solution is selected and optimized based on project conditions, ensuring technical performance, cost efficiency, and reliability in execution.</p>
-      </div>
-      <div class="bridge-img-col">
-        <img class="bridge-img" src="./images/tablaestaca blueprint.webp" alt="Tablaestaca blueprint" />
-        <img class="bridge-img-secondary" src="./images/Blueprint.webp" alt="Blueprint" />
-      </div>
-    </div>
-
-    <!-- Carousel -->
-    <div class="carousel-section">
-      <div class="carousel-backdrop"></div>
-      <button class="carousel-btn carousel-prev" id="carousel-prev">&#8249;</button>
-      <div class="carousel-outer" id="carousel-outer">
-        <div class="carousel-track" id="carousel-track">
-
-          <article class="card">
-            <div class="card-img-wrap">
-              <img class="card-img" src="https://picsum.photos/seed/geotextile/800/500" alt="Geotextiles" />
-              <span class="card-badge" data-i18n="card.badge">Premium Spec</span>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">Geotextiles</h3>
-              <p class="card-desc">Woven and non-woven geotextile systems for drainage, filtration, and soil reinforcement in demanding civil engineering projects.</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-img-wrap">
-              <img class="card-img" src="https://picsum.photos/seed/sheetpile/800/500" alt="Sheet Piles" />
-              <span class="card-badge" data-i18n="card.badge">Premium Spec</span>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">Tablestacas</h3>
-              <p class="card-desc">High-performance sheet pile systems for retaining walls, port structures, and deep excavation support across varied soil conditions.</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-img-wrap">
-              <img class="card-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB13e6lsiYM-uzzqEfPfOp-VinTna2SREbgP-1CWWOLTqfov4CsZuKAStf6Y8w1vI1f--OSX2iOI5ct7NAZw_x6lYTbJhR-5eHY8P3z72dgzehd5xzATg6Nkd5xgHhZcTrMpZEtXS9DN6g0_qNuYwam6SP2RmKAthk06JaDkKllFVa_9D9uQEXIgPPgp7NxFU4m3mO-8a7ywDGTpO7uI7amSb4dBEd2HURo9Ijxs2XD-uqQHB06EX5wVB2oQAkeOGz4dDyHxE-6cOSB" alt="High-resistance industrial anchor systems" />
-              <span class="card-badge" data-i18n="card.badge">Premium Spec</span>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title" data-i18n="card1.title">Anclajes de Alta Resistencia</h3>
-              <p class="card-desc" data-i18n="card1.desc">Engineering strength that defies environmental degradation. Our proprietary anchoring systems are forged for extreme conditions and tested to international load-bearing standards.</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-img-wrap">
-              <img class="card-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQT4bVLkUP1WjckO-c0osNB30RxlH5qLoAMUotkOn6qh09NY9j-pL17mY9KqRXqvrXerCJn0csSYN9vy5o6eREtr5OCB4kka2fKZKk27-BywANrr8f3StBFfFL4nDAd3u-6BZAfqsgtmSR50-TZjSX0W1B4kIMblPw3sAQ6VIC51K_gZv_k3v__qxSp2-bc5jmlfh-y9Z0BIvXnuH5bOD8qtzSsHvY6KGdy0Evy3l6JJ8msIdpWkXgbsD84jZQNg2stafLBA_dZGat" alt="Amorphous gabion stone matrix for erosion control" />
-              <span class="card-badge" data-i18n="card.badge">Premium Spec</span>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title" data-i18n="card2.title">Gavión Amorfo</h3>
-              <p class="card-desc" data-i18n="card2.desc">Fluid structural solutions meeting rigid requirements. A breakthrough in erosion control and international landscaping — adaptive, durable, architecturally precise.</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-img-wrap">
-              <img class="card-img" src="https://picsum.photos/seed/oilgas/800/500" alt="Oil and Gas" />
-              <span class="card-badge" data-i18n="card.badge">Premium Spec</span>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">Oil &amp; Gas</h3>
-              <p class="card-desc">Specialized materials and structural components engineered for upstream and downstream energy infrastructure under extreme operational conditions.</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-img-wrap">
-              <img class="card-img" src="https://picsum.photos/seed/portwork/800/500" alt="Port Works" />
-              <span class="card-badge" data-i18n="card.badge">Premium Spec</span>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">Obras Portuarias</h3>
-              <p class="card-desc">Robust structural systems and marine-grade materials designed for port, coastal, and waterfront infrastructure development.</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-img-wrap">
-              <img class="card-img" src="https://picsum.photos/seed/slopewall/800/500" alt="Slope Stabilization" />
-              <span class="card-badge" data-i18n="card.badge">Premium Spec</span>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">Estabilización de Taludes</h3>
-              <p class="card-desc">Integrated slope stabilization systems combining anchoring, drainage, and geosynthetics for long-term geotechnical performance.</p>
-            </div>
-          </article>
-
-        </div>
-      </div>
-      <button class="carousel-btn carousel-next" id="carousel-next">&#8250;</button>
-    </div>
-
-  </div><!-- /white-panel -->
-</div><!-- /solutions-wrap -->
+<div class="hm-blueprint-bridge" aria-hidden="true">
+  <img src="./images/tablaestaca blueprint.webp" alt="" />
+</div>
 
 <!-- ══════════════════════════════════════════════════════════
-     CAPABILITIES — dark section
+     SECTION 1 — ENGINEERING BEGINS LONG BEFORE CONSTRUCTION
 ══════════════════════════════════════════════════════════ -->
-<section id="capabilities" aria-label="Core Capabilities">
-  <div class="cap-inner">
+<div id="about" aria-hidden="true"></div>
+<section class="hm-manifesto" aria-label="Engineering Philosophy">
+  <div class="hm-manifesto-inner">
+    <h2 class="hm-manifesto-lead hm-reveal" data-i18n-html="eng.lead">
+      <span class="hm-line">Infrastructure doesn't begin with concrete.</span><span class="hm-line">It begins with the right materials.</span>
+    </h2>
+    <p class="hm-manifesto-sub hm-reveal" data-i18n="eng.sub">From coastal defenses and stabilized foundations to industrial pipelines and marine infrastructure, INGE&amp;MAT supplies the engineering systems that make modern infrastructure possible.</p>
+  </div>
+</section>
 
-    <div>
-      <span class="cap-eyebrow" data-i18n="cap.eyebrow">Core Capabilities</span>
-      <h2 class="cap-heading" data-i18n-html="cap.heading">Engineering &amp; Supply<br>Capabilities</h2>
-      <p class="cap-body" data-i18n="cap.body">We operate as an integration channel between international manufacturers and projects across Latin America, facilitating access to specialized solutions and ensuring their availability during critical execution phases. We have the capacity to articulate technical supply for sectors such as road infrastructure, geotechnics, maritime works, and energy, adapting each solution to the specific conditions of the project. Our structure allows us to respond quickly to complex technical requirements and serve projects at both regional and broader market levels, with a direct focus on performance and execution.</p>
-      <ul class="cap-features" role="list">
-        <li class="cap-feat">
-          <div class="cap-feat-icon" aria-hidden="true">
-            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#ddcc0f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <span class="cap-feat-text" data-i18n="cap.feat1">Fully compliant with all applicable technical and regulatory requirements established by the Agencia Nacional de Infraestructura (ANI), Colombia.</span>
-        </li>
-        <li class="cap-feat">
-          <div class="cap-feat-icon" aria-hidden="true">
-            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#ddcc0f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <span class="cap-feat-text" data-i18n="cap.feat2">Established operational presence across Latin America, with the ability to support projects in multiple markets and technical contexts.</span>
-        </li>
-        <li class="cap-feat">
-          <div class="cap-feat-icon" aria-hidden="true">
-            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#ddcc0f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <span class="cap-feat-text" data-i18n="cap.feat3">End-to-end support, from sourcing and logistics to on-site delivery and integration.</span>
-        </li>
-      </ul>
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 2 — THE WORLD'S TOUGHEST PROJECTS
+══════════════════════════════════════════════════════════ -->
+<section id="solutions" class="hm-projects" aria-label="Featured Projects">
+  <div class="hm-projects-head hm-reveal">
+    <span class="hm-eyebrow" data-i18n="proj.eyebrow">Featured Work</span>
+    <h2 class="hm-h2" data-i18n="proj.heading">The World's Toughest Projects</h2>
+  </div>
+
+  <div class="hm-projects-grid">
+
+    <a href="coastal-protection.html" class="hm-proj-card hm-reveal">
+      <img src="images/Coastal protection frames/Frame 13.webp" alt="Coastal Protection" class="hm-proj-img" />
+      <div class="hm-proj-scrim" aria-hidden="true"></div>
+      <div class="hm-proj-body">
+        <h3 class="hm-proj-title" data-i18n="proj.c1.title">Coastal Protection</h3>
+        <p class="hm-proj-desc" data-i18n="proj.c1.desc">Protecting shorelines through integrated geosynthetics, amorphous gabions and steel systems.</p>
+        <span class="hm-proj-cta"><span data-i18n="proj.cta">Explore Solution</span> <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
+
+    <a href="ground-stabilization.html" class="hm-proj-card hm-reveal">
+      <img src="images/Ground Stabilization/Frame 9 GS.webp" alt="Ground Stabilization" class="hm-proj-img" />
+      <div class="hm-proj-scrim" aria-hidden="true"></div>
+      <div class="hm-proj-body">
+        <h3 class="hm-proj-title" data-i18n="proj.c2.title">Ground Stabilization</h3>
+        <p class="hm-proj-desc" data-i18n="proj.c2.desc">Transforming weak ground into reliable foundations for heavy infrastructure.</p>
+        <span class="hm-proj-cta"><span data-i18n="proj.cta">Explore Solution</span> <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
+
+    <a href="oil-gas-mining.html" class="hm-proj-card hm-reveal">
+      <img src="images/Oil, Gas and Energy/Frame 9 Oil.webp" alt="Oil, Gas &amp; Mining" class="hm-proj-img" />
+      <div class="hm-proj-scrim" aria-hidden="true"></div>
+      <div class="hm-proj-body">
+        <h3 class="hm-proj-title" data-i18n="proj.c3.title">Oil, Gas &amp; Mining</h3>
+        <p class="hm-proj-desc" data-i18n="proj.c3.desc">Engineering industrial infrastructure while respecting the Colombian landscape.</p>
+        <span class="hm-proj-cta"><span data-i18n="proj.cta">Explore Solution</span> <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
+
+    <div class="hm-proj-card hm-proj-card--soon hm-reveal">
+      <img src="images/Amorphous Gabions Page/Port & Marine Infrastructure.webp" alt="Marine Infrastructure" class="hm-proj-img" />
+      <div class="hm-proj-scrim" aria-hidden="true"></div>
+      <div class="hm-proj-body">
+        <h3 class="hm-proj-title" data-i18n="proj.c4.title">Marine Infrastructure</h3>
+        <p class="hm-proj-desc" data-i18n="proj.c4.desc">Ports, terminals and waterfront structures engineered for long-term performance.</p>
+        <span class="hm-proj-cta hm-proj-cta--soon" data-i18n="proj.soon">Coming Soon</span>
+      </div>
     </div>
 
-    <div class="cap-right">
-      <div class="cap-planet-block">
-        <img
-          class="cap-planet"
-          src="images/planet.webp"
-          alt="Global operations map"
-        />
-      </div>
-      <div class="stat-block">
-        <div>
-          <span class="stat-label" data-i18n="cap.stat.label">PROJECTS SUPPORTED</span>
-          <p class="stat-desc" data-i18n="cap.stat.desc">Across infrastructure, geotechnical and energy sectors</p>
-        </div>
-        <span class="stat-number">+50</span>
+    <div class="hm-proj-card hm-proj-card--soon hm-reveal">
+      <img src="images/Geosynthetics Page/Mining grid banner.webp" alt="Mining &amp; Heavy Industry" class="hm-proj-img" />
+      <div class="hm-proj-scrim" aria-hidden="true"></div>
+      <div class="hm-proj-body">
+        <h3 class="hm-proj-title" data-i18n="proj.c5.title">Mining &amp; Heavy Industry</h3>
+        <p class="hm-proj-desc" data-i18n="proj.c5.desc">Infrastructure supporting the world's most demanding industrial operations.</p>
+        <span class="hm-proj-cta hm-proj-cta--soon" data-i18n="proj.soon">Coming Soon</span>
       </div>
     </div>
 
@@ -285,44 +207,253 @@
 </section>
 
 <!-- ══════════════════════════════════════════════════════════
-     ABOUT
+     SECTION 3 — ONE PROJECT. MANY MATERIALS.
 ══════════════════════════════════════════════════════════ -->
-<div class="about-white-panel">
-  <section id="about" aria-label="About INGE&amp;MAT">
-    <div class="about-inner">
+<section id="hm-system" class="hm-system" aria-label="Integrated Material Systems">
+  <div class="hm-system-head hm-reveal">
+    <h2 class="hm-h2" data-i18n-html="sys.heading">One Project.<br>Many Materials.</h2>
+    <p class="hm-lead" data-i18n="sys.sub">Every engineering solution combines multiple material technologies working together.</p>
+  </div>
 
-      <div>
-        <span class="about-eyebrow" data-i18n="about.eyebrow">About INGE&amp;MAT</span>
-        <h2 class="about-heading" data-i18n="about.heading">Engineering the Foundation of Tomorrow's Infrastructure</h2>
-        <p class="about-body" data-i18n="about.body1">Founded on the principles of structural precision and global sourcing, INGE&amp;MAT delivers advanced anchoring systems, gabion solutions, and engineered structural components to major infrastructure projects worldwide.</p>
-        <p class="about-body" style="margin-bottom:0;" data-i18n="about.body2">With over two decades of field experience, our team of structural engineers and logistics specialists ensures every component meets the highest international standards before it reaches your site.</p>
-      </div>
+  <div class="hm-diagram hm-reveal" id="hm-diagram">
+    <svg class="hm-diagram-svg" id="hm-diagram-svg" aria-hidden="true"></svg>
 
-      <div class="stats-grid">
-        <div class="stat-card">
-          <span class="stat-card-num" style="color:#f0eeec;">20+</span>
-          <span class="stat-card-label" data-i18n="about.stat1">Years of engineering excellence</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-card-num" style="color:#ddcc0f;">40+</span>
-          <span class="stat-card-label" data-i18n="about.stat2">Countries in our supply network</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-card-num" style="color:#f0eeec;">2,400+</span>
-          <span class="stat-card-label" data-i18n="about.stat3">Projects completed globally</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-card-num" style="color:#ddcc0f;">ISO</span>
-          <span class="stat-card-label" data-i18n="about.stat4">9001 certified quality management</span>
-        </div>
-      </div>
-
+    <div class="hm-diagram-row hm-diagram-row--solutions">
+      <button type="button" class="hm-node hm-node--solution" data-node="coastal" data-i18n="sys.coastal">Coastal Protection</button>
+      <button type="button" class="hm-node hm-node--solution" data-node="ground" data-i18n="sys.ground">Ground Stabilization</button>
+      <button type="button" class="hm-node hm-node--solution" data-node="ogm" data-i18n="sys.ogm">Oil, Gas &amp; Mining</button>
     </div>
-  </section>
-</div><!-- /about-white-panel -->
+
+    <div class="hm-diagram-row hm-diagram-row--materials">
+      <button type="button" class="hm-node hm-node--material" data-node="geotextiles" data-i18n="sys.mat.geotextiles">Geotextiles</button>
+      <button type="button" class="hm-node hm-node--material" data-node="gabions" data-i18n="sys.mat.gabions">Gabions</button>
+      <button type="button" class="hm-node hm-node--material" data-node="steel" data-i18n="sys.mat.steel">Steel</button>
+      <button type="button" class="hm-node hm-node--material" data-node="geocells" data-i18n="sys.mat.geocells">Geocells</button>
+      <button type="button" class="hm-node hm-node--material" data-node="geogrids" data-i18n="sys.mat.geogrids">Geogrids</button>
+      <button type="button" class="hm-node hm-node--material" data-node="steelpipe" data-i18n="sys.mat.steelpipe">Steel Pipe</button>
+      <button type="button" class="hm-node hm-node--material" data-node="drainage" data-i18n="sys.mat.drainage">Drainage</button>
+    </div>
+  </div>
+  <p class="hm-diagram-hint" data-i18n="sys.hint">Hover a solution or a material to see how they connect.</p>
+</section>
 
 <!-- ══════════════════════════════════════════════════════════
-     RESOURCES / PDF SECTION
+     SECTION 4 — ENGINEERING MATERIALS
+══════════════════════════════════════════════════════════ -->
+<section class="hm-materials" aria-label="Engineering Materials">
+  <div class="hm-materials-head hm-reveal">
+    <span class="hm-eyebrow" data-i18n="mat.eyebrow">What We Supply</span>
+    <h2 class="hm-h2" data-i18n="mat.heading">Engineering Materials</h2>
+  </div>
+
+  <a href="steel-solutions.html" class="hm-mat-hero hm-reveal">
+    <img src="images/Steel Page/steel hero.webp" alt="Steel" class="hm-mat-img" />
+    <div class="hm-mat-scrim" aria-hidden="true"></div>
+    <div class="hm-mat-body">
+      <span class="hm-mat-num">01</span>
+      <h3 class="hm-mat-title" data-i18n="mat.p1.title">Steel</h3>
+      <p class="hm-mat-line" data-i18n="mat.p1.line">API 5L Steel Pipes</p>
+      <p class="hm-mat-sub" data-i18n="mat.p1.sub">Engineered for critical infrastructure.</p>
+      <span class="hm-mat-btn"><span data-i18n="mat.p1.btn">Explore Steel</span> <span aria-hidden="true">→</span></span>
+    </div>
+  </a>
+
+  <a href="geosynthetics.html" class="hm-mat-hero hm-reveal">
+    <img src="images/Geosynthetics Page/Geosynthetics hero.webp" alt="Geosynthetics" class="hm-mat-img" />
+    <div class="hm-mat-scrim" aria-hidden="true"></div>
+    <div class="hm-mat-body">
+      <span class="hm-mat-num">02</span>
+      <h3 class="hm-mat-title" data-i18n="mat.p2.title">Geosynthetics</h3>
+      <p class="hm-mat-sub" data-i18n="mat.p2.sub">Engineered ground improvement.</p>
+      <span class="hm-mat-btn"><span data-i18n="mat.p2.btn">Explore Geosynthetics</span> <span aria-hidden="true">→</span></span>
+    </div>
+  </a>
+
+  <a href="amorphous-gabions.html" class="hm-mat-hero hm-reveal">
+    <img src="images/Amorphous Gabions Page/Amorphous Gabions Hero.webp" alt="Amorphous Gabions" class="hm-mat-img" />
+    <div class="hm-mat-scrim" aria-hidden="true"></div>
+    <div class="hm-mat-body">
+      <span class="hm-mat-num">03</span>
+      <h3 class="hm-mat-title" data-i18n="mat.p3.title">Amorphous Gabions</h3>
+      <p class="hm-mat-sub" data-i18n="mat.p3.sub">Flexible coastal protection systems.</p>
+      <span class="hm-mat-btn"><span data-i18n="mat.p3.btn">Explore Gabions</span> <span aria-hidden="true">→</span></span>
+    </div>
+  </a>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 5 — INDUSTRIES WE SERVE
+══════════════════════════════════════════════════════════ -->
+<section class="hm-industries" id="hm-industries" aria-label="Industries We Serve">
+  <div class="hm-industries-bg" id="hm-industries-bg" aria-hidden="true"></div>
+  <div class="hm-industries-scrim" aria-hidden="true"></div>
+  <div class="hm-industries-inner">
+    <span class="hm-eyebrow hm-eyebrow--light hm-reveal" data-i18n="ind.eyebrow">Where We Work</span>
+    <h2 class="hm-h2 hm-h2--light hm-reveal" data-i18n="ind.heading">Industries We Serve</h2>
+    <div class="hm-industries-list">
+      <div class="hm-industry-word hm-reveal" data-bg="images/Oil, Gas and Energy/Frame 4 Oil.webp" data-i18n="ind.energy">Energy</div>
+      <div class="hm-industry-word hm-reveal" data-bg="images/Geosynthetics Page/Mining grid banner.webp" data-i18n="ind.mining">Mining</div>
+      <div class="hm-industry-word hm-reveal" data-bg="images/Amorphous Gabions Page/Amorphous Gabions Hero.webp" data-i18n="ind.marine">Marine</div>
+      <div class="hm-industry-word hm-reveal" data-bg="images/Ground Stabilization/Frame 6 GS.webp" data-i18n="ind.transport">Transportation</div>
+      <div class="hm-industry-word hm-reveal" data-bg="images/Coastal protection frames/Frame 7.webp" data-i18n="ind.water">Water</div>
+      <div class="hm-industry-word hm-reveal" data-bg="images/Oil, Gas and Energy/Frame 5 Oil.webp" data-i18n="ind.industrial">Industrial</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 6 — WHY ENGINEERS CHOOSE INGE&MAT
+══════════════════════════════════════════════════════════ -->
+<div id="capabilities" aria-hidden="true"></div>
+<section class="hm-why" aria-label="Why Engineers Choose INGE&amp;MAT">
+  <div class="hm-why-head hm-reveal">
+    <span class="hm-eyebrow" data-i18n="why.eyebrow">Why Partner With Us</span>
+    <h2 class="hm-h2" data-i18n="why.heading">Why Engineers Choose INGE&amp;MAT</h2>
+  </div>
+
+  <div class="hm-why-grid">
+    <div class="hm-why-card hm-reveal">
+      <h3 class="hm-why-title" data-i18n="why.c1.title">Engineering Support</h3>
+      <p class="hm-why-desc" data-i18n="why.c1.desc">Direct technical collaboration from specification to installation.</p>
+    </div>
+    <div class="hm-why-card hm-reveal">
+      <h3 class="hm-why-title" data-i18n="why.c2.title">Certified Materials</h3>
+      <p class="hm-why-desc" data-i18n="why.c2.desc">Every product manufactured and tested to international standards.</p>
+    </div>
+    <div class="hm-why-card hm-reveal">
+      <h3 class="hm-why-title" data-i18n="why.c3.title">Reliable Supply Chains</h3>
+      <p class="hm-why-desc" data-i18n="why.c3.desc">A global manufacturing network built for on-time delivery.</p>
+    </div>
+    <div class="hm-why-card hm-reveal">
+      <h3 class="hm-why-title" data-i18n="why.c4.title">Technical Documentation</h3>
+      <p class="hm-why-desc" data-i18n="why.c4.desc">Complete datasheets, certifications and installation guides for every project.</p>
+    </div>
+    <div class="hm-why-card hm-reveal">
+      <h3 class="hm-why-title" data-i18n="why.c5.title">Global Manufacturing Network</h3>
+      <p class="hm-why-desc" data-i18n="why.c5.desc">Access to specialized producers across multiple continents.</p>
+    </div>
+    <div class="hm-why-card hm-reveal">
+      <h3 class="hm-why-title" data-i18n="why.c6.title">Long-Term Performance</h3>
+      <p class="hm-why-desc" data-i18n="why.c6.desc">Materials selected and engineered to perform for decades, not years.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 7 — ENGINEERING INSIGHTS
+══════════════════════════════════════════════════════════ -->
+<section class="hm-insights" aria-label="Engineering Insights">
+  <div class="hm-insights-head hm-reveal">
+    <span class="hm-eyebrow" data-i18n="insight.eyebrow">Project Stories</span>
+    <h2 class="hm-h2" data-i18n="insight.heading">Engineering Insights</h2>
+  </div>
+
+  <div class="hm-insights-grid">
+
+    <a href="coastal-protection.html" class="hm-insight-card hm-reveal">
+      <img src="images/Coastal protection frames/Frame 7.webp" alt="Wave Energy Dissipation" class="hm-insight-img" />
+      <div class="hm-insight-scrim" aria-hidden="true"></div>
+      <div class="hm-insight-body">
+        <span class="hm-insight-tag" data-i18n="insight.tag.coastal">Coastal Protection</span>
+        <h3 class="hm-insight-title" data-i18n="insight.c1.title">Wave Energy Dissipation</h3>
+        <p class="hm-insight-desc" data-i18n="insight.c1.desc">How porous gabion armor absorbs and redirects hydraulic energy along the shoreline.</p>
+      </div>
+    </a>
+
+    <a href="ground-stabilization.html" class="hm-insight-card hm-reveal">
+      <img src="images/Ground Stabilization/Frame 6 GS.webp" alt="Working Platform Construction" class="hm-insight-img" />
+      <div class="hm-insight-scrim" aria-hidden="true"></div>
+      <div class="hm-insight-body">
+        <span class="hm-insight-tag" data-i18n="insight.tag.ground">Ground Stabilization</span>
+        <h3 class="hm-insight-title" data-i18n="insight.c2.title">Working Platform Construction</h3>
+        <p class="hm-insight-desc" data-i18n="insight.c2.desc">Turning weak, saturated ground into a stable foundation for heavy equipment.</p>
+      </div>
+    </a>
+
+    <a href="oil-gas-mining.html" class="hm-insight-card hm-reveal">
+      <img src="images/Oil, Gas and Energy/Frame 6 Oil.webp" alt="Pipeline Installation" class="hm-insight-img" />
+      <div class="hm-insight-scrim" aria-hidden="true"></div>
+      <div class="hm-insight-body">
+        <span class="hm-insight-tag" data-i18n="insight.tag.ogm">Oil, Gas &amp; Mining</span>
+        <h3 class="hm-insight-title" data-i18n="insight.c3.title">Pipeline Installation</h3>
+        <p class="hm-insight-desc" data-i18n="insight.c3.desc">Precision welding and burial practices that place critical infrastructure beneath the landscape.</p>
+      </div>
+    </a>
+
+    <a href="oil-gas-mining.html" class="hm-insight-card hm-reveal">
+      <img src="images/Oil, Gas and Energy/Frame 3 Oil.webp" alt="Industrial Corridors" class="hm-insight-img" />
+      <div class="hm-insight-scrim" aria-hidden="true"></div>
+      <div class="hm-insight-body">
+        <span class="hm-insight-tag" data-i18n="insight.tag.ogm">Oil, Gas &amp; Mining</span>
+        <h3 class="hm-insight-title" data-i18n="insight.c4.title">Industrial Corridors</h3>
+        <p class="hm-insight-desc" data-i18n="insight.c4.desc">Surveying and route planning across some of the most demanding terrain in the Andes.</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 8 — HOW WE WORK
+══════════════════════════════════════════════════════════ -->
+<section class="hm-how" aria-label="How We Work">
+  <div class="hm-how-head hm-reveal">
+    <span class="hm-eyebrow" data-i18n="how.eyebrow">Process</span>
+    <h2 class="hm-h2" data-i18n="how.heading">From Specification to Site</h2>
+  </div>
+
+  <div class="hm-how-timeline">
+    <div class="hm-how-step hm-reveal">
+      <span class="hm-how-num">01</span>
+      <h3 class="hm-how-title" data-i18n="how.s1.title">Engineering</h3>
+      <p class="hm-how-desc" data-i18n="how.s1.desc">Understanding the technical demands of your project.</p>
+    </div>
+    <div class="hm-how-step hm-reveal">
+      <span class="hm-how-num">02</span>
+      <h3 class="hm-how-title" data-i18n="how.s2.title">Material Selection</h3>
+      <p class="hm-how-desc" data-i18n="how.s2.desc">Matching proven material technologies to site conditions.</p>
+    </div>
+    <div class="hm-how-step hm-reveal">
+      <span class="hm-how-num">03</span>
+      <h3 class="hm-how-title" data-i18n="how.s3.title">Manufacturing</h3>
+      <p class="hm-how-desc" data-i18n="how.s3.desc">Sourced from certified manufacturers across our global network.</p>
+    </div>
+    <div class="hm-how-step hm-reveal">
+      <span class="hm-how-num">04</span>
+      <h3 class="hm-how-title" data-i18n="how.s4.title">Global Supply</h3>
+      <p class="hm-how-desc" data-i18n="how.s4.desc">Logistics coordinated from factory to site, anywhere in Latin America.</p>
+    </div>
+    <div class="hm-how-step hm-reveal">
+      <span class="hm-how-num">05</span>
+      <h3 class="hm-how-title" data-i18n="how.s5.title">Technical Support</h3>
+      <p class="hm-how-desc" data-i18n="how.s5.desc">Engineering guidance through specification, installation and beyond.</p>
+    </div>
+    <div class="hm-how-step hm-reveal">
+      <span class="hm-how-num">06</span>
+      <h3 class="hm-how-title" data-i18n="how.s6.title">Project Success</h3>
+      <p class="hm-how-desc" data-i18n="how.s6.desc">Infrastructure that performs reliably for decades.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 9 — FINAL CTA
+══════════════════════════════════════════════════════════ -->
+<section class="hm-fcta" aria-label="Final Call To Action">
+  <img src="images/Oil, Gas and Energy/Frame 1 Oil.webp" alt="" class="hm-fcta-img" aria-hidden="true" />
+  <div class="hm-fcta-scrim" aria-hidden="true"></div>
+  <div class="hm-fcta-inner hm-reveal">
+    <h2 class="hm-fcta-h2" data-i18n-html="fcta.heading">The materials<br>behind<br>great engineering.</h2>
+    <p class="hm-fcta-body" data-i18n="fcta.body">Every successful infrastructure project begins long before construction starts. It begins with selecting the right materials. INGE&amp;MAT supplies engineered solutions trusted across coastal, industrial, transportation, marine, mining and energy infrastructure throughout Latin America.</p>
+    <div class="hm-fcta-btns">
+      <a href="#solutions" class="hm-fcta-btn hm-fcta-btn--primary" data-i18n="fcta.btn1">Explore Solutions</a>
+      <a href="steel-solutions.html" class="hm-fcta-btn hm-fcta-btn--ghost" data-i18n="fcta.btn2">Explore Products</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     RESOURCES / PDF SECTION — DO NOT MODIFY
 ══════════════════════════════════════════════════════════ -->
 <section id="resources" aria-label="Technical Documentation">
   <div class="res-inner">
@@ -396,7 +527,7 @@
 </section>
 
 <!-- ══════════════════════════════════════════════════════════
-     CONTACT
+     CONTACT — DO NOT MODIFY
 ══════════════════════════════════════════════════════════ -->
 <section id="contact" aria-label="Contact">
   <div class="contact-inner">
@@ -438,7 +569,7 @@
 </section>
 
 <!-- ══════════════════════════════════════════════════════════
-     FOOTER
+     FOOTER — FINAL, DO NOT MODIFY
 ══════════════════════════════════════════════════════════ -->
 <footer>
   <div class="footer-inner">
@@ -466,5 +597,6 @@
 </a>
 
 <script type="module" src="main.js"></script>
+<script type="module" src="home.js"></script>
 </body>
 </html>

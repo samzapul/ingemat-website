@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oil, Gas &amp; Mining — INGE&amp;MAT</title>
+  <meta name="description" content="Engineered pipeline infrastructure for oil, gas and mining — API 5L steel pipe, geosynthetics and drainage systems connecting industrial operations across the Colombian Andes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Nunito:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="./images/INGEMAT ICON.png" type="image/png" />
+
+  <!-- Preload every frame — no flicker -->
+  <link rel="preload" as="image" href="images/Oil, Gas and Energy/Frame 1 Oil.webp" />
+  <link rel="preload" as="image" href="images/Oil, Gas and Energy/Frame 2 Oil.webp" />
+  <link rel="preload" as="image" href="images/Oil, Gas and Energy/Frame 3 Oil.webp" />
+  <link rel="preload" as="image" href="images/Oil, Gas and Energy/Frame 4 Oil.webp" />
+  <link rel="preload" as="image" href="images/Oil, Gas and Energy/Frame 5 Oil.webp" />
+  <link rel="preload" as="image" href="images/Oil, Gas and Energy/Frame 6 Oil.webp" />
+  <link rel="preload" as="image" href="images/Oil, Gas and Energy/Frame 7 Oil.webp" />
+  <link rel="preload" as="image" href="images/Oil, Gas and Energy/Frame 8 Oil.webp" />
+  <link rel="preload" as="image" href="images/Oil, Gas and Energy/Frame 9 Oil.webp" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="oil-gas-mining.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
+</head>
+<body class="ogm-page">
+
+<!-- ══════════════════════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════════════════════ -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="./images/INGEMAT ICON.png" alt="INGE&MAT icon" class="nav-logo-icon" />
+      INGE&amp;MAT S.A.S
+      <span class="nav-logo-sub">Ingeniería y Materiales</span>
+    </a>
+    <div class="nav-center">
+      <div class="nav-links">
+        <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+        <div class="nav-item nav-item--dropdown">
+          <a href="index.html#solutions" class="nav-link active" data-i18n="nav.solutions">Solutions</a>
+          <div class="mega-menu">
+            <a href="coastal-protection.html" class="mega-sub" data-i18n="nav.sub.coastal">Coastal Protection</a>
+            <a href="ground-stabilization.html" class="mega-sub" data-i18n="nav.sub.ground">Ground Stabilization</a>
+            <a href="oil-gas-mining.html" class="mega-sub" style="color:#ddcc0f;" data-i18n="nav.sub.mining">Oil, Gas and Mining</a>
+          </div>
+        </div>
+        <div class="nav-item nav-item--dropdown">
+          <a href="#" class="nav-link" data-i18n="nav.products">Products</a>
+          <div class="mega-menu">
+            <a href="steel-solutions.html" class="mega-sub" data-i18n="nav.sub.steel">Steel</a>
+            <a href="geosynthetics.html" class="mega-sub" data-i18n="nav.sub.geosyn">Geosynthetics</a>
+            <a href="amorphous-gabions.html" class="mega-sub" data-i18n="nav.sub.rocks">Amorphous Gabions</a>
+          </div>
+        </div>
+        <a href="index.html#capabilities" class="nav-link" data-i18n="nav.capabilities">Capabilities</a>
+        <a href="index.html#about"        class="nav-link" data-i18n="nav.about">About</a>
+        <a href="index.html#contact"      class="nav-link" data-i18n="nav.contact">Contact</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
+        <span class="lang-opt lang-active" id="lang-en">EN</span>
+        <span class="lang-sep">/</span>
+        <span class="lang-opt" id="lang-es">ES</span>
+      </button>
+      <a href="index.html#contact" class="nav-cta" data-i18n="nav.enquire">Enquire</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+    <div class="nav-mobile-links">
+      <a href="index.html" class="nav-mobile-link" data-i18n="nav.home">Home</a>
+      <div class="nav-mobile-item">
+        <button class="nav-mobile-trigger is-open" aria-expanded="true">
+          <span data-i18n="nav.solutions">Solutions</span>
+          <svg class="nav-mobile-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="nav-mobile-sub is-open">
+          <a href="coastal-protection.html" class="nav-mobile-sub-link" data-i18n="nav.sub.coastal">Coastal Protection</a>
+          <a href="ground-stabilization.html" class="nav-mobile-sub-link" data-i18n="nav.sub.ground">Ground Stabilization</a>
+          <a href="oil-gas-mining.html" class="nav-mobile-sub-link" style="color:#ddcc0f;" data-i18n="nav.sub.mining">Oil, Gas and Mining</a>
+        </div>
+      </div>
+      <div class="nav-mobile-item">
+        <button class="nav-mobile-trigger" aria-expanded="false">
+          <span data-i18n="nav.products">Products</span>
+          <svg class="nav-mobile-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="nav-mobile-sub">
+          <a href="steel-solutions.html" class="nav-mobile-sub-link" data-i18n="nav.sub.steel">Steel</a>
+          <a href="geosynthetics.html" class="nav-mobile-sub-link" data-i18n="nav.sub.geosyn">Geosynthetics</a>
+          <a href="amorphous-gabions.html" class="nav-mobile-sub-link" data-i18n="nav.sub.rocks">Amorphous Gabions</a>
+        </div>
+      </div>
+      <a href="index.html#capabilities" class="nav-mobile-link" data-i18n="nav.capabilities">Capabilities</a>
+      <a href="index.html#about"        class="nav-mobile-link" data-i18n="nav.about">About</a>
+      <a href="index.html#contact"      class="nav-mobile-link" data-i18n="nav.contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════════
+     CINEMA SECTION — 900vh pinned image sequence
+══════════════════════════════════════════════════════════ -->
+<section id="ogm-cinema" aria-label="Oil, gas and mining pipeline engineering sequence">
+
+  <div id="ogm-viewport">
+
+    <!-- ── Frame Stage ─────────────────────────────────────── -->
+    <div id="ogm-frame-stage" aria-hidden="true">
+      <img src="images/Oil, Gas and Energy/Frame 1 Oil.webp" class="ogm-frame is-active" data-frame="1" alt="" />
+      <img src="images/Oil, Gas and Energy/Frame 2 Oil.webp" class="ogm-frame" data-frame="2" alt="" />
+      <img src="images/Oil, Gas and Energy/Frame 3 Oil.webp" class="ogm-frame" data-frame="3" alt="" />
+      <img src="images/Oil, Gas and Energy/Frame 4 Oil.webp" class="ogm-frame" data-frame="4" alt="" />
+      <img src="images/Oil, Gas and Energy/Frame 5 Oil.webp" class="ogm-frame" data-frame="5" alt="" />
+      <img src="images/Oil, Gas and Energy/Frame 6 Oil.webp" class="ogm-frame" data-frame="6" alt="" />
+      <img src="images/Oil, Gas and Energy/Frame 7 Oil.webp" class="ogm-frame" data-frame="7" alt="" />
+      <img src="images/Oil, Gas and Energy/Frame 8 Oil.webp" class="ogm-frame" data-frame="8" alt="" />
+      <img src="images/Oil, Gas and Energy/Frame 9 Oil.webp" class="ogm-frame" data-frame="9" alt="" />
+    </div>
+
+    <!-- ── Cinematic overlays ──────────────────────────────── -->
+    <div class="ogm-vignette" aria-hidden="true"></div>
+    <div class="ogm-gradient-top" aria-hidden="true"></div>
+    <div class="ogm-gradient-bottom" aria-hidden="true"></div>
+
+    <!-- ── Chapter Cards ───────────────────────────────────── -->
+    <div id="ogm-cards-layer">
+
+      <!-- Chapter 1 — Opening -->
+      <div class="ogm-card ogm-card--center" id="card-ogm1">
+        <h1 class="ogm-card-h1" data-i18n-html="ogm.ch1.h1">OIL, GAS<br>&amp; MINING</h1>
+        <p class="ogm-card-tagline" data-i18n="ogm.ch1.tagline">Engineering Industrial Infrastructure</p>
+        <p class="ogm-card-sub" data-i18n="ogm.ch1.sub">Integrated pipeline systems connecting energy, mining and industrial operations across the Colombian Andes.</p>
+        <div class="ogm-card-scroll-cue" id="ogm-scroll-cue">
+          <span data-i18n="ogm.ch1.scroll">Scroll to explore</span>
+          <svg width="16" height="24" viewBox="0 0 16 24" fill="none" aria-hidden="true">
+            <rect x="1" y="1" width="14" height="22" rx="7" stroke="currentColor" stroke-width="1.2"/>
+            <circle class="ogm-scroll-dot" cx="8" cy="8" r="2.5" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Chapter 2 — The Challenge -->
+      <div class="ogm-card ogm-card--left-mid" id="card-ogm2">
+        <h2 class="ogm-card-h2-large" data-i18n="ogm.ch2.h2">The Challenge</h2>
+        <p class="ogm-card-body" data-i18n="ogm.ch2.body">Every industrial corridor must cross rivers, mountains and environmentally sensitive terrain before resources can reach the industries that depend on them.</p>
+      </div>
+
+      <!-- Chapter 3 — Plan -->
+      <div class="ogm-card ogm-card--right-lower" id="card-ogm3">
+        <h2 class="ogm-card-h2-large" data-i18n="ogm.ch3.h2">Plan</h2>
+        <p class="ogm-card-body" data-i18n="ogm.ch3.body">Every successful pipeline project begins with precise surveying, route optimization and environmental planning.</p>
+      </div>
+
+      <!-- Chapter 4 — Steel (API 5L Steel Pipe) -->
+      <div class="ogm-card ogm-card--left-lower ogm-card--product" id="card-ogm4">
+        <div class="ogm-card-number">01</div>
+        <h2 class="ogm-card-h2-large" data-i18n="ogm.ch4.h2">Steel</h2>
+        <p class="ogm-card-tag" data-i18n="ogm.ch4.tag">API 5L Steel Pipe</p>
+        <p class="ogm-card-body" data-i18n="ogm.ch4.body">High-performance transmission steel pipe engineered for demanding industrial infrastructure.</p>
+        <a href="steel-solutions.html#ss-seamless" class="ogm-card-btn" data-i18n="ogm.ch4.btn">Explore Steel</a>
+      </div>
+
+      <!-- Chapter 5 — Connect -->
+      <div class="ogm-card ogm-card--right-mid" id="card-ogm5">
+        <h2 class="ogm-card-h2-large" data-i18n="ogm.ch5.h2">Connect</h2>
+        <p class="ogm-card-body" data-i18n="ogm.ch5.body">Individual pipe sections become one continuous transmission system through precision welding and quality-controlled construction.</p>
+      </div>
+
+      <!-- Chapter 6 — Install -->
+      <div class="ogm-card ogm-card--center ogm-card--wide" id="card-ogm6">
+        <h2 class="ogm-card-h2-large" data-i18n="ogm.ch6.h2">Install</h2>
+        <p class="ogm-card-body ogm-card-body--centered" data-i18n="ogm.ch6.body">World-class installation practices place critical infrastructure beneath the landscape with maximum precision.</p>
+      </div>
+
+      <!-- Chapter 7 — Restore -->
+      <div class="ogm-card ogm-card--top-right ogm-card--compact" id="card-ogm7">
+        <h3 class="ogm-card-h3" data-i18n="ogm.ch7.h3">Restore</h3>
+        <p class="ogm-card-body" data-i18n="ogm.ch7.body1">The engineering disappears.</p>
+        <p class="ogm-card-body" data-i18n="ogm.ch7.body2">The landscape remains.</p>
+      </div>
+
+      <!-- Chapter 8 — Coexist -->
+      <div class="ogm-card ogm-card--left-mid" id="card-ogm8">
+        <h2 class="ogm-card-h2-large" data-i18n="ogm.ch8.h2">Coexist</h2>
+        <p class="ogm-card-body" data-i18n="ogm.ch8.body1">The corridor is restored.</p>
+        <p class="ogm-card-body" data-i18n="ogm.ch8.body2">Nature recovers.</p>
+        <p class="ogm-card-body" data-i18n="ogm.ch8.body3">Infrastructure quietly performs beneath the surface.</p>
+      </div>
+
+      <!-- Chapter 9 — Enable (final hero) -->
+      <div class="ogm-card ogm-card--final-hero" id="card-ogm9">
+        <div class="ogm-card-eyebrow">INGE&amp;MAT</div>
+        <h2 class="ogm-card-h1-final" data-i18n="ogm.ch9.h1">Enable</h2>
+        <p class="ogm-card-body ogm-card-body--final" data-i18n="ogm.ch9.body">Reliable pipeline infrastructure supports responsible energy, mining and industrial operations while respecting the surrounding ecosystem.</p>
+        <a href="steel-solutions.html" class="ogm-btn--final">
+          <span data-i18n="ogm.ch9.btn">View Steel Products</span>
+          <span class="ogm-btn-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+
+    </div><!-- /#ogm-cards-layer -->
+
+    <!-- ── Cinema progress bar ─────────────────────────────── -->
+    <div id="ogm-progress" aria-hidden="true">
+      <div id="ogm-progress-fill"></div>
+    </div>
+
+    <!-- ── Chapter timeline ───────────────────────────────── -->
+    <div id="ogm-timeline" aria-hidden="true">
+      <div class="ogm-tl-row">
+        <span class="ogm-tl-dot" data-ch="1"></span>
+        <span class="ogm-tl-dot" data-ch="2"></span>
+        <span class="ogm-tl-dot" data-ch="3"></span>
+        <span class="ogm-tl-dot" data-ch="4"></span>
+        <span class="ogm-tl-dot" data-ch="5"></span>
+        <span class="ogm-tl-dot" data-ch="6"></span>
+        <span class="ogm-tl-dot" data-ch="7"></span>
+        <span class="ogm-tl-dot" data-ch="8"></span>
+        <span class="ogm-tl-dot" data-ch="9"></span>
+      </div>
+      <div id="ogm-tl-label"></div>
+    </div>
+
+  </div><!-- /#ogm-viewport -->
+</section><!-- /#ogm-cinema -->
+
+<!-- ══════════════════════════════════════════════════════════
+     AFTER-FILM CONTENT
+══════════════════════════════════════════════════════════ -->
+<main id="after-film">
+
+  <!-- ── Featured Industrial Applications ─────────────────── -->
+  <section id="ogm-applications" class="af-section">
+    <img src="images/Oil, Gas and Energy/Oil sketch.webp" alt="" class="ogm-apps-bg" aria-hidden="true" />
+    <div class="af-inner">
+      <div class="af-head af-reveal">
+        <span class="af-eyebrow" data-i18n="ogm.apps.eyebrow">Where We Operate</span>
+        <h2 class="af-h2" data-i18n="ogm.apps.h2">Industrial Infrastructure Applications</h2>
+        <p class="af-lead" data-i18n="ogm.apps.lead">Pipeline systems supporting energy, mining and heavy industry across demanding environments.</p>
+      </div>
+      <div class="af-apps-grid">
+
+        <div class="af-app-card af-reveal">
+          <div class="af-app-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M4 16h24"/><circle cx="10" cy="16" r="2.4"/><circle cx="22" cy="16" r="2.4"/><path d="M4 16v6M28 16v6"/></svg>
+          </div>
+          <h3 class="af-app-title" data-i18n="ogm.app1.title">Transmission Pipelines</h3>
+          <p class="af-app-desc" data-i18n="ogm.app1.desc">High-pressure pipeline systems for long-distance transportation of oil, gas and industrial fluids.</p>
+        </div>
+
+        <div class="af-app-card af-reveal">
+          <div class="af-app-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M4 26l5-12 5 7 4-9 4 7 6-9v16z"/><path d="M4 26h24"/></svg>
+          </div>
+          <h3 class="af-app-title" data-i18n="ogm.app2.title">Mining Infrastructure</h3>
+          <p class="af-app-desc" data-i18n="ogm.app2.desc">Pipeline systems supporting mining operations, slurry transport and industrial process facilities.</p>
+        </div>
+
+        <div class="af-app-card af-reveal">
+          <div class="af-app-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="5" y="8" width="8" height="16" rx="1"/><rect x="19" y="14" width="8" height="10" rx="1"/><path d="M13 16h6"/></svg>
+          </div>
+          <h3 class="af-app-title" data-i18n="ogm.app3.title">Industrial Corridors</h3>
+          <p class="af-app-desc" data-i18n="ogm.app3.desc">Integrated infrastructure connecting remote industrial operations with processing facilities and logistics networks.</p>
+        </div>
+
+        <div class="af-app-card af-reveal">
+          <div class="af-app-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M2 18q6-6 10 0t10 0t8-4"/><path d="M2 24q6-6 10 0t10 0t8-4"/></svg>
+          </div>
+          <h3 class="af-app-title" data-i18n="ogm.app4.title">River Crossings</h3>
+          <p class="af-app-desc" data-i18n="ogm.app4.desc">Pipeline crossings engineered to safely traverse rivers and environmentally sensitive waterways.</p>
+        </div>
+
+        <div class="af-app-card af-reveal">
+          <div class="af-app-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M2 26l7-16 5 8 4-6 12 14z"/><path d="M2 26h28"/></svg>
+          </div>
+          <h3 class="af-app-title" data-i18n="ogm.app5.title">Mountain Pipelines</h3>
+          <p class="af-app-desc" data-i18n="ogm.app5.desc">Transmission systems designed for steep terrain and complex Andean topography.</p>
+        </div>
+
+        <div class="af-app-card af-reveal">
+          <div class="af-app-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="6" y="14" width="20" height="12" rx="1"/><path d="M10 14V9h3v5M17 14V6h3v8"/><circle cx="24" cy="10" r="2"/></svg>
+          </div>
+          <h3 class="af-app-title" data-i18n="ogm.app6.title">Industrial Facilities</h3>
+          <p class="af-app-desc" data-i18n="ogm.app6.desc">Pipeline networks supporting terminals, compressor stations and processing plants.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Integrated Pipeline System ────────────────────────── -->
+  <section id="ogm-integrated-system" class="af-section af-section--light">
+    <div class="af-inner">
+      <div class="af-head af-reveal">
+        <span class="af-eyebrow af-eyebrow--gold" data-i18n="ogm.sys.eyebrow">The Material System</span>
+        <h2 class="af-h2" data-i18n="ogm.sys.h2">Integrated Pipeline Systems</h2>
+        <p class="af-lead" data-i18n="ogm.sys.lead">Multiple engineering layers working together to deliver safe, durable and environmentally responsible infrastructure.</p>
+      </div>
+
+      <div class="af-inner--split">
+        <div class="ogm-diagram af-reveal">
+          <div class="ogm-layer">
+            <span class="ogm-layer-num">—</span>
+            <span class="ogm-layer-label" data-i18n="ogm.diag.surface">Surface</span>
+          </div>
+          <div class="ogm-layer-arrow">↓</div>
+          <div class="ogm-layer">
+            <span class="ogm-layer-num">—</span>
+            <span class="ogm-layer-label" data-i18n="ogm.diag.vegetation">Restored Native Vegetation</span>
+          </div>
+          <div class="ogm-layer-arrow">↓</div>
+          <div class="ogm-layer">
+            <span class="ogm-layer-num">—</span>
+            <span class="ogm-layer-label" data-i18n="ogm.diag.backfill">Backfill</span>
+          </div>
+          <div class="ogm-layer-arrow">↓</div>
+          <div class="ogm-layer">
+            <span class="ogm-layer-num">02</span>
+            <span class="ogm-layer-label" data-i18n="ogm.diag.geotextile">Protective Geotextile</span>
+          </div>
+          <div class="ogm-layer-arrow">↓</div>
+          <div class="ogm-layer ogm-layer--hero">
+            <span class="ogm-layer-num">01</span>
+            <span class="ogm-layer-label" data-i18n="ogm.diag.pipe">API 5L Steel Pipeline</span>
+            <span class="ogm-layer-tag" data-i18n="ogm.diag.pipe.tag">Transmission</span>
+          </div>
+          <div class="ogm-layer-arrow">↓</div>
+          <div class="ogm-layer">
+            <span class="ogm-layer-num">—</span>
+            <span class="ogm-layer-label" data-i18n="ogm.diag.bedding">Engineered Bedding</span>
+          </div>
+          <div class="ogm-layer-arrow">↓</div>
+          <div class="ogm-layer">
+            <span class="ogm-layer-num">—</span>
+            <span class="ogm-layer-label" data-i18n="ogm.diag.ground">Natural Ground</span>
+          </div>
+        </div>
+
+        <div class="af-systems-grid af-systems-grid--stacked">
+
+          <a href="steel-solutions.html#ss-seamless" class="af-system-card af-reveal">
+            <div class="af-system-num">01</div>
+            <h3 class="af-system-title" data-i18n="ogm.prod1.title">Steel Pipes</h3>
+            <p class="af-system-role" data-i18n="ogm.prod1.role">Transmission</p>
+            <p class="af-system-desc" data-i18n="ogm.prod1.desc">API 5L steel pipeline systems engineered for high-pressure industrial applications.</p>
+            <span class="af-system-link">
+              <span data-i18n="ogm.prod1.link">Explore Steel</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            </span>
+          </a>
+
+          <a href="geosynthetics.html#gs-geotextiles" class="af-system-card af-reveal">
+            <div class="af-system-num">02</div>
+            <h3 class="af-system-title" data-i18n="ogm.prod2.title">Geosynthetics</h3>
+            <p class="af-system-role" data-i18n="ogm.prod2.role">Protection</p>
+            <p class="af-system-desc" data-i18n="ogm.prod2.desc">Protective geotextiles separate, cushion and safeguard buried infrastructure.</p>
+            <span class="af-system-link">
+              <span data-i18n="ogm.prod2.link">Explore Geosynthetics</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            </span>
+          </a>
+
+          <a href="geosynthetics.html#gs-geotextiles" class="af-system-card af-reveal">
+            <div class="af-system-num">03</div>
+            <h3 class="af-system-title" data-i18n="ogm.prod3.title">Drainage Systems</h3>
+            <p class="af-system-role" data-i18n="ogm.prod3.role">Performance</p>
+            <p class="af-system-desc" data-i18n="ogm.prod3.desc">Integrated drainage solutions preserving long-term stability of buried infrastructure.</p>
+            <span class="af-system-link">
+              <span data-i18n="ogm.prod3.link">Explore Drainage</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            </span>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Engineering Capabilities ─────────────────────────── -->
+  <section id="ogm-capabilities" class="af-section">
+    <div class="af-inner af-inner--split">
+      <div class="af-cap-left af-reveal">
+        <span class="af-eyebrow" data-i18n="ogm.cap.eyebrow">What We Deliver</span>
+        <h2 class="af-h2" data-i18n="ogm.cap.h2">Engineering Capabilities</h2>
+        <p class="af-lead" data-i18n="ogm.cap.lead">From route engineering to long-term performance — one integrated infrastructure service.</p>
+      </div>
+      <div class="af-cap-right">
+        <div class="af-cap-item af-reveal">
+          <div class="af-cap-num">01</div>
+          <div class="af-cap-body">
+            <h4 data-i18n="ogm.cap1.title">Pipeline Route Engineering</h4>
+            <p data-i18n="ogm.cap1.body">Corridor surveying, terrain analysis and route optimization across sensitive Andean landscapes.</p>
+          </div>
+        </div>
+        <div class="af-cap-item af-reveal">
+          <div class="af-cap-num">02</div>
+          <div class="af-cap-body">
+            <h4 data-i18n="ogm.cap2.title">Transmission System Design</h4>
+            <p data-i18n="ogm.cap2.body">Pressure-rated pipeline design engineered to API 5L standards for long-distance transmission.</p>
+          </div>
+        </div>
+        <div class="af-cap-item af-reveal">
+          <div class="af-cap-num">03</div>
+          <div class="af-cap-body">
+            <h4 data-i18n="ogm.cap3.title">River Crossing Engineering</h4>
+            <p data-i18n="ogm.cap3.body">Specialized crossing design safeguarding pipeline integrity through rivers and waterways.</p>
+          </div>
+        </div>
+        <div class="af-cap-item af-reveal">
+          <div class="af-cap-num">04</div>
+          <div class="af-cap-body">
+            <h4 data-i18n="ogm.cap4.title">Industrial Corridor Development</h4>
+            <p data-i18n="ogm.cap4.body">Integrated corridor planning connecting remote operations with processing and logistics infrastructure.</p>
+          </div>
+        </div>
+        <div class="af-cap-item af-reveal">
+          <div class="af-cap-num">05</div>
+          <div class="af-cap-body">
+            <h4 data-i18n="ogm.cap5.title">Material Supply</h4>
+            <p data-i18n="ogm.cap5.body">Manufacturing, QA and delivery of API 5L steel pipe and protective geosynthetics to site.</p>
+          </div>
+        </div>
+        <div class="af-cap-item af-reveal">
+          <div class="af-cap-num">06</div>
+          <div class="af-cap-body">
+            <h4 data-i18n="ogm.cap6.title">Construction Support</h4>
+            <p data-i18n="ogm.cap6.body">Technical oversight of welding, trenching and burial to ensure quality-controlled installation.</p>
+          </div>
+        </div>
+        <div class="af-cap-item af-reveal">
+          <div class="af-cap-num">07</div>
+          <div class="af-cap-body">
+            <h4 data-i18n="ogm.cap7.title">Environmental Restoration</h4>
+            <p data-i18n="ogm.cap7.body">Corridor reinstatement and native vegetation recovery once construction is complete.</p>
+          </div>
+        </div>
+        <div class="af-cap-item af-reveal">
+          <div class="af-cap-num">08</div>
+          <div class="af-cap-body">
+            <h4 data-i18n="ogm.cap8.title">Long-Term Infrastructure Performance</h4>
+            <p data-i18n="ogm.cap8.body">Ongoing monitoring and maintenance planning to ensure decades of reliable operation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Technical Advantages ─────────────────────────────── -->
+  <section id="ogm-advantages" class="af-section af-section--light">
+    <div class="af-inner">
+      <div class="af-head af-reveal">
+        <span class="af-eyebrow af-eyebrow--gold" data-i18n="ogm.adv.eyebrow">Engineering Outcomes</span>
+        <h2 class="af-h2" data-i18n="ogm.adv.h2">Technical Advantages</h2>
+      </div>
+      <div class="af-stats-grid">
+        <div class="af-stat af-reveal">
+          <span class="af-stat-num">01</span>
+          <span class="af-stat-label" data-i18n="ogm.adv1">API-Compliant Steel</span>
+        </div>
+        <div class="af-stat af-reveal">
+          <span class="af-stat-num">02</span>
+          <span class="af-stat-label" data-i18n="ogm.adv2">Long-Term Corrosion Resistance</span>
+        </div>
+        <div class="af-stat af-reveal">
+          <span class="af-stat-num">03</span>
+          <span class="af-stat-label" data-i18n="ogm.adv3">Environmentally Responsible Installation</span>
+        </div>
+        <div class="af-stat af-reveal">
+          <span class="af-stat-num">04</span>
+          <span class="af-stat-label" data-i18n="ogm.adv4">Minimal Surface Disturbance</span>
+        </div>
+        <div class="af-stat af-reveal">
+          <span class="af-stat-num">05</span>
+          <span class="af-stat-label" data-i18n="ogm.adv5">Reliable Long-Distance Transmission</span>
+        </div>
+        <div class="af-stat af-reveal">
+          <span class="af-stat-num">06</span>
+          <span class="af-stat-label" data-i18n="ogm.adv6">Integrated Engineering Support</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Final CTA — restored landscape, pipeline hidden ──── -->
+  <section id="ogm-cta" class="af-section ogm-cta">
+    <img src="images/Oil, Gas and Energy/Frame 9 Oil.webp" alt="" class="ogm-cta-photo" aria-hidden="true" />
+    <div class="ogm-cta-overlay" aria-hidden="true"></div>
+    <div class="af-cta-inner af-reveal">
+      <span class="af-eyebrow af-eyebrow--gold" data-i18n="ogm.cta.eyebrow">Start a Project</span>
+      <h2 class="af-cta-h2" data-i18n-html="ogm.cta.h2">Engineering Progress.<br>Respecting Nature.</h2>
+      <p class="af-cta-body" data-i18n="ogm.cta.body">INGE&amp;MAT delivers complete industrial infrastructure systems that transport the resources the world depends on while preserving the landscapes where they operate.</p>
+      <div class="af-cta-btns">
+        <a href="index.html#contact" class="ogm-btn ogm-btn--primary" data-i18n="ogm.cta.btn1">Request Engineering Support</a>
+        <a href="steel-solutions.html" class="ogm-btn ogm-btn--ghost" data-i18n="ogm.cta.btn2">View Steel Products</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./images/INGEMAT ICON.png" alt="INGE&MAT icon" class="footer-brand-icon" />
+      <div>
+        <span class="footer-brand-name">INGE&amp;MAT S.A.S</span>
+        <span class="footer-brand-sub">Ingeniería y Materiales</span>
+      </div>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="docs/Politica_Privacidad_INGEMAT.pdf" target="_blank" rel="noopener" class="footer-link" data-i18n="footer.privacy">Privacy Policy</a>
+      <a href="#" class="footer-link" data-i18n="footer.terms">Terms of Service</a>
+      <a href="#" class="footer-link" data-i18n="footer.sustainability">Sustainability</a>
+    </nav>
+    <span class="footer-copy" data-i18n="footer.copy">© 2024 INGE&amp;MAT. All rights reserved.</span>
+  </div>
+</footer>
+
+<a href="https://wa.link/trjia4" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contact us on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 32 32" fill="white"><path d="M16.001 3C9.096 3 3.5 8.596 3.5 15.5c0 2.42.674 4.686 1.845 6.615L3 29l7.062-2.293A12.437 12.437 0 0016 28c6.905 0 12.5-5.596 12.5-12.5S22.906 3 16.001 3zm0 22.688a10.13 10.13 0 01-5.166-1.417l-.37-.22-3.79 1.23 1.246-3.694-.24-.38a10.146 10.146 0 01-1.556-5.407c0-5.615 4.567-10.183 10.182-10.183 5.615 0 10.183 4.568 10.183 10.183 0 5.616-4.568 10.183-10.183 10.183 0 0-.001 0 0 0zm5.577-7.633c-.306-.153-1.81-.893-2.09-.994-.28-.102-.485-.153-.69.153-.204.306-.79.994-.968 1.198-.178.204-.357.23-.663.077-.306-.153-1.29-.475-2.457-1.516-.908-.81-1.522-1.812-1.7-2.118-.178-.306-.019-.472.134-.624.138-.137.306-.357.459-.535.153-.178.204-.306.306-.51.102-.204.051-.383-.026-.536-.077-.153-.69-1.664-.945-2.28-.249-.598-.502-.517-.69-.526l-.588-.01c-.204 0-.535.076-.816.382-.28.306-1.07 1.046-1.07 2.55 0 1.505 1.095 2.96 1.248 3.164.153.204 2.155 3.291 5.222 4.615.73.315 1.298.503 1.742.643.732.233 1.398.2 1.924.121.587-.088 1.81-.74 2.065-1.454.255-.714.255-1.326.178-1.454-.076-.128-.28-.204-.586-.357z"/></svg>
+</a>
+
+<script type="module" src="oil-gas-mining.js"></script>
+</body>
+</html>
