@@ -14,6 +14,7 @@ export default defineConfig({
         gabions:  './amorphous-gabions.html',
         coastal:  './coastal-protection.html',
         ground:   './ground-stabilization.html',
+        oilgas:   './oil-gas-mining.html',
       },
     },
   },
