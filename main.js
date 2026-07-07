@@ -354,15 +354,27 @@ applyLang(initLanguageFromUrlOrStorage());
 
 /* ── EMAILJS CONTACT FORM ──────────────────────────────────── */
 const ejs = window.emailjs;
-ejs.init({ publicKey: '2lC9rNTrRbzwaB9SV' });
+if (ejs) ejs.init({ publicKey: '2lC9rNTrRbzwaB9SV' });
 
 document.getElementById('form-submit').addEventListener('click', () => {
   const name     = document.getElementById('form-name').value.trim();
   const email    = document.getElementById('form-email').value.trim();
   const company  = document.getElementById('form-company').value.trim();
   const message  = document.getElementById('form-message').value.trim();
+  const honeypot = document.getElementById('form-website').value;
   const feedback = document.getElementById('form-feedback');
   const btn      = document.getElementById('form-submit');
+
+  /* Bots fill every field; humans never see this one. Fail silently. */
+  if (honeypot) return;
+
+  if (!ejs) {
+    feedback.textContent = currentLang === 'es'
+      ? 'No se pudo enviar el mensaje. Por favor inténtalo de nuevo o escríbenos por WhatsApp.'
+      : 'The message could not be sent. Please try again or reach us on WhatsApp.';
+    feedback.className = 'form-feedback form-feedback--error';
+    return;
+  }
 
   if (!name || !email || !message) {
     feedback.textContent = currentLang === 'es'
