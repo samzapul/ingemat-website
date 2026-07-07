@@ -5,6 +5,22 @@
    / contact are untouched and have no logic here.
    ============================================================ */
 
+import industryEnergy from './images/Oil, Gas and Energy/Frame 4 Oil.webp';
+import industryMining from './images/Geosynthetics Page/Mining grid banner.webp';
+import industryMarine from './images/Amorphous Gabions Page/Amorphous Gabions Hero.webp';
+import industryTransport from './images/Ground Stabilization/Frame 6 GS.webp';
+import industryWater from './images/Coastal protection frames/Frame 7.webp';
+import industryIndustrial from './images/Oil, Gas and Energy/Frame 5 Oil.webp';
+
+const industryBgMap = {
+  energy: industryEnergy,
+  mining: industryMining,
+  marine: industryMarine,
+  transport: industryTransport,
+  water: industryWater,
+  industrial: industryIndustrial,
+};
+
 const gsap = window.gsap;
 const ScrollTrigger = window.ScrollTrigger;
 if (gsap && ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
@@ -175,9 +191,9 @@ function initIndustries() {
   if (!bg || !words.length) return;
 
   words.forEach((word) => {
-    const src = word.dataset.bg;
+    const src = industryBgMap[word.dataset.industry];
     const activate = () => {
-      bg.style.backgroundImage = `url("${src}")`;
+      if (src) bg.style.backgroundImage = `url("${src}")`;
       bg.classList.add('is-active');
       words.forEach((w) => w.classList.toggle('is-active', w === word));
     };
