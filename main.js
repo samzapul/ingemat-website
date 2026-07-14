@@ -158,7 +158,7 @@ const translations = {
     'footer.privacy':        'Privacy Policy',
     'footer.terms':          'Terms of Service',
     'footer.sustainability': 'Sustainability',
-    'footer.copy':           '© 2024 INGE&MAT. All rights reserved.',
+    'footer.copy':           '© 2026 INGE&MAT. All rights reserved.',
   },
   es: {
     'nav.home':         'Inicio',
@@ -309,7 +309,7 @@ const translations = {
     'footer.privacy':        'Política de Privacidad',
     'footer.terms':          'Términos de Servicio',
     'footer.sustainability': 'Sostenibilidad',
-    'footer.copy':           '© 2024 INGE&MAT. Todos los derechos reservados.',
+    'footer.copy':           '© 2026 INGE&MAT. Todos los derechos reservados.',
   },
 };
 

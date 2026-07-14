@@ -138,7 +138,7 @@ const translations = {
     'cp.af.cta.btn1': 'Request Technical Assistance', 'cp.af.cta.btn2': 'Talk to an Engineer',
 
     'footer.privacy': 'Privacy Policy', 'footer.terms': 'Terms of Service',
-    'footer.sustainability': 'Sustainability', 'footer.copy': '© 2024 INGE&MAT. All rights reserved.',
+    'footer.sustainability': 'Sustainability', 'footer.copy': '© 2026 INGE&MAT. All rights reserved.',
   },
 
   es: {
@@ -266,7 +266,7 @@ const translations = {
     'cp.af.cta.btn1': 'Solicitar Asistencia Técnica', 'cp.af.cta.btn2': 'Hablar con un Ingeniero',
 
     'footer.privacy': 'Política de Privacidad', 'footer.terms': 'Términos de Servicio',
-    'footer.sustainability': 'Sostenibilidad', 'footer.copy': '© 2024 INGE&MAT. Todos los derechos reservados.',
+    'footer.sustainability': 'Sostenibilidad', 'footer.copy': '© 2026 INGE&MAT. Todos los derechos reservados.',
   },
 };
 
