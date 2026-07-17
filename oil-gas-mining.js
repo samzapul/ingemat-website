@@ -143,6 +143,11 @@ const translations = {
     'ogm.cta.btn1':    'Request Engineering Support',
     'ogm.cta.btn2':    'View Steel Products',
 
+    'footer.products':       'Products',
+    'footer.solutions':      'Solutions',
+    'footer.geosynthetics':  'Geosynthetics',
+    'footer.steel':          'Steel',
+    'footer.gabions':        'Amorphous Gabions',
     'footer.privacy':        'Privacy Policy',
     'footer.terms':          'Terms of Service',
     'footer.sustainability': 'Sustainability',
@@ -274,6 +279,11 @@ const translations = {
     'ogm.cta.btn1':    'Solicitar Soporte de Ingeniería',
     'ogm.cta.btn2':    'Ver Productos de Acero',
 
+    'footer.products':       'Productos',
+    'footer.solutions':      'Soluciones',
+    'footer.geosynthetics':  'Geosintéticos',
+    'footer.steel':          'Acero',
+    'footer.gabions':        'Gaviones Amorfos',
     'footer.privacy':        'Política de Privacidad',
     'footer.terms':          'Términos de Servicio',
     'footer.sustainability': 'Sostenibilidad',
@@ -339,6 +349,11 @@ let currentChapter = null;
 let activeCardEl   = null;
 let generation     = 0;
 let floatTween     = null;
+let cinemaScrollTrigger = null;
+
+/* Con prefers-reduced-motion activo, las tarjetas del hero aparecen y
+   desaparecen sin animación (ver animateCardIn / animateCardOut). */
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ══════════════════════════════════════════════════════════
    DOM REFS
@@ -425,6 +440,15 @@ function animateCardIn(el) {
   if (!el) return;
   const pct = IS_MOBILE ? {} : getPercentPos(el);
   gsap.killTweensOf(el);
+
+  if (prefersReducedMotion) {
+    // Sin animación: la tarjeta aparece directamente, sin float idle.
+    gsap.set(el, { opacity: 1, y: 0, filter: 'blur(0px)', ...pct });
+    el.style.visibility = 'visible';
+    el.classList.add('is-visible');
+    return;
+  }
+
   gsap.fromTo(el,
     { opacity: 0, y: 22, filter: 'blur(8px)', ...pct },
     {
@@ -442,6 +466,16 @@ function animateCardOut(el, onComplete) {
   stopFloat();
   gsap.killTweensOf(el);
   const pct = IS_MOBILE ? {} : getPercentPos(el);
+
+  if (prefersReducedMotion) {
+    // Sin animación: la tarjeta se oculta directamente.
+    el.style.visibility = 'hidden';
+    el.classList.remove('is-visible');
+    gsap.set(el, { opacity: 0, x: 0, y: 0, filter: 'blur(0px)', ...pct });
+    if (onComplete) onComplete();
+    return;
+  }
+
   gsap.to(el, {
     opacity: 0,
     y: -16,
@@ -484,12 +518,21 @@ function switchChapter(newCh) {
   currentChapter = newCh;
   activeCardEl   = nextEl;
 
-  if (prevEl) {
+  // Si la tarjeta anterior nunca llegó a mostrarse (un scroll rápido en
+  // cascada la reemplazó antes de que su propia animación de entrada
+  // arrancara), no tiene sentido pagar los ~0.55s de la animación de
+  // salida sobre un elemento invisible: eso es lo que acumulaba el
+  // retraso y hacía sentir que la tarjeta correcta "no aparecía".
+  // Saltamos directo a mostrar la nueva.
+  const prevWasVisible = prevEl && prevEl.classList.contains('is-visible');
+
+  if (prevWasVisible) {
     animateCardOut(prevEl, () => {
       if (generation !== gen) return;
       animateCardIn(nextEl);
     });
   } else {
+    if (prevEl) { gsap.killTweensOf(prevEl); prevEl.style.visibility = 'hidden'; }
     animateCardIn(nextEl);
   }
 }
@@ -509,6 +552,25 @@ function updateCinema(progress) {
   updatePhase(ch.id);
   updateTimeline(ch);
   switchChapter(ch);
+}
+
+/* ══════════════════════════════════════════════════════════
+   SCROLL-SETTLE SAFETY NET
+   Fallback para scroll muy rápido: si algún tick de onUpdate se
+   pierde y la tarjeta que corresponde a la posición actual del
+   scroll nunca llegó a mostrarse, este mecanismo la resincroniza
+   ~120ms después de que el scroll (o un resize) se detiene.
+   No acumula tarjetas: sigue mostrando solo la del capítulo
+   correcto, igual que updateCinema() — nunca dos a la vez.
+══════════════════════════════════════════════════════════ */
+let settleTimer = null;
+function syncToScrollPosition() {
+  if (!cinemaScrollTrigger) return;
+  updateCinema(cinemaScrollTrigger.progress);
+}
+function scheduleSettleSync() {
+  clearTimeout(settleTimer);
+  settleTimer = setTimeout(syncToScrollPosition, 120);
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -540,12 +602,15 @@ function initCinema() {
 
   updateTimeline(CHAPTERS[0]);
 
-  ScrollTrigger.create({
+  cinemaScrollTrigger = ScrollTrigger.create({
     trigger: section,
     start: 'top top',
     end: 'bottom bottom',
     onUpdate(self) { updateCinema(self.progress); },
   });
+
+  window.addEventListener('scroll', scheduleSettleSync, { passive: true });
+  window.addEventListener('resize', scheduleSettleSync);
 
   /* Rotation / resize across the 768px boundary: mobile CSS pins cards
      with !important while desktop relies on GSAP xPercent — re-sync. */
@@ -562,6 +627,7 @@ function initCinema() {
         });
       }
       ScrollTrigger.refresh();
+      syncToScrollPosition();
     }, 200);
   });
 }
@@ -628,5 +694,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initAfterFilmReveals();
   initLang();
 
-  window.addEventListener('load', () => ScrollTrigger.refresh());
+  window.addEventListener('load', () => { ScrollTrigger.refresh(); syncToScrollPosition(); });
 });
