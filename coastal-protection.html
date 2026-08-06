@@ -11,20 +11,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Nunito:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="icon" href="./images/INGEMAT ICON.png" type="image/png" />
 
-  <!-- Preload every frame — no flicker -->
-  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 1.webp" />
-  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 2.webp" />
-  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 3.webp" />
-  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 4.webp" />
-  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 5.webp" />
-  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 6.webp" />
-  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 7.webp" />
-  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 8.webp" />
-  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 9.webp" />
-  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 10.webp" />
-  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 11.webp" />
-  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 12.webp" />
-  <link rel="preload" as="image" href="images/Coastal protection frames/Frame 13.webp" />
+  <!-- Poster frame (first frame of the sequence) — visible while the 96-frame
+       canvas sequence preloads in JS. Only this one is preloaded via <link>. -->
+  <link rel="preload" as="image" href="images/coastal-sequence/coastal_0001.webp" />
 
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="coastal-protection.css" />
@@ -48,7 +37,7 @@
       <div class="nav-links">
         <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
         <div class="nav-item nav-item--dropdown">
-          <a href="index.html#solutions" class="nav-link active" data-i18n="nav.solutions">Solutions</a>
+          <a href="soluciones.html" class="nav-link active" data-i18n="nav.solutions">Solutions</a>
           <div class="mega-menu">
             <a href="coastal-protection.html" class="mega-sub" style="color:#ddcc0f;" data-i18n="nav.sub.coastal">Coastal Protection</a>
             <a href="ground-stabilization.html" class="mega-sub" data-i18n="nav.sub.ground">Ground Stabilization</a>
@@ -56,7 +45,7 @@
           </div>
         </div>
         <div class="nav-item nav-item--dropdown">
-          <a href="#" class="nav-link" data-i18n="nav.products">Products</a>
+          <a href="productos.html" class="nav-link" data-i18n="nav.products">Products</a>
           <div class="mega-menu">
             <a href="steel-solutions.html" class="mega-sub" data-i18n="nav.sub.steel">Steel</a>
             <a href="geosynthetics.html" class="mega-sub" data-i18n="nav.sub.geosyn">Geosynthetics</a>
@@ -113,27 +102,19 @@
 </nav>
 
 <!-- ══════════════════════════════════════════════════════════
-     CINEMA SECTION — 900vh pinned image sequence
+     CINEMA SECTION — canvas image sequence scrubbed by scroll
+     (96 frames extraídos de video; altura de scroll controlada
+     por SCROLL_HEIGHT_VH en coastal-protection.js)
 ══════════════════════════════════════════════════════════ -->
 <section id="cinema-section" aria-label="Coastal protection engineering sequence">
 
   <div id="cinema-viewport">
 
-    <!-- ── Frame Stage ─────────────────────────────────────── -->
+    <!-- ── Frame Stage: poster + canvas ────────────────────── -->
     <div id="frame-stage" aria-hidden="true">
-      <img src="images/Coastal protection frames/Frame 1.webp"  class="cp-frame is-active" data-frame="1"  alt="" width="1672" height="941" fetchpriority="high" />
-      <img src="images/Coastal protection frames/Frame 2.webp"  class="cp-frame" data-frame="2"  alt="" width="1672" height="940" />
-      <img src="images/Coastal protection frames/Frame 3.webp"  class="cp-frame" data-frame="3"  alt="" width="1672" height="940" />
-      <img src="images/Coastal protection frames/Frame 4.webp"  class="cp-frame" data-frame="4"  alt="" width="1672" height="940" />
-      <img src="images/Coastal protection frames/Frame 5.webp"  class="cp-frame" data-frame="5"  alt="" width="1672" height="940" />
-      <img src="images/Coastal protection frames/Frame 6.webp"  class="cp-frame" data-frame="6"  alt="" width="1672" height="940" />
-      <img src="images/Coastal protection frames/Frame 7.webp"  class="cp-frame" data-frame="7"  alt="" width="1672" height="940" />
-      <img src="images/Coastal protection frames/Frame 8.webp"  class="cp-frame" data-frame="8"  alt="" width="1672" height="940" />
-      <img src="images/Coastal protection frames/Frame 9.webp"  class="cp-frame" data-frame="9"  alt="" width="1672" height="940" />
-      <img src="images/Coastal protection frames/Frame 10.webp" class="cp-frame" data-frame="10" alt="" width="1672" height="940" />
-      <img src="images/Coastal protection frames/Frame 11.webp" class="cp-frame" data-frame="11" alt="" width="1672" height="940" />
-      <img src="images/Coastal protection frames/Frame 12.webp" class="cp-frame" data-frame="12" alt="" width="1672" height="940" />
-      <img src="images/Coastal protection frames/Frame 13.webp" class="cp-frame" data-frame="13" alt="" width="1672" height="940" />
+      <!-- Poster: primer frame, visible hasta que el canvas dibuja -->
+      <img id="frame-poster" src="images/coastal-sequence/coastal_0001.webp" alt="" width="1600" height="900" fetchpriority="high" />
+      <canvas id="frame-canvas"></canvas>
     </div>
 
     <!-- ── Cinematic overlays ──────────────────────────────── -->
@@ -525,6 +506,11 @@
       </div>
     </div>
     <nav class="footer-links" aria-label="Footer navigation">
+      <a href="productos.html" class="footer-link" data-i18n="footer.products">Products</a>
+      <a href="soluciones.html" class="footer-link" data-i18n="footer.solutions">Solutions</a>
+      <a href="geosynthetics.html" class="footer-link" data-i18n="footer.geosynthetics">Geosynthetics</a>
+      <a href="steel-solutions.html" class="footer-link" data-i18n="footer.steel">Steel</a>
+      <a href="amorphous-gabions.html" class="footer-link" data-i18n="footer.gabions">Amorphous Gabions</a>
       <a href="docs/Politica_Privacidad_INGEMAT.pdf" target="_blank" rel="noopener" class="footer-link" data-i18n="footer.privacy">Privacy Policy</a>
       <a href="#" class="footer-link" data-i18n="footer.terms">Terms of Service</a>
       <a href="#" class="footer-link" data-i18n="footer.sustainability">Sustainability</a>

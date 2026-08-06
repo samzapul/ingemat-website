@@ -10,6 +10,45 @@ const ScrollTrigger = window.ScrollTrigger;
 gsap.registerPlugin(ScrollTrigger);
 
 /* ══════════════════════════════════════════════════════════
+   CONSTANTES DE TUNEO — CAPA A (secuencia de frames en canvas)
+══════════════════════════════════════════════════════════ */
+
+/* Cuánto scroll físico cuesta recorrer TODO el hero (en vh).
+   350 = ~3.5 pantallas: recorrido ágil. Súbelo para un scrub más
+   lento/exigente, bájalo para uno más rápido. No afecta nada más:
+   los popups (Capa B) se disparan por PORCENTAJE de progreso. */
+const SCROLL_HEIGHT_VH = 350;
+
+/* Secuencia extraída del video (3 clips concatenados, 24 s @ 4 fps).
+   Los archivos viven en public/images/coastal-sequence/. */
+const FRAME_COUNT = 96;
+const FRAMES = Array.from(
+  { length: FRAME_COUNT },
+  (_, i) => `images/coastal-sequence/coastal_${String(i + 1).padStart(4, '0')}.webp`
+);
+
+/* La secuencia se recorre entre progreso 0 y SEQUENCE_END; el tramo
+   final (SEQUENCE_END → 1) descansa sobre el último frame, igual que
+   la "resting pause" de la versión anterior de 13 frames. */
+const SEQUENCE_END = 0.889;
+
+/* ══════════════════════════════════════════════════════════
+   CONSTANTES DE TUNEO — CAPA B (velocidad de aparición de tarjetas)
+   Algunos capítulos cubren un tramo muy corto del scroll total. Con
+   una animación lenta, un scroll rápido cambia de capítulo antes de
+   que la tarjeta llegue a hacerse visible — la info "no sale nunca".
+   Por eso la entrada/salida es deliberadamente rápida. */
+const CARD_IN_DURATION  = 0.28;  // s — fade+blur de entrada
+const CARD_OUT_DURATION = 0.16;  // s — fade+blur de salida
+
+/* Tope de tiempo total (ms) para el "catch-up flash": si un salto de
+   scroll instantáneo (tecla Fin, arrastrar el scrollbar, resize) se
+   salta varios capítulos de un tiro, cada uno se muestra brevemente
+   en orden antes de asentarse en el capítulo real — así ninguna
+   tarjeta se salta del todo, sin importar cuántas queden en medio. */
+const MAX_CATCHUP_MS = 480;
+
+/* ══════════════════════════════════════════════════════════
    TRANSLATIONS
 ══════════════════════════════════════════════════════════ */
 const translations = {
@@ -309,24 +348,27 @@ function initLang() {
 }
 
 /* ══════════════════════════════════════════════════════════
-   CHAPTER DEFINITIONS
-   900vh total. Active chapters cover progress 0–0.889 (800vh).
-   Progress 0.889–1.0 is the resting pause on Frame 13.
+   CONSTANTES DE TUNEO — CAPA B (popups / tarjetas de información)
+   INDEPENDIENTE del número de frames: cada tarjeta se dispara por
+   PORCENTAJE de progreso del scroll (start → end, en fracción 0–1).
+   Ajusta estos porcentajes para mover el momento de aparición de
+   cada tarjeta sin tocar nada de la Capa A.
+   El tramo 0.889–1.0 es la pausa final sobre el último frame.
 ══════════════════════════════════════════════════════════ */
 const CHAPTERS = [
-  { id: 1,  frame: 1,  start: 0.000, end: 0.048, labelKey: 'cp.tl.1'  },
-  { id: 2,  frame: 2,  start: 0.048, end: 0.138, labelKey: 'cp.tl.2'  },
-  { id: 3,  frame: 3,  start: 0.138, end: 0.200, labelKey: 'cp.tl.3'  },
-  { id: 4,  frame: 4,  start: 0.200, end: 0.316, labelKey: 'cp.tl.4'  },
-  { id: 5,  frame: 5,  start: 0.316, end: 0.428, labelKey: 'cp.tl.5'  },
-  { id: 6,  frame: 6,  start: 0.428, end: 0.516, labelKey: 'cp.tl.6'  },
-  { id: 7,  frame: 7,  start: 0.516, end: 0.588, labelKey: 'cp.tl.7'  },
-  { id: 8,  frame: 8,  start: 0.588, end: 0.658, labelKey: 'cp.tl.8'  },
-  { id: 9,  frame: 9,  start: 0.658, end: 0.748, labelKey: 'cp.tl.9'  },
-  { id: 10, frame: 10, start: 0.748, end: 0.800, labelKey: 'cp.tl.10' },
-  { id: 11, frame: 11, start: 0.800, end: 0.844, labelKey: 'cp.tl.11' },
-  { id: 12, frame: 12, start: 0.844, end: 0.864, labelKey: 'cp.tl.12' },
-  { id: 13, frame: 13, start: 0.864, end: 0.889, labelKey: 'cp.tl.13' },
+  { id: 1,  start: 0.000, end: 0.048, labelKey: 'cp.tl.1'  },
+  { id: 2,  start: 0.048, end: 0.138, labelKey: 'cp.tl.2'  },
+  { id: 3,  start: 0.138, end: 0.200, labelKey: 'cp.tl.3'  },
+  { id: 4,  start: 0.200, end: 0.316, labelKey: 'cp.tl.4'  },
+  { id: 5,  start: 0.316, end: 0.428, labelKey: 'cp.tl.5'  },
+  { id: 6,  start: 0.428, end: 0.516, labelKey: 'cp.tl.6'  },
+  { id: 7,  start: 0.516, end: 0.588, labelKey: 'cp.tl.7'  },
+  { id: 8,  start: 0.588, end: 0.658, labelKey: 'cp.tl.8'  },
+  { id: 9,  start: 0.658, end: 0.748, labelKey: 'cp.tl.9'  },
+  { id: 10, start: 0.748, end: 0.800, labelKey: 'cp.tl.10' },
+  { id: 11, start: 0.800, end: 0.844, labelKey: 'cp.tl.11' },
+  { id: 12, start: 0.844, end: 0.864, labelKey: 'cp.tl.12' },
+  { id: 13, start: 0.864, end: 0.889, labelKey: 'cp.tl.13' },
 ];
 
 /* ══════════════════════════════════════════════════════════
@@ -345,15 +387,14 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 /* ══════════════════════════════════════════════════════════
    DOM REFS
 ══════════════════════════════════════════════════════════ */
-const frames       = document.querySelectorAll('.cp-frame');
+const canvasEl     = document.getElementById('frame-canvas');
+const canvasCtx    = canvasEl ? canvasEl.getContext('2d') : null;
+const posterEl     = document.getElementById('frame-poster');
 const progressFill = document.getElementById('cinema-progress-fill');
 const tlLabelEl    = document.getElementById('tl-label');
 const tlDots       = document.querySelectorAll('.tl-dot');
 
 let IS_MOBILE = window.innerWidth < 768;
-
-const frameMap = {};
-frames.forEach(img => { frameMap[+img.dataset.frame] = img; });
 
 const cardMap = {};
 CHAPTERS.forEach(ch => {
@@ -383,14 +424,84 @@ function applyPercentPos(el) {
 }
 
 /* ══════════════════════════════════════════════════════════
-   FRAME SWITCHING — instant, no CSS transition
+   CAPA A — MOTOR DE FRAMES EN CANVAS
+   Precarga las 96 imágenes con new Image(); mientras cargan, el
+   poster (#frame-poster = coastal_0001) cubre el hero — sin
+   parpadeos ni frames en blanco. El canvas dibuja cada frame con
+   cover-fit (equivalente a object-fit: cover) y SOLO redibuja
+   cuando cambia el índice.
 ══════════════════════════════════════════════════════════ */
-let lastFrame = -1;
-function showFrame(n) {
-  if (n === lastFrame) return;
-  lastFrame = n;
-  frames.forEach(img => img.classList.remove('is-active'));
-  if (frameMap[n]) frameMap[n].classList.add('is-active');
+const frameImages   = new Array(FRAME_COUNT).fill(null);
+let   renderedIndex = -1;   // último índice dibujado en el canvas
+let   targetIndex   = 0;    // índice que corresponde al scroll actual
+let   posterHidden  = false;
+
+function sizeCanvas() {
+  if (!canvasEl) return;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2); // cap DPR: rendimiento
+  const w = canvasEl.clientWidth;
+  const h = canvasEl.clientHeight;
+  if (canvasEl.width !== Math.round(w * dpr) || canvasEl.height !== Math.round(h * dpr)) {
+    canvasEl.width  = Math.round(w * dpr);
+    canvasEl.height = Math.round(h * dpr);
+  }
+}
+
+/* Dibuja img cubriendo todo el canvas, centrada (cover-fit). */
+function drawCover(img) {
+  if (!canvasCtx || !img) return;
+  const cw = canvasEl.width;
+  const ch = canvasEl.height;
+  if (!cw || !ch) return;
+  const scale = Math.max(cw / img.naturalWidth, ch / img.naturalHeight);
+  const dw = img.naturalWidth  * scale;
+  const dh = img.naturalHeight * scale;
+  canvasCtx.drawImage(img, (cw - dw) / 2, (ch - dh) / 2, dw, dh);
+}
+
+/* Dibuja el frame `i`. Si aún no cargó, cae al frame cargado más
+   cercano por debajo (carga progresiva sin huecos en blanco). */
+function renderFrame(i) {
+  targetIndex = i;
+  let best = -1;
+  for (let j = i; j >= 0; j--) {
+    if (frameImages[j] && frameImages[j].complete && frameImages[j].naturalWidth) { best = j; break; }
+  }
+  if (best === -1 || best === renderedIndex) return;
+  renderedIndex = best;
+  drawCover(frameImages[best]);
+  if (!posterHidden && posterEl) {
+    posterHidden = true;
+    posterEl.style.display = 'none';
+  }
+}
+
+/* Fuerza redibujo (tras resize: el canvas cambió de tamaño). */
+function redrawCurrent() {
+  sizeCanvas();
+  renderedIndex = -1;
+  renderFrame(targetIndex);
+}
+
+function preloadFrames(onAllLoaded) {
+  let loaded = 0;
+  FRAMES.forEach((src, i) => {
+    const img = new Image();
+    img.decoding = 'async';
+    img.onload = () => {
+      loaded++;
+      /* Si este frame es el que el scroll está pidiendo (o mejora el
+         fallback actual), dibújalo ya. */
+      if (i <= targetIndex && i > renderedIndex) renderFrame(targetIndex);
+      if (loaded === FRAME_COUNT && onAllLoaded) onAllLoaded();
+    };
+    img.onerror = () => {
+      loaded++;
+      if (loaded === FRAME_COUNT && onAllLoaded) onAllLoaded();
+    };
+    img.src = src;
+    frameImages[i] = img;
+  });
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -429,11 +540,11 @@ function animateCardIn(el) {
   }
 
   gsap.fromTo(el,
-    { opacity: 0, y: 22, filter: 'blur(8px)', ...pct },
+    { opacity: 0, y: 14, filter: 'blur(5px)', ...pct },
     {
       opacity: 1, y: 0, filter: 'blur(0px)', ...pct,
-      duration: 1.0,
-      ease: 'power3.out',
+      duration: CARD_IN_DURATION,
+      ease: 'power2.out',
       onStart()    { el.style.visibility = 'visible'; el.classList.add('is-visible'); },
       onComplete() { startFloat(el); },
     }
@@ -457,10 +568,10 @@ function animateCardOut(el, onComplete) {
 
   gsap.to(el, {
     opacity: 0,
-    y: -16,
-    filter: 'blur(6px)',
+    y: -10,
+    filter: 'blur(4px)',
     ...pct,
-    duration: 0.55,
+    duration: CARD_OUT_DURATION,
     ease: 'power2.in',
     onComplete() {
       el.style.visibility = 'hidden';
@@ -499,10 +610,10 @@ function switchChapter(newCh) {
 
   // Si la tarjeta anterior nunca llegó a mostrarse (un scroll rápido en
   // cascada la reemplazó antes de que su propia animación de entrada
-  // arrancara), no tiene sentido pagar los ~0.55s de la animación de
-  // salida sobre un elemento invisible: eso es lo que acumulaba el
-  // retraso y hacía sentir que la tarjeta correcta "no aparecía".
-  // Saltamos directo a mostrar la nueva.
+  // arrancara), no tiene sentido pagar la animación de salida sobre un
+  // elemento invisible: eso es lo que acumulaba el retraso y hacía
+  // sentir que la tarjeta correcta "no aparecía". Saltamos directo a
+  // mostrar la nueva.
   const prevWasVisible = prevEl && prevEl.classList.contains('is-visible');
 
   if (prevWasVisible) {
@@ -517,19 +628,182 @@ function switchChapter(newCh) {
 }
 
 /* ══════════════════════════════════════════════════════════
+   CATCH-UP FLASH
+   Un scroll instantáneo (tecla Fin, arrastrar el scrollbar, un
+   resize) puede saltar de un capítulo a otro varios capítulos más
+   adelante en un solo tick de onUpdate. Para que ninguna tarjeta se
+   salte del todo — la 5 nunca debe aparecer sin que antes hayan
+   aparecido la 2, 3 y 4 — mostramos brevemente cada capítulo
+   intermedio, en orden, antes de asentarnos en el capítulo real.
+   El tiempo total está acotado (MAX_CATCHUP_MS) para que un salto
+   grande (p.ej. de 1 a 13) no bloquee la sensación de scroll con una
+   cola larga de flashes: cuantos más capítulos de por medio, más
+   corto es cada flash individual.
+   flashGeneration invalida cualquier cola en curso en cuanto llega
+   un tick de scroll más nuevo — nunca se acumulan colas.
+══════════════════════════════════════════════════════════ */
+let lastShownId    = 1;
+let flashTimer     = null;
+let flashGeneration = 0;
+
+/* Duración de entrada/salida de un flash INTERMEDIO del catch-up —
+   mucho más corta que CARD_IN/OUT_DURATION porque los pasos pueden
+   llegar cada ~35-110ms; con la duración normal (0.28s/0.16s) varios
+   flashes se solaparían visualmente a la vez. Solo opacidad, sin
+   blur ni desplazamiento: a esta cadencia esos detalles no se
+   perciben y sólo suman coste de layout/paint. */
+const FLASH_STEP_DURATION = 0.09;
+
+/* Arranca (o redirige) el catch-up hacia targetCh. El presupuesto de
+   tiempo (perStep) se calcula UNA sola vez aquí, a partir de la
+   distancia real en ese momento, y se mantiene fijo durante toda la
+   cadena — si se recalculara en cada paso a partir de lo que queda
+   (como en un primer intento), los últimos pasos terminan más lentos
+   que los primeros y el total se dispara muy por encima de
+   MAX_CATCHUP_MS. Con un perStep fijo, distancia × perStep queda
+   acotado a ese presupuesto sin importar cuántos capítulos de por
+   medio haya. */
+function catchUpAndSwitch(targetCh) {
+  clearTimeout(flashTimer);
+  const gen = ++flashGeneration;
+  const distance = Math.abs(targetCh.id - lastShownId);
+  const perStep = Math.max(35, Math.min(110, MAX_CATCHUP_MS / distance));
+  advanceTowards(targetCh, gen, perStep);
+}
+
+/* Avanza UN capítulo por llamada y se reprograma a sí misma hasta
+   llegar. Diseño clave: cada llamada actualiza lastShownId de forma
+   SÍNCRONA e inmediata — así, si llegan ticks de scroll reales más
+   rápido que el propio temporizador (típico durante un scroll con
+   scroll-behavior:smooth, que dispara un tick por frame), cada tick
+   sigue empujando el progreso un paso más cerca del objetivo en
+   lugar de reiniciar la cola desde cero. Nunca se pierde avance ya
+   hecho. El ÚLTIMO paso (llegar a targetCh) usa la transición normal,
+   completa y pausada — el destino real merece el acabado pulido; solo
+   los capítulos de PASO usan el flash rápido. */
+function advanceTowards(targetCh, gen, perStep) {
+  if (gen !== flashGeneration || lastShownId === targetCh.id) return;
+
+  const dir    = targetCh.id > lastShownId ? 1 : -1;
+  const nextId = lastShownId + dir;
+  const nextCh = CHAPTERS[nextId - 1];
+  if (!nextCh) return;
+
+  const arriving = nextId === targetCh.id;
+  if (arriving) {
+    switchChapter(nextCh);
+  } else {
+    flashShowChapter(nextCh);
+  }
+  lastShownId = nextId;
+
+  if (!arriving) {
+    flashTimer = setTimeout(() => advanceTowards(targetCh, gen, perStep), perStep);
+  }
+}
+
+/* Transición rápida y NO bloqueante para los capítulos de PASO del
+   catch-up. switchChapter() normal encadena: espera a que la tarjeta
+   anterior termine de salir (onComplete) para recién ahí arrancar la
+   entrada de la siguiente. Eso es correcto para scroll normal, pero
+   aquí cada paso llega cada ~35-110ms. Si usáramos ese mismo
+   encadenamiento, el siguiente paso invalidaría (vía el guard de
+   generation) el callback pendiente ANTES de que llegara a
+   dispararse, y la tarjeta intermedia jamás se mostraría — por eso
+   la entrada de la siguiente arranca en paralelo con la salida de
+   la anterior, sin esperarla. */
+function flashShowChapter(newCh) {
+  if (newCh === currentChapter) return;
+
+  const prevEl = activeCardEl;
+  const nextEl = cardMap[newCh.id];
+  generation++; // invalida cualquier callback pendiente de un switchChapter normal
+  currentChapter = newCh;
+  activeCardEl   = nextEl;
+
+  if (prevEl && prevEl !== nextEl) {
+    stopFloat();
+    gsap.killTweensOf(prevEl);
+    if (prefersReducedMotion) {
+      prevEl.style.visibility = 'hidden';
+      prevEl.classList.remove('is-visible');
+      gsap.set(prevEl, { opacity: 0 });
+    } else {
+      gsap.to(prevEl, {
+        opacity: 0,
+        duration: FLASH_STEP_DURATION,
+        ease: 'power1.in',
+        onComplete() {
+          prevEl.style.visibility = 'hidden';
+          prevEl.classList.remove('is-visible');
+        },
+      });
+    }
+  }
+
+  if (!nextEl) return;
+  gsap.killTweensOf(nextEl);
+
+  if (prefersReducedMotion) {
+    gsap.set(nextEl, { opacity: 1 });
+    nextEl.style.visibility = 'visible';
+    nextEl.classList.add('is-visible');
+    return;
+  }
+
+  const pct = IS_MOBILE ? {} : getPercentPos(nextEl);
+  gsap.fromTo(nextEl,
+    { opacity: 0, ...pct },
+    {
+      opacity: 1, ...pct,
+      duration: FLASH_STEP_DURATION,
+      ease: 'power1.out',
+      onStart() { nextEl.style.visibility = 'visible'; nextEl.classList.add('is-visible'); },
+    }
+  );
+}
+
+/* ══════════════════════════════════════════════════════════
    CINEMA UPDATE — fires on every scroll tick
+   CAPA A: progreso → índice de frame (0 → FRAME_COUNT-1).
+   CAPA B: progreso → capítulo/tarjeta por porcentaje. La lógica
+   de capítulos es "por tramo alcanzado", no por rango estrecho:
+   cualquier progreso cae SIEMPRE en un capítulo, así que aunque
+   un tick se pierda por scroll rápido, el siguiente tick (o el
+   fallback de recuperación) muestra la tarjeta correcta. Cuando el
+   salto cubre más de un capítulo, el catch-up flash de arriba se
+   encarga de que ninguno se salte del todo.
 ══════════════════════════════════════════════════════════ */
 function updateCinema(progress) {
   if (progressFill) progressFill.style.width = (progress * 100).toFixed(2) + '%';
 
+  /* Capa A — frame de la secuencia */
+  const frameIdx = Math.max(0, Math.min(
+    FRAME_COUNT - 1,
+    Math.floor((progress / SEQUENCE_END) * FRAME_COUNT)
+  ));
+  renderFrame(frameIdx);
+
+  /* Capa B — tarjeta según porcentaje */
   let ch = CHAPTERS[CHAPTERS.length - 1];
   for (let i = 0; i < CHAPTERS.length; i++) {
     if (progress < CHAPTERS[i].end) { ch = CHAPTERS[i]; break; }
   }
 
-  showFrame(ch.frame);
   updateTimeline(ch);
-  switchChapter(ch);
+
+  if (Math.abs(ch.id - lastShownId) > 1) {
+    catchUpAndSwitch(ch);
+  } else {
+    // Un capítulo adyacente es un destino definitivo: cualquier catch-up
+    // que hubiera quedado a medias de un salto anterior queda obsoleto.
+    // Sin esto, su setTimeout pendiente sigue su propio rumbo (viejo) y
+    // termina pisando este capítulo, correcto, con uno equivocado.
+    clearTimeout(flashTimer);
+    flashGeneration++;
+    switchChapter(ch);
+    lastShownId = ch.id;
+  }
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -558,8 +832,31 @@ function initCinema() {
   const section = document.getElementById('cinema-section');
   if (!section) return;
 
+  /* ── MODO ESTÁTICO (prefers-reduced-motion) ─────────────────
+     Sin pin ni scrub: el poster pasa a ser el ÚLTIMO frame
+     (secuencia terminada) y el CSS (html.cinema-static) apila
+     todas las tarjetas visibles en flujo normal. */
+  if (prefersReducedMotion) {
+    document.documentElement.classList.add('cinema-static');
+    if (posterEl) posterEl.src = FRAMES[FRAME_COUNT - 1];
+    return;
+  }
+
+  /* Altura de scroll del hero — controlada por SCROLL_HEIGHT_VH. */
+  section.style.height = SCROLL_HEIGHT_VH + 'vh';
+
+  /* Canvas + precarga de la secuencia. El pin del viewport lo hace
+     CSS con position: sticky (#cinema-viewport) — equivalente a
+     pin:true de ScrollTrigger, sin pin-spacer que rompa el layout
+     en móvil. */
+  sizeCanvas();
+  renderFrame(0);
+  preloadFrames(() => {
+    ScrollTrigger.refresh();
+    syncToScrollPosition();
+  });
+
   Object.values(cardMap).forEach(applyPercentPos);
-  showFrame(1);
 
   const ch1 = cardMap[1];
   if (ch1) {
@@ -603,6 +900,7 @@ function initCinema() {
           applyPercentPos(el);
         });
       }
+      redrawCurrent();          // el canvas cambió de tamaño — redibujar
       ScrollTrigger.refresh();
       syncToScrollPosition();
     }, 200);

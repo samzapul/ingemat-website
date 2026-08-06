@@ -84,7 +84,10 @@ body.cp-page {
 ══════════════════════════════════════════════════════════ */
 #cinema-section {
   position: relative;
-  height: 900vh;  /* 800vh story + 100vh resting pause on Frame 13 */
+  /* Fallback — la altura real la fija JS con SCROLL_HEIGHT_VH
+     (coastal-protection.js). Esa constante controla cuánto scroll
+     físico cuesta recorrer toda la secuencia. */
+  height: 350vh;
   background: #000;
 }
 
@@ -105,18 +108,27 @@ body.cp-page {
   inset: 0;
 }
 
-.cp-frame {
+/* Poster (coastal_0001) — visible hasta que el canvas hace su primer
+   dibujo; JS lo oculta entonces. Evita parpadeos/frames en blanco. */
+#frame-poster {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center center;
-  opacity: 0;
   pointer-events: none;
-  /* No CSS transition — JS controls frame switches instantly */
 }
-.cp-frame.is-active { opacity: 1; }
+
+/* Canvas de la secuencia — JS dibuja cada frame con cover-fit */
+#frame-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  will-change: contents;
+}
 
 /* ── Cinematic overlays ──────────────────────────────────── */
 .cinema-vignette {
@@ -1234,4 +1246,59 @@ footer {
 /* Comfortable tap targets on coarse pointers */
 @media (max-width: 900px) {
   .af-app-tags a { padding: 8px 12px; }
+}
+
+/* ============================================================
+   PREFERS-REDUCED-MOTION — MODO ESTÁTICO DEL HERO
+   JS añade .cinema-static a <html> cuando el usuario tiene
+   prefers-reduced-motion activo: sin pin, sin scrub. Se muestra
+   el último frame (secuencia terminada) como fondo estático y
+   TODAS las tarjetas de información apiladas, visibles y
+   legibles, en flujo normal.
+   ============================================================ */
+html.cinema-static #cinema-section {
+  height: auto !important;
+}
+
+html.cinema-static #cinema-viewport {
+  position: relative;
+  height: auto;
+  min-height: 100vh;
+  display: block;
+  overflow: hidden;
+}
+
+html.cinema-static #frame-stage {
+  position: absolute;
+  inset: 0;
+}
+
+/* En modo estático el poster (JS lo cambia al último frame) es el fondo;
+   el canvas no se usa. */
+html.cinema-static #frame-canvas { display: none; }
+
+html.cinema-static #cards-layer {
+  position: relative;
+  inset: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  padding: 140px 24px 100px;
+}
+
+html.cinema-static .cp-card {
+  position: static !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  filter: none !important;
+  max-width: 520px !important;
+  width: 100% !important;
+}
+
+html.cinema-static #cinema-progress,
+html.cinema-static #cinema-timeline,
+html.cinema-static .cp-card-scroll-cue {
+  display: none !important;
 }
